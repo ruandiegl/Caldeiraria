@@ -16,7 +16,7 @@ export default function ServiceDetail() {
       <Section>
         <Container>
           <Split>
-            <SectionTitle><Eyebrow>Descricao</Eyebrow><h2>Execucao tecnica com rastreabilidade e foco em campo.</h2><p>{service.summary}</p></SectionTitle>
+            <SectionTitle><Eyebrow>Descrição</Eyebrow><h2>Execução técnica com rastreabilidade e foco em campo.</h2><p>{service.summary}</p></SectionTitle>
             <img src={service.image} alt="" style={{ minHeight: 440, objectFit: 'cover', borderRadius: 8 }} />
           </Split>
         </Container>
@@ -24,11 +24,11 @@ export default function ServiceDetail() {
       <Section $muted>
         <Container>
           <CardGrid>
-            <Panel><h3>Aplicacoes</h3><ul>{service.applications.map((item) => <li key={item}>{item}</li>)}</ul></Panel>
+            <Panel><h3>Aplicações</h3><ul>{service.applications.map((item) => <li key={item}>{item}</li>)}</ul></Panel>
             <Panel><h3>Diferenciais</h3><ul>{service.differentials.map((item) => <li key={item}>{item}</li>)}</ul></Panel>
             <Panel><h3>Normas atendidas</h3><ul>{service.standards.map((item) => <li key={item}>{item}</li>)}</ul></Panel>
           </CardGrid>
-          <Actions><Button as={Link} to="/contato">Solicitar orcamento</Button></Actions>
+          <Actions><Button as={Link} to="/contato">Solicitar orçamento</Button></Actions>
         </Container>
       </Section>
     </>

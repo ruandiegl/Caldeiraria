@@ -39,8 +39,8 @@ const heroSlides = [
 ];
 
 const certificationLabels: Record<string, string> = {
-  seguranca: 'Seguranca operacional',
-  offshore: 'Operacao offshore',
+  seguranca: 'Segurança operacional',
+  offshore: 'Operação offshore',
   soldagem: 'Soldagem qualificada',
   qualidade: 'Qualidade e processo',
 };
@@ -70,21 +70,21 @@ export default function Home() {
           <HeroSlide key={slide} $image={slide} $active={index === activeSlide} aria-hidden={index !== activeSlide} />
         ))}
         <Container>
-          <Eyebrow>Caldeiraria, tubulacao e offshore services</Eyebrow>
-          <h1>Engenharia Industrial com mais de 50 anos de experiencia</h1>
+          <Eyebrow>Caldeiraria, tubulação e serviços offshore</Eyebrow>
+          <h1>Engenharia industrial com mais de 50 anos de experiência</h1>
           <p className="copy">
-            Desenvolvendo solucoes metalicas, sistemas de tubulacao, estruturas especiais e servicos offshore para os
+            Desenvolvendo soluções metálicas, sistemas de tubulação, estruturas especiais e serviços offshore para os
             maiores empreendimentos do Brasil.
           </p>
           <Actions>
-            <Button as={Link} to="/contato">Solicitar orcamento</Button>
-            <Button as={Link} to="/servicos" $ghost>Conheca nossos servicos</Button>
+            <Button as={Link} to="/contato">Solicitar orçamento</Button>
+            <Button as={Link} to="/servicos" $ghost>Conheça nossos serviços</Button>
           </Actions>
           <Metrics>
-            <article><strong>+50</strong><span>anos de experiencia</span></article>
+            <article><strong>+50</strong><span>anos de experiência</span></article>
             <article><strong>+200k</strong><span>toneladas produzidas</span></article>
             <article><strong>4</strong><span>unidades industriais</span></article>
-            <article><strong>LATAM</strong><span>atuacao regional</span></article>
+            <article><strong>LATAM</strong><span>atuação regional</span></article>
           </Metrics>
         </Container>
       </HeroCarousel>
@@ -95,24 +95,24 @@ export default function Home() {
             <IdentityMedia>
               <img
                 src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1500&q=82"
-                alt="Operacao metalurgica com tubulacoes industriais"
+                alt="Operação metalúrgica com tubulações industriais"
               />
-              <figcaption>Caldeiraria, soldagem e tubulacao sob medida</figcaption>
+              <figcaption>Caldeiraria, soldagem e tubulação sob medida</figcaption>
             </IdentityMedia>
             <IdentityContent>
               <Eyebrow>Quem somos</Eyebrow>
-              <h2>Uma operacao metalurgica preparada para projetos criticos.</h2>
+              <h2>Uma operação metalúrgica preparada para projetos críticos.</h2>
               <p>
-                A Vulcano atua na fabricacao, montagem e manutencao de componentes industriais sob medida, combinando
-                caldeiraria pesada, soldagem qualificada e engenharia aplicada a setores de petroleo, gas, siderurgia,
-                mineracao, energia e infraestrutura.
+                A Vulcano atua na fabricação, montagem e manutenção de componentes industriais sob medida, combinando
+                caldeiraria pesada, soldagem qualificada e engenharia aplicada a setores de petróleo, gás, siderurgia,
+                mineração, energia e infraestrutura.
               </p>
               <CapabilityGrid aria-label="Capacidades industriais">
                 <article><strong>01</strong><span>Engenharia aplicada a contratos de alta complexidade</span></article>
-                <article><strong>02</strong><span>Fabricacao metalica, spools e estruturas especiais</span></article>
-                <article><strong>03</strong><span>Equipe preparada para campo, manutencao e offshore</span></article>
+                <article><strong>02</strong><span>Fabricação metálica, spools e estruturas especiais</span></article>
+                <article><strong>03</strong><span>Equipe preparada para campo, manutenção e offshore</span></article>
               </CapabilityGrid>
-              <Actions><Button as={Link} to="/empresa">Conheca nossa trajetoria</Button></Actions>
+              <Actions><Button as={Link} to="/empresa">Conheça nossa trajetória</Button></Actions>
             </IdentityContent>
           </IdentityGrid>
         </Container>
@@ -121,7 +121,7 @@ export default function Home() {
       <Section $muted>
         <Container>
           <SectionTitle>
-            <Eyebrow>Nossas solucoes</Eyebrow>
+            <Eyebrow>Nossas soluções</Eyebrow>
             <h2>Capacidade produtiva para metal, tubo, campo e mar.</h2>
           </SectionTitle>
           <CardGrid $columns={4}>
@@ -139,11 +139,11 @@ export default function Home() {
         <Container>
           <Split>
             <SectionTitle>
-              <Eyebrow>Offshore services</Eyebrow>
-              <h2 style={{ color: '#fff' }}>Fabricacao, montagem e manutencao offshore.</h2>
+              <Eyebrow>Serviços offshore</Eyebrow>
+              <h2 style={{ color: '#fff' }}>Fabricação, montagem e manutenção offshore.</h2>
               <p style={{ color: 'rgba(255,255,255,.76)' }}>
-                Equipes qualificadas para soldagem AWS e ASME IX, tubulacoes FRP, linhas metalicas, sistemas em CPVC,
-                PEAD e PTFE, revestimentos especiais e montagens mecanicas em campo.
+                Equipes qualificadas para soldagem AWS e ASME IX, tubulações FRP, linhas metálicas, sistemas em CPVC,
+                PEAD e PTFE, revestimentos especiais e montagens mecânicas em campo.
               </p>
               <Actions><Button as={Link} to="/contato">Solicitar proposta offshore</Button></Actions>
             </SectionTitle>
@@ -159,10 +159,10 @@ export default function Home() {
         <Container>
           <AssuranceGrid>
             <AssuranceIntro>
-              <Eyebrow>Certificacoes</Eyebrow>
+              <Eyebrow>Certificações</Eyebrow>
               <h2>Conformidade para fabricar, soldar, montar e operar em campo.</h2>
               <p>
-                Credenciais organizadas por disciplina para apoiar contratos industriais que exigem seguranca,
+                Credenciais organizadas por disciplina para apoiar contratos industriais que exigem segurança,
                 rastreabilidade, qualidade e atendimento a normas.
               </p>
             </AssuranceIntro>
@@ -201,23 +201,23 @@ export default function Home() {
           <ClientGrid>
             <ClientContent>
               <Eyebrow>Grandes clientes</Eyebrow>
-              <h2>Historico com operacoes lideres em energia, oleo e gas, siderurgia e infraestrutura.</h2>
+              <h2>Histórico com operações líderes em energia, óleo e gás, siderurgia e infraestrutura.</h2>
               <p>
-                A Vulcano participa de obras e manutencoes para plantas, ativos offshore e cadeias industriais em que
-                confiabilidade, prazo e documentacao tecnica sao parte do escopo.
+                A Vulcano participa de obras e manutenções para plantas, ativos offshore e cadeias industriais em que
+                confiabilidade, prazo e documentação técnica fazem parte do escopo.
               </p>
               <ClientNames>{clients.map((client) => <span key={client}>{client}</span>)}</ClientNames>
             </ClientContent>
             <ClientMedia>
               <strong>Setores atendidos</strong>
               <figcaption>
-                Relacionamentos em operacoes onde parada, prazo e rastreabilidade tecnica fazem parte do contrato.
+                Relacionamentos em operações onde parada, prazo e rastreabilidade técnica fazem parte do contrato.
               </figcaption>
               <div>
                 <span><b>Energia</b>plantas e utilidades industriais</span>
-                <span><b>Oleo e gas</b>ativos offshore e apoio a campo</span>
-                <span><b>Siderurgia</b>estruturas, spools e manutencao</span>
-                <span><b>Infraestrutura</b>projetos tecnicos sob demanda</span>
+                <span><b>Óleo e gás</b>ativos offshore e apoio a campo</span>
+                <span><b>Siderurgia</b>estruturas, spools e manutenção</span>
+                <span><b>Infraestrutura</b>projetos técnicos sob demanda</span>
               </div>
             </ClientMedia>
           </ClientGrid>
@@ -228,7 +228,7 @@ export default function Home() {
         <Container>
           <SectionTitle>
             <Eyebrow>Obras realizadas</Eyebrow>
-            <h2>Projetos executados em plantas e ativos industriais estrategicos.</h2>
+            <h2>Projetos executados em plantas e ativos industriais estratégicos.</h2>
           </SectionTitle>
           <CardGrid>
             {projects.map((project) => <Panel key={project.name}><h3>{project.name}</h3><p>{project.detail}</p></Panel>)}

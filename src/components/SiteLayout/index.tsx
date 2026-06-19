@@ -46,8 +46,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <Shell>
       <Header $open={open}>
-        <Brand as={Link} to="/" aria-label="Metalurgica Vulcano">
-          <img src={logo} alt="Metalurgica Vulcano" />
+        <Brand as={Link} to="/" aria-label="Metalúrgica Vulcano">
+          <img src={logo} alt="Metalúrgica Vulcano" />
         </Brand>
         <MenuButton type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} onClick={() => setOpen((current) => !current)}>
           <span />
@@ -56,12 +56,12 @@ export function SiteLayout({ children }: SiteLayoutProps) {
         </MenuButton>
         <Nav $open={open} onClick={() => setOpen(false)}>
           <NavLink to="/empresa">Empresa</NavLink>
-          <NavLink to="/servicos">Servicos</NavLink>
-          <NavLink to="/instalacoes">Instalacoes</NavLink>
+          <NavLink to="/servicos">Serviços</NavLink>
+          <NavLink to="/instalacoes">Instalações</NavLink>
           <NavLink to="/equipamentos">Equipamentos</NavLink>
-          <NavLink to="/certificacoes">Certificacoes</NavLink>
+          <NavLink to="/certificacoes">Certificações</NavLink>
           <NavLink to="/obras-clientes">Obras e clientes</NavLink>
-          <NavLink className="quote" to="/contato">Solicitar orcamento</NavLink>
+          <NavLink className="quote" to="/contato">Solicitar orçamento</NavLink>
         </Nav>
       </Header>
       <Main>
@@ -70,12 +70,12 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       <Footer>
         <div>
           <section>
-            <strong>Metalurgica Vulcano</strong>
-            <p>Solucoes metalicas sob medida para projetos industriais de alta complexidade.</p>
+            <strong>Metalúrgica Vulcano</strong>
+            <p>Soluções metálicas sob medida para projetos industriais de alta complexidade.</p>
           </section>
           <nav>
             <Link to="/empresa">Empresa</Link>
-            <Link to="/servicos">Servicos</Link>
+            <Link to="/servicos">Serviços</Link>
             <Link to="/contato">Contato</Link>
           </nav>
         </div>

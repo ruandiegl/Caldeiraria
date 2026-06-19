@@ -6,19 +6,19 @@ import { Actions, Button, CardGrid, Container, Eyebrow, Hero, Panel, Section, Se
 const timeline = [
   {
     year: '1974',
-    label: 'Fundacao',
-    title: 'Inicio da operacao metalurgica',
+    label: 'Fundação',
+    title: 'Início da operação metalúrgica',
     text:
-      'A Vulcano nasce com vocacao para fabricacao metalica, atendendo demandas industriais que exigiam dominio de chapa, soldagem e montagem.',
+      'A Vulcano nasce com vocação para fabricação metálica, atendendo demandas industriais que exigiam domínio de chapa, soldagem e montagem.',
     image:
       'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=82',
   },
   {
     year: '2006',
-    label: 'Servicos especiais',
-    title: 'Nova frente para obras tecnicas',
+    label: 'Serviços especiais',
+    title: 'Nova frente para obras técnicas',
     text:
-      'A Unidade Servicos Especiais amplia a capacidade de atendimento em soldagem, manutencao, preparacao de campo e fabricacoes de maior complexidade.',
+      'A Unidade Serviços Especiais amplia a capacidade de atendimento em soldagem, manutenção, preparação de campo e fabricações de maior complexidade.',
     image:
       'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=82',
   },
@@ -27,25 +27,25 @@ const timeline = [
     label: 'Apoio operacional',
     title: 'Mais estrutura para suportar contratos',
     text:
-      'A Unidade Apoio fortalece a logistica, o armazenamento tecnico, a movimentacao e a preparacao de conjuntos fabricados para obras industriais.',
+      'A Unidade Apoio fortalece a logística, o armazenamento técnico, a movimentação e a preparação de conjuntos fabricados para obras industriais.',
     image:
       'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=82',
   },
   {
     year: '2012',
     label: 'Nova Vulcano',
-    title: 'Expansao da capacidade fabril',
+    title: 'Expansão da capacidade fabril',
     text:
-      'Com a Nova Vulcano, a empresa passa a operar com maior area produtiva para spools, estruturas especiais, caldeiraria e linhas de montagem.',
+      'Com a Nova Vulcano, a empresa passa a operar com maior área produtiva para spools, estruturas especiais, caldeiraria e linhas de montagem.',
     image:
       'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=82',
   },
   {
     year: '2025+',
     label: 'Offshore',
-    title: 'Expansao para campo e mar',
+    title: 'Expansão para campo e mar',
     text:
-      'A empresa intensifica a atuacao offshore, integrando equipes qualificadas, procedimentos de seguranca e servicos para ativos de oleo e gas.',
+      'A empresa intensifica a atuação offshore, integrando equipes qualificadas, procedimentos de segurança e serviços para ativos de óleo e gás.',
     image:
       'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=82',
   },
@@ -347,10 +347,10 @@ export default function Company() {
       <Hero $image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2200&q=82">
         <Container>
           <Eyebrow>Empresa</Eyebrow>
-          <h1>Uma trajetoria industrial construida em obras de alta responsabilidade.</h1>
+          <h1>Uma trajetória industrial construída em obras de alta responsabilidade.</h1>
           <p className="copy">
-            Desde 1974, a Vulcano evolui em capacidade fabril, servicos especiais e atendimento offshore para responder
-            a contratos tecnicos de grande porte.
+            Desde 1974, a Vulcano evolui em capacidade fabril, serviços especiais e atendimento offshore para responder
+            a contratos técnicos de grande porte.
           </p>
         </Container>
       </Hero>
@@ -358,12 +358,12 @@ export default function Company() {
         <Container>
           <SectionTitle>
             <Eyebrow>Linha do tempo</Eyebrow>
-            <h2>Expansao orientada por capacidade tecnica.</h2>
+            <h2>Expansão orientada por capacidade técnica.</h2>
           </SectionTitle>
           <TimelineShowcase>
             <TimelineStage $direction={direction} key={active.year}>
               <TimelinePhoto>
-                <img src={active.image} alt={`Marco historico da Vulcano em ${active.year}`} />
+                <img src={active.image} alt={`Marco histórico da Vulcano em ${active.year}`} />
               </TimelinePhoto>
               <TimelineCopy>
                 <span>{active.year}</span>
@@ -373,7 +373,7 @@ export default function Company() {
             </TimelineStage>
             <TimelineControls>
               <TimelineTrack
-                aria-label="Marcos historicos"
+                aria-label="Marcos históricos"
                 $progress={progress}
                 $dragging={dragStart !== null}
                 onPointerDown={(event) => {
@@ -406,14 +406,14 @@ export default function Company() {
       <Section $muted>
         <Container>
           <CardGrid>
-            <Panel><h3>Missao</h3><p>Entregar solucoes metalicas industriais com seguranca, qualidade e engenharia aplicada.</p></Panel>
-            <Panel><h3>Visao</h3><p>Ser referencia brasileira em caldeiraria, tubulacao, soldagem especial e offshore services.</p></Panel>
-            <Panel><h3>Politica da qualidade</h3><p>Atuar com processos controlados, melhoria continua, rastreabilidade e atendimento a requisitos contratuais.</p></Panel>
-            <Panel><h3>Meio ambiente</h3><p>Executar operacoes com gestao de residuos, reducao de impactos e conformidade ambiental.</p></Panel>
-            <Panel><h3>Seguranca</h3><p>Priorizar capacitacao, analise de risco, procedimentos e normas regulamentadoras aplicaveis.</p></Panel>
-            <Panel><h3>Engenharia</h3><p>Traduzir demandas complexas em solucoes fabricaveis, montaveis e documentadas.</p></Panel>
+            <Panel><h3>Missão</h3><p>Entregar soluções metálicas industriais com segurança, qualidade e engenharia aplicada.</p></Panel>
+            <Panel><h3>Visão</h3><p>Ser referência brasileira em caldeiraria, tubulação, soldagem especial e serviços offshore.</p></Panel>
+            <Panel><h3>Política da qualidade</h3><p>Atuar com processos controlados, melhoria contínua, rastreabilidade e atendimento a requisitos contratuais.</p></Panel>
+            <Panel><h3>Meio ambiente</h3><p>Executar operações com gestão de resíduos, redução de impactos e conformidade ambiental.</p></Panel>
+            <Panel><h3>Segurança</h3><p>Priorizar capacitação, análise de risco, procedimentos e normas regulamentadoras aplicáveis.</p></Panel>
+            <Panel><h3>Engenharia</h3><p>Traduzir demandas complexas em soluções fabricáveis, montáveis e documentadas.</p></Panel>
           </CardGrid>
-          <Actions><Button as={Link} to="/instalacoes">Ver instalacoes</Button></Actions>
+          <Actions><Button as={Link} to="/instalacoes">Ver instalações</Button></Actions>
         </Container>
       </Section>
     </>

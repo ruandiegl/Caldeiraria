@@ -5,11 +5,11 @@ export default function Facilities() {
   return (
     <>
       <Hero $image="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2200&q=82">
-        <Container><Eyebrow>Instalacoes</Eyebrow><h1>Footprint industrial para obras de grande porte.</h1><p className="copy">Quatro unidades com areas produtivas, apoio logistico, laboratorio e movimentacao interna para fabricar componentes de alta complexidade.</p></Container>
+        <Container><Eyebrow>Instalações</Eyebrow><h1>Footprint industrial para obras de grande porte.</h1><p className="copy">Quatro unidades com áreas produtivas, apoio logístico, laboratório e movimentação interna para fabricar componentes de alta complexidade.</p></Container>
       </Hero>
       <Section $muted>
         <Container>
-          <SectionTitle><Eyebrow>Unidades</Eyebrow><h2>Capacidade fabril distribuida por especialidade.</h2></SectionTitle>
+          <SectionTitle><Eyebrow>Unidades</Eyebrow><h2>Capacidade fabril distribuída por especialidade.</h2></SectionTitle>
           <CardGrid $columns={4}>
             {facilities.map((facility) => (
               <Panel key={facility.title}>

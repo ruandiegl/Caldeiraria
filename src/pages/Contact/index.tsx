@@ -102,27 +102,27 @@ export default function Contact() {
   return (
     <>
       <Hero $image="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2200&q=82">
-        <Container><Eyebrow>Contato</Eyebrow><h1>Vamos dimensionar a solucao industrial do seu projeto.</h1><p className="copy">Informe o escopo, a localizacao e o servico desejado para a equipe tecnica avaliar o melhor encaminhamento.</p></Container>
+        <Container><Eyebrow>Contato</Eyebrow><h1>Vamos dimensionar a solução industrial do seu projeto.</h1><p className="copy">Informe o escopo, a localização e o serviço desejado para a equipe técnica avaliar o melhor encaminhamento.</p></Container>
       </Hero>
       <Section $muted>
         <Container>
-          <SectionTitle><Eyebrow>Orcamento</Eyebrow><h2>Dados iniciais para analise tecnica.</h2></SectionTitle>
+          <SectionTitle><Eyebrow>Orçamento</Eyebrow><h2>Dados iniciais para análise técnica.</h2></SectionTitle>
           <ContactGrid>
             <Form onSubmit={(event) => { event.preventDefault(); setSent(true); event.currentTarget.reset(); }}>
               <label>Nome<input required /></label>
               <label>Empresa<input required /></label>
               <label>Telefone<input required /></label>
-              <label>Email<input type="email" required /></label>
+              <label>E-mail<input type="email" required /></label>
               <label>Cidade<input /></label>
-              <label>Servico desejado<select><option>Caldeiraria industrial</option><option>Sistemas de tubulacao</option><option>Soldagem especial</option><option>Offshore services</option><option>Projeto sob medida</option></select></label>
+              <label>Serviço desejado<select><option>Caldeiraria industrial</option><option>Sistemas de tubulação</option><option>Soldagem especial</option><option>Serviços offshore</option><option>Projeto sob medida</option></select></label>
               <label className="full">Mensagem<textarea required /></label>
-              <button className="full" type="submit">Solicitar orcamento</button>
-              {sent && <p className="full">Solicitacao registrada. Nossa equipe comercial retornara com os proximos passos.</p>}
+              <button className="full" type="submit">Solicitar orçamento</button>
+              {sent && <p className="full">Solicitação registrada. Nossa equipe comercial retornará com os próximos passos.</p>}
             </Form>
             <MapPanel>
               <Eyebrow>Atendimento comercial</Eyebrow>
-              <h3>Brasil e America Latina</h3>
-              <p>Base industrial preparada para contratos nacionais, obras em campo e atendimento offshore. O mapa integrado pode entrar aqui com o endereco final da unidade principal.</p>
+              <h3>Brasil e América Latina</h3>
+              <p>Base industrial preparada para contratos nacionais, obras em campo e atendimento offshore. O mapa integrado pode entrar aqui com o endereço final da unidade principal.</p>
             </MapPanel>
           </ContactGrid>
         </Container>
