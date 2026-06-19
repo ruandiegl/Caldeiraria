@@ -235,10 +235,15 @@ export const WhatsApp = styled.a`
   color: #fff;
   background: #1f9d55;
   box-shadow: 0 14px 34px rgba(31, 157, 85, 0.35);
-  font-size: 11px;
-  font-weight: 900;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease;
+
+  svg {
+    width: 31px;
+    height: 31px;
+    fill: currentColor;
+    display: block;
+  }
 
   &:hover {
     transform: translateY(-2px) scale(1.03);
@@ -250,6 +255,10 @@ export const WhatsApp = styled.a`
     bottom: 14px;
     width: 46px;
     height: 46px;
-    font-size: 10px;
+
+    svg {
+      width: 27px;
+      height: 27px;
+    }
   }
 `;
