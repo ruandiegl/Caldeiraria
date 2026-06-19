@@ -25,17 +25,17 @@ export const Hero = styled.section.attrs({ className: 'reveal' })<{ $image: stri
   animation: hero-drift 900ms cubic-bezier(0.2, 0.72, 0.24, 1) both;
 
   h1 {
-    max-width: 837px;
+    max-width: 100%;
     margin: 0;
     font-family: Montserrat, Inter, sans-serif;
-    font-size: clamp(2.34rem, 6.3vw, 5.94rem);
-    line-height: 1.02;
+    font-size: clamp(2rem, 4.2vw, 4.2rem);
+    line-height: 1.06;
     letter-spacing: 0;
     text-transform: uppercase;
   }
 
   p.copy {
-    max-width: 702px;
+    max-width: 820px;
     margin: 23px 0 0;
     color: rgba(255, 255, 255, 0.84);
     font-size: clamp(0.9rem, 1.7vw, 1.15rem);
@@ -47,7 +47,7 @@ export const Hero = styled.section.attrs({ className: 'reveal' })<{ $image: stri
     padding-top: 108px;
 
     h1 {
-      font-size: clamp(1.98rem, 10.8vw, 3.6rem);
+      font-size: clamp(1.75rem, 8.6vw, 3rem);
     }
   }
 

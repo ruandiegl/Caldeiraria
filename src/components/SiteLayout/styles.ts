@@ -60,7 +60,7 @@ export const Nav = styled.nav<{ $open: boolean }>`
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
 
@@ -243,5 +243,13 @@ export const WhatsApp = styled.a`
   &:hover {
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 18px 42px rgba(31, 157, 85, 0.42);
+  }
+
+  @media (max-width: 640px) {
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
+    font-size: 10px;
   }
 `;
