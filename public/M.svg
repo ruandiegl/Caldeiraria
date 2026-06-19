@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Metalurgica Vulcano">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <path
+    d="M8 48V15h8l13 17 13-17h8v33h-8V28L29 45 16 28v20H8Z"
+    fill="#ff7a00"
+  />
+  <path
+    d="M34 26h8l6 14 6-14h8L51.8 48h-7.6L34 26Z"
+    fill="#004f78"
+  />
+</svg>
