@@ -4,12 +4,16 @@ import { certifications, clients, facilities, projects, services } from '../../c
 import {
   Actions,
   Button,
+  CapabilityGrid,
   CardGrid,
   Container,
   Eyebrow,
   HeroCarousel,
-  HeroDots,
   HeroSlide,
+  IdentityBand,
+  IdentityContent,
+  IdentityGrid,
+  IdentityMedia,
   LogoGrid,
   Metrics,
   Panel,
@@ -67,38 +71,37 @@ export default function Home() {
             <article><strong>4</strong><span>unidades industriais</span></article>
             <article><strong>LATAM</strong><span>atuacao regional</span></article>
           </Metrics>
-          <HeroDots aria-label="Fotos em destaque">
-            {heroSlides.map((slide, index) => (
-              <button
-                key={slide}
-                type="button"
-                aria-label={`Mostrar foto ${index + 1}`}
-                aria-current={index === activeSlide}
-                onClick={() => setActiveSlide(index)}
-              />
-            ))}
-          </HeroDots>
         </Container>
       </HeroCarousel>
 
-      <Section>
+      <IdentityBand>
         <Container>
-          <Split>
-            <SectionTitle>
+          <IdentityGrid>
+            <IdentityMedia>
+              <img
+                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1500&q=82"
+                alt="Operacao metalurgica com tubulacoes industriais"
+              />
+              <figcaption>Caldeiraria, soldagem e tubulacao sob medida</figcaption>
+            </IdentityMedia>
+            <IdentityContent>
               <Eyebrow>Quem somos</Eyebrow>
               <h2>Uma operacao metalurgica preparada para projetos criticos.</h2>
-            </SectionTitle>
-            <div>
               <p>
                 A Vulcano atua na fabricacao, montagem e manutencao de componentes industriais sob medida, combinando
                 caldeiraria pesada, soldagem qualificada e engenharia aplicada a setores de petroleo, gas, siderurgia,
                 mineracao, energia e infraestrutura.
               </p>
+              <CapabilityGrid aria-label="Capacidades industriais">
+                <article><strong>01</strong><span>Engenharia aplicada a contratos de alta complexidade</span></article>
+                <article><strong>02</strong><span>Fabricacao metalica, spools e estruturas especiais</span></article>
+                <article><strong>03</strong><span>Equipe preparada para campo, manutencao e offshore</span></article>
+              </CapabilityGrid>
               <Actions><Button as={Link} to="/empresa">Conheca nossa trajetoria</Button></Actions>
-            </div>
-          </Split>
+            </IdentityContent>
+          </IdentityGrid>
         </Container>
-      </Section>
+      </IdentityBand>
 
       <Section $muted>
         <Container>

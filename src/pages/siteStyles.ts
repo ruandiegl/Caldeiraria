@@ -84,36 +84,6 @@ export const HeroSlide = styled.div<{ $image: string; $active: boolean }>`
   transition: opacity 900ms ease, transform 4200ms ease;
 `;
 
-export const HeroDots = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: -4px;
-  z-index: 3;
-  display: flex;
-  gap: 8px;
-
-  button {
-    width: 34px;
-    height: 4px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.36);
-    cursor: pointer;
-    transition: background 180ms ease, width 180ms ease;
-  }
-
-  button[aria-current="true"] {
-    width: 48px;
-    background: #ff8424;
-  }
-
-  @media (max-width: 720px) {
-    position: static;
-    margin-top: 26px;
-  }
-`;
-
 export const Eyebrow = styled.p`
   margin: 0 0 14px;
   color: #ff8424;
@@ -197,6 +167,147 @@ export const Split = styled.div`
   }
 
   @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const IdentityBand = styled.section.attrs({ className: 'reveal' })`
+  position: relative;
+  padding: 62px 0;
+  overflow: hidden;
+  color: #223044;
+  background:
+    linear-gradient(110deg, #ffffff 0%, #f8fafc 50%, #eef5fb 100%),
+    #f8fafc;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(16, 42, 67, 0.06) 0 1px, transparent 1px 72px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+`;
+
+export const IdentityGrid = styled.div`
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 34px;
+  align-items: stretch;
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const IdentityMedia = styled.figure`
+  position: relative;
+  min-height: 370px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #102a43;
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 370px;
+    object-fit: cover;
+    filter: grayscale(0.2) contrast(1.04);
+  }
+
+  figcaption {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    padding: 16px 18px;
+    color: #fff;
+    background: rgba(17, 24, 45, 0.78);
+    border-left: 4px solid #ff8424;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+  }
+
+  @media (max-width: 720px) {
+    min-height: 230px;
+
+    img {
+      min-height: 230px;
+    }
+  }
+`;
+
+export const IdentityContent = styled.div`
+  min-width: 0;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    max-width: 760px;
+    margin: 0;
+    color: #11182d;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: clamp(1.75rem, 3.6vw, 3.35rem);
+    line-height: 1.04;
+    text-transform: uppercase;
+  }
+
+  p {
+    max-width: 690px;
+    margin: 18px 0 0;
+    color: #475569;
+    font-size: 0.94rem;
+    line-height: 1.68;
+  }
+
+  ${Actions} {
+    margin-top: 24px;
+  }
+`;
+
+export const CapabilityGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  background: #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+
+  article {
+    min-height: 104px;
+    padding: 17px;
+    background: #ffffff;
+  }
+
+  strong {
+    display: block;
+    color: #ff8424;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  span {
+    display: block;
+    margin-top: 9px;
+    color: #334155;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.45;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
 `;

@@ -169,34 +169,11 @@ const TimelineCopy = styled.article`
 const TimelineControls = styled.div`
   margin-top: 40px;
   display: grid;
-  grid-template-columns: 36px 1fr 36px;
-  gap: 18px;
+  grid-template-columns: 1fr;
   align-items: start;
 
   @media (max-width: 640px) {
-    grid-template-columns: 1fr;
     margin-top: 30px;
-  }
-`;
-
-const ArrowButton = styled.button`
-  width: 36px;
-  height: 36px;
-  border: 0;
-  color: #063e66;
-  background: transparent;
-  cursor: pointer;
-  font-size: 34px;
-  line-height: 1;
-  transition: color 180ms ease, transform 180ms ease;
-
-  &:hover {
-    color: #fb7900;
-    transform: translateY(-1px);
-  }
-
-  @media (max-width: 640px) {
-    display: none;
   }
 `;
 
@@ -235,30 +212,27 @@ const TimelineTrack = styled.div<{ $progress: number; $dragging: boolean }>`
   }
 
   @media (max-width: 640px) {
-    overflow-x: auto;
-    grid-template-columns: repeat(${timeline.length}, 92px);
-    padding: 2px 28px 14px;
-    margin-inline: -28px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    --step: 92px;
-    --marker-center: 46px;
-    --rail-width: calc((${timeline.length} - 1) * var(--step));
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    grid-template-columns: repeat(${timeline.length}, minmax(0, 1fr));
+    padding: 2px 0 8px;
+    margin-inline: 0;
+    overflow: visible;
+    --step: ${100 / timeline.length}%;
+    --marker-center: calc(var(--step) / 2);
+    --rail-width: calc(100% - var(--step));
   }
 `;
 
-const MarkerButton = styled.button<{ $active: boolean }>`
+const TimelineMarker = styled.button<{ $active: boolean }>`
   position: relative;
   z-index: 1;
   min-width: 0;
   padding: 0;
-  border: 0;
   color: ${({ $active }) => ($active ? '#063e66' : '#9ca3af')};
   background: transparent;
+  border: 0;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   cursor: pointer;
   text-align: center;
   transition: color 180ms ease;
@@ -301,22 +275,21 @@ const MarkerButton = styled.button<{ $active: boolean }>`
   }
 
   @media (max-width: 640px) {
-    scroll-snap-align: center;
-
     &::before {
-      width: 19px;
-      height: 19px;
-      margin-bottom: 10px;
+      width: 17px;
+      height: 17px;
+      margin-bottom: 8px;
+      box-shadow: 0 0 0 4px #fff;
     }
 
     strong {
-      font-size: 1.12rem;
+      font-size: 0.92rem;
     }
 
     span {
-      max-width: 78px;
+      max-width: 58px;
       margin-inline: auto;
-      font-size: 8px;
+      font-size: 6.8px;
       line-height: 1.2;
     }
   }
@@ -348,14 +321,15 @@ export default function Company() {
   const active = timeline[activeIndex];
   const progress = timeline.length === 1 ? 100 : (activeIndex / (timeline.length - 1)) * 100;
 
-  function moveTimeline(direction: -1 | 1) {
-    setDirection(direction);
-    setActiveIndex((current) => (current + direction + timeline.length) % timeline.length);
+  function selectTimeline(index: number) {
+    if (index === activeIndex) return;
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
   }
 
-  function selectTimeline(index: number) {
-    setDirection(index >= activeIndex ? 1 : -1);
-    setActiveIndex(index);
+  function moveTimeline(direction: -1 | 1) {
+    setDirection(direction);
+    setActiveIndex((current) => Math.max(0, Math.min(timeline.length - 1, current + direction)));
   }
 
   function finishDrag(clientX: number) {
@@ -398,34 +372,32 @@ export default function Company() {
               </TimelineCopy>
             </TimelineStage>
             <TimelineControls>
-              <ArrowButton type="button" aria-label="Marco anterior" onClick={() => moveTimeline(-1)}>
-                {'<'}
-              </ArrowButton>
               <TimelineTrack
                 aria-label="Marcos historicos"
                 $progress={progress}
                 $dragging={dragStart !== null}
-                onPointerDown={(event) => setDragStart(event.clientX)}
+                onPointerDown={(event) => {
+                  event.currentTarget.setPointerCapture(event.pointerId);
+                  setDragStart(event.clientX);
+                }}
                 onPointerUp={(event) => finishDrag(event.clientX)}
                 onPointerCancel={() => setDragStart(null)}
-                onPointerLeave={(event) => finishDrag(event.clientX)}
               >
                 {timeline.map((item, index) => (
-                  <MarkerButton
+                  <TimelineMarker
                     key={item.year}
                     type="button"
                     $active={index === activeIndex}
                     aria-current={index === activeIndex}
+                    onPointerDown={(event) => event.stopPropagation()}
+                    onPointerUp={(event) => event.stopPropagation()}
                     onClick={() => selectTimeline(index)}
                   >
                     <strong>{item.year}</strong>
                     <span>{item.label}</span>
-                  </MarkerButton>
+                  </TimelineMarker>
                 ))}
               </TimelineTrack>
-              <ArrowButton type="button" aria-label="Proximo marco" onClick={() => moveTimeline(1)}>
-                {'>'}
-              </ArrowButton>
             </TimelineControls>
             <GalleryLink to="/obras-clientes">Veja nossa galeria de obras</GalleryLink>
           </TimelineShowcase>
@@ -447,4 +419,6 @@ export default function Company() {
     </>
   );
 }
+
+
 
