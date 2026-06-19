@@ -168,6 +168,24 @@ export const Split = styled.div`
 
   @media (max-width: 920px) {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "copy"
+      "names";
+  }
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: clamp(1.55rem, 7vw, 2.1rem);
+      line-height: 1.08;
+    }
+
+    > p:not(:first-child) {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      line-height: 1.62;
+    }
   }
 `;
 
@@ -200,6 +218,25 @@ export const IdentityGrid = styled.div`
 
   @media (max-width: 920px) {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "copy"
+      "names";
+    row-gap: 0;
+  }
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: clamp(1.55rem, 7vw, 2.1rem);
+      line-height: 1.08;
+    }
+
+    > p:not(:first-child) {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      line-height: 1.62;
+    }
   }
 `;
 
@@ -625,6 +662,25 @@ export const ClientContent = styled.div`
 
   @media (max-width: 920px) {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "copy"
+      "names";
+    row-gap: 0;
+  }
+
+  @media (max-width: 560px) {
+    h2 {
+      font-size: clamp(1.55rem, 7vw, 2.1rem);
+      line-height: 1.08;
+    }
+
+    > p:not(:first-child) {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      line-height: 1.62;
+    }
   }
 `;
 
@@ -660,6 +716,14 @@ export const ClientNames = styled.div`
 
   @media (max-width: 640px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-top: 24px;
+
+    span {
+      min-height: 50px;
+      padding: 12px;
+      font-size: 0.66rem;
+    }
   }
 `;
 
@@ -729,16 +793,35 @@ export const ClientMedia = styled.figure`
   }
 
   @media (max-width: 560px) {
+    padding-top: 20px;
+    row-gap: 18px;
+
+    strong {
+      font-size: 1.35rem;
+    }
+
+    figcaption {
+      max-width: none;
+      font-size: 0.8rem;
+    }
+
     div {
       grid-template-columns: 1fr;
+      border-left: 0;
     }
 
     span {
       min-height: auto;
-      padding: 14px 0;
+      padding: 14px 0 13px;
       background: transparent;
       border-right: 0;
       border-bottom: 1px solid #d8e3ef;
+      font-size: 0.68rem;
+      overflow-wrap: normal;
+    }
+
+    b {
+      margin-bottom: 6px;
     }
   }
 `;
