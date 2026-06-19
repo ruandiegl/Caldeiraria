@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom';
 import { certifications, clients, facilities, projects, services } from '../../content/siteData';
 import {
   Actions,
+  AssuranceBand,
+  AssuranceCard,
+  AssuranceGrid,
+  AssuranceIntro,
+  AssuranceList,
   Button,
   CapabilityGrid,
   CardGrid,
+  ClientBand,
+  ClientContent,
+  ClientGrid,
+  ClientMedia,
+  ClientNames,
   Container,
   Eyebrow,
   HeroCarousel,
@@ -14,7 +24,6 @@ import {
   IdentityContent,
   IdentityGrid,
   IdentityMedia,
-  LogoGrid,
   Metrics,
   Panel,
   Section,
@@ -29,8 +38,14 @@ const heroSlides = [
   'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=2400&q=84',
 ];
 
+const certificationLabels: Record<string, string> = {
+  seguranca: 'Seguranca operacional',
+  offshore: 'Operacao offshore',
+  soldagem: 'Soldagem qualificada',
+  qualidade: 'Qualidade e processo',
+};
+
 export default function Home() {
-  const certs = Object.values(certifications).flat();
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -140,15 +155,28 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section>
+      <AssuranceBand>
         <Container>
-          <SectionTitle>
-            <Eyebrow>Certificacoes</Eyebrow>
-            <h2>Qualidade, seguranca e conformidade para contratos industriais.</h2>
-          </SectionTitle>
-          <LogoGrid>{certs.map((cert) => <span key={cert}>{cert}</span>)}</LogoGrid>
+          <AssuranceGrid>
+            <AssuranceIntro>
+              <Eyebrow>Certificacoes</Eyebrow>
+              <h2>Conformidade para fabricar, soldar, montar e operar em campo.</h2>
+              <p>
+                Credenciais organizadas por disciplina para apoiar contratos industriais que exigem seguranca,
+                rastreabilidade, qualidade e atendimento a normas.
+              </p>
+            </AssuranceIntro>
+            <AssuranceList>
+              {Object.entries(certifications).map(([group, items]) => (
+                <AssuranceCard key={group}>
+                  <h3>{certificationLabels[group] ?? group}</h3>
+                  <div>{items.map((item) => <span key={item}>{item}</span>)}</div>
+                </AssuranceCard>
+              ))}
+            </AssuranceList>
+          </AssuranceGrid>
         </Container>
-      </Section>
+      </AssuranceBand>
 
       <Section $muted>
         <Container>
@@ -168,15 +196,33 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section>
+      <ClientBand>
         <Container>
-          <SectionTitle>
-            <Eyebrow>Grandes clientes</Eyebrow>
-            <h2>Historico com operacoes lideres em energia, oleo e gas, siderurgia e infraestrutura.</h2>
-          </SectionTitle>
-          <LogoGrid>{clients.map((client) => <span key={client}>{client}</span>)}</LogoGrid>
+          <ClientGrid>
+            <ClientContent>
+              <Eyebrow>Grandes clientes</Eyebrow>
+              <h2>Historico com operacoes lideres em energia, oleo e gas, siderurgia e infraestrutura.</h2>
+              <p>
+                A Vulcano participa de obras e manutencoes para plantas, ativos offshore e cadeias industriais em que
+                confiabilidade, prazo e documentacao tecnica sao parte do escopo.
+              </p>
+              <ClientNames>{clients.map((client) => <span key={client}>{client}</span>)}</ClientNames>
+            </ClientContent>
+            <ClientMedia>
+              <strong>Setores atendidos</strong>
+              <figcaption>
+                Relacionamentos em operacoes onde parada, prazo e rastreabilidade tecnica fazem parte do contrato.
+              </figcaption>
+              <div>
+                <span><b>Energia</b>plantas e utilidades industriais</span>
+                <span><b>Oleo e gas</b>ativos offshore e apoio a campo</span>
+                <span><b>Siderurgia</b>estruturas, spools e manutencao</span>
+                <span><b>Infraestrutura</b>projetos tecnicos sob demanda</span>
+              </div>
+            </ClientMedia>
+          </ClientGrid>
         </Container>
-      </Section>
+      </ClientBand>
 
       <Section $muted>
         <Container>

@@ -466,6 +466,283 @@ export const LogoGrid = styled.div.attrs({ className: 'reveal' })`
   }
 `;
 
+export const AssuranceBand = styled.section.attrs({ className: 'reveal' })`
+  padding: 68px 0;
+  background:
+    linear-gradient(180deg, #f7fbfe 0%, #ffffff 72%),
+    #ffffff;
+`;
+
+export const AssuranceGrid = styled.div`
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 36px;
+  align-items: start;
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const AssuranceIntro = styled.article`
+  padding-top: 4px;
+
+  h2 {
+    max-width: 540px;
+    margin: 0;
+    color: #11182d;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: clamp(1.6rem, 3.1vw, 2.75rem);
+    line-height: 1.07;
+    text-transform: uppercase;
+  }
+
+  p {
+    max-width: 500px;
+    margin: 18px 0 0;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+`;
+
+export const AssuranceList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+
+  @media (max-width: 920px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const AssuranceCard = styled.article`
+  position: relative;
+  min-height: 194px;
+  padding: 22px 22px 20px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid #d8e3ef;
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(17, 24, 45, 0.06);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 18px;
+    left: 18px;
+    height: 4px;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(90deg, #fb7900 0%, #fb7900 32%, #d8e3ef 32%, #d8e3ef 100%);
+  }
+
+  h3 {
+    margin: 8px 0 16px;
+    color: #11182d;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  div {
+    display: grid;
+    gap: 7px;
+  }
+
+  span {
+    position: relative;
+    padding: 0 0 0 14px;
+    color: #063e66;
+    font-size: 0.7rem;
+    font-weight: 900;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  span::before {
+    content: "";
+    position: absolute;
+    top: 0.48em;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: #fb7900;
+  }
+`;
+
+export const ClientBand = styled.section.attrs({ className: 'reveal' })`
+  padding: 74px 0 82px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f7fafc 100%),
+    #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+`;
+
+export const ClientGrid = styled.div`
+  display: grid;
+  gap: 34px;
+`;
+
+export const ClientContent = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+  grid-template-areas:
+    "eyebrow names"
+    "title names"
+    "copy names";
+  column-gap: 58px;
+  row-gap: 0;
+  align-items: start;
+
+  > p:first-child {
+    grid-area: eyebrow;
+  }
+
+  h2 {
+    grid-area: title;
+    max-width: 720px;
+    margin: 0;
+    color: #11182d;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: clamp(1.55rem, 3.3vw, 2.95rem);
+    line-height: 1.07;
+    text-transform: uppercase;
+  }
+
+  > p:not(:first-child) {
+    grid-area: copy;
+    max-width: 610px;
+    margin: 18px 0 0;
+    color: #475569;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const ClientNames = styled.div`
+  grid-area: names;
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #d8e3ef;
+  border-left: 1px solid #d8e3ef;
+
+  span {
+    min-height: 58px;
+    padding: 13px 14px;
+    display: flex;
+    align-items: center;
+    color: #0f2f47;
+    background: #fff;
+    border-right: 1px solid #d8e3ef;
+    border-bottom: 1px solid #d8e3ef;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: color 180ms ease, background 180ms ease;
+  }
+
+  span:hover {
+    color: #fb7900;
+    background: #fff;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+`;
+
+export const ClientMedia = styled.figure`
+  margin: 0;
+  padding: 24px 0 0;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.35fr) minmax(0, 0.65fr);
+  column-gap: 40px;
+  row-gap: 24px;
+  border-top: 2px solid #fb7900;
+
+  figcaption {
+    max-width: 410px;
+    color: #475569;
+    font-size: 0.84rem;
+    line-height: 1.65;
+  }
+
+  strong {
+    display: block;
+    margin: 0 0 8px;
+    color: #063e66;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: clamp(1.25rem, 2.2vw, 1.95rem);
+    line-height: 1.04;
+    text-transform: uppercase;
+  }
+
+  div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border-left: 1px solid #d8e3ef;
+  }
+
+  span {
+    min-height: 104px;
+    padding: 18px 22px;
+    color: #334155;
+    border-right: 1px solid #d8e3ef;
+    background: rgba(255, 255, 255, 0.62);
+    font-size: 0.7rem;
+    font-weight: 900;
+    line-height: 1.45;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  b {
+    display: block;
+    color: #063e66;
+    font-family: Montserrat, Inter, sans-serif;
+    font-size: 1rem;
+    line-height: 1.12;
+    margin-bottom: 10px;
+    overflow-wrap: normal;
+  }
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+
+    div {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    div {
+      grid-template-columns: 1fr;
+    }
+
+    span {
+      min-height: auto;
+      padding: 14px 0;
+      background: transparent;
+      border-right: 0;
+      border-bottom: 1px solid #d8e3ef;
+    }
+  }
+`;
+
 export const Metrics = styled.div.attrs({ className: 'reveal' })`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
