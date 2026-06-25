@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import styled from 'styled-components';
 import { Container, Eyebrow, Hero, Section, SectionTitle } from '../siteStyles';
 
@@ -85,7 +85,7 @@ const MapPanel = styled.aside`
 
   h3 {
     margin: 0 0 16px;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.5rem;
     text-transform: uppercase;
   }
@@ -130,3 +130,4 @@ export default function Contact() {
     </>
   );
 }
+

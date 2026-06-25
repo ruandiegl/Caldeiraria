@@ -7,6 +7,7 @@ import Contact from '../pages/Contact';
 import Equipment from '../pages/Equipment';
 import Facilities from '../pages/Facilities';
 import Home from '../pages/Home';
+import People from '../pages/People';
 import ServiceDetail from '../pages/ServiceDetail';
 import Services from '../pages/Services';
 
@@ -16,6 +17,8 @@ export function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/empresa" element={<Company />} />
+        <Route path="/pessoas" element={<People />} />
+        <Route path="/pessoas/:topic" element={<People />} />
         <Route path="/servicos" element={<Services />} />
         <Route path="/servicos/:slug" element={<ServiceDetail />} />
         <Route path="/instalacoes" element={<Facilities />} />

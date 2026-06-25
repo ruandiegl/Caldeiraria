@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+﻿import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     background: #ffffff;
     color: #223044;
-    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -64,3 +64,4 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 `;
+

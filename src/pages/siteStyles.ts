@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Container = styled.div`
   width: min(1062px, calc(100% - 40px));
@@ -27,7 +27,7 @@ export const Hero = styled.section.attrs({ className: 'reveal' })<{ $image: stri
   h1 {
     max-width: 100%;
     margin: 0;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(2rem, 4.2vw, 4.2rem);
     line-height: 1.06;
     letter-spacing: 0;
@@ -140,7 +140,7 @@ export const SectionTitle = styled.div.attrs({ className: 'reveal' })`
     max-width: 810px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.8rem, 4.2vw, 3.78rem);
     line-height: 1.04;
     letter-spacing: 0;
@@ -292,7 +292,7 @@ export const IdentityContent = styled.div`
     max-width: 760px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.75rem, 3.6vw, 3.35rem);
     line-height: 1.04;
     text-transform: uppercase;
@@ -329,7 +329,7 @@ export const CapabilityGrid = styled.div`
   strong {
     display: block;
     color: #ff8424;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.15rem;
     line-height: 1;
   }
@@ -346,6 +346,153 @@ export const CapabilityGrid = styled.div`
 
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
+  }
+`;
+
+export const PeopleBand = styled.section.attrs({ className: 'reveal' })`
+  position: relative;
+  padding: 72px 0;
+  overflow: hidden;
+  color: #223044;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%),
+    #ffffff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(15, 47, 71, 0.055) 0 1px, transparent 1px 86px);
+    pointer-events: none;
+  }
+`;
+
+export const PeopleGrid = styled.div`
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.72fr);
+  gap: 38px;
+  align-items: stretch;
+
+  @media (max-width: 940px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const PeopleContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    max-width: 780px;
+    margin: 0;
+    color: #11182d;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: clamp(1.8rem, 3.8vw, 3.55rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  p {
+    max-width: 680px;
+    margin: 18px 0 0;
+    color: #475569;
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+`;
+
+export const PeopleFlow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 30px;
+  border-top: 2px solid #fb7900;
+  border-left: 1px solid #d8e3ef;
+
+  article {
+    min-height: 136px;
+    padding: 19px 18px;
+    background: rgba(255, 255, 255, 0.72);
+    border-right: 1px solid #d8e3ef;
+    border-bottom: 1px solid #d8e3ef;
+  }
+
+  strong {
+    display: block;
+    color: #063e66;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  span {
+    display: block;
+    margin-top: 12px;
+    color: #475569;
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 760px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+
+    article {
+      min-height: auto;
+    }
+  }
+`;
+
+export const PeopleMedia = styled.figure`
+  position: relative;
+  min-height: 470px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #11182d;
+  box-shadow: 0 24px 70px rgba(17, 24, 45, 0.12);
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 470px;
+    object-fit: cover;
+    filter: grayscale(0.18) contrast(1.04);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(17, 24, 45, 0.72), transparent 58%);
+  }
+
+  figcaption {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    z-index: 1;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 940px) {
+    min-height: 320px;
+
+    img {
+      min-height: 320px;
+    }
   }
 `;
 
@@ -380,7 +527,7 @@ export const Panel = styled.article.attrs({ className: 'reveal' })`
   h3 {
     margin: 0 0 14px;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 0.97rem;
     line-height: 1.2;
     text-transform: uppercase;
@@ -451,7 +598,7 @@ export const ServiceCard = styled.a.attrs({ className: 'reveal' })`
   strong {
     display: block;
     margin-top: 10px;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.06rem;
     line-height: 1.18;
     text-transform: uppercase;
@@ -481,7 +628,7 @@ export const LogoGrid = styled.div.attrs({ className: 'reveal' })`
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-weight: 800;
     text-align: center;
     text-transform: uppercase;
@@ -528,7 +675,7 @@ export const AssuranceIntro = styled.article`
     max-width: 540px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.6rem, 3.1vw, 2.75rem);
     line-height: 1.07;
     text-transform: uppercase;
@@ -580,7 +727,7 @@ export const AssuranceCard = styled.article`
   h3 {
     margin: 8px 0 16px;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 0.9rem;
     text-transform: uppercase;
   }
@@ -646,7 +793,7 @@ export const ClientContent = styled.div`
     max-width: 720px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.55rem, 3.3vw, 2.95rem);
     line-height: 1.07;
     text-transform: uppercase;
@@ -702,7 +849,7 @@ export const ClientNames = styled.div`
     background: #fff;
     border-right: 1px solid #d8e3ef;
     border-bottom: 1px solid #d8e3ef;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -747,7 +894,7 @@ export const ClientMedia = styled.figure`
     display: block;
     margin: 0 0 8px;
     color: #063e66;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.25rem, 2.2vw, 1.95rem);
     line-height: 1.04;
     text-transform: uppercase;
@@ -777,7 +924,7 @@ export const ClientMedia = styled.figure`
   b {
     display: block;
     color: #063e66;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.12;
     margin-bottom: 10px;
@@ -858,7 +1005,7 @@ export const Metrics = styled.div.attrs({ className: 'reveal' })`
   strong {
     display: block;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.53rem, 3.6vw, 2.7rem);
     line-height: 1;
   }
@@ -880,3 +1027,4 @@ export const Metrics = styled.div.attrs({ className: 'reveal' })`
     grid-template-columns: 1fr;
   }
 `;
+

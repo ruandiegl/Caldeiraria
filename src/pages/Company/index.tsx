@@ -135,7 +135,7 @@ const TimelineCopy = styled.article`
   h3 {
     margin: 10px 0 18px;
     color: #063e66;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.75rem, 3.5vw, 3rem);
     line-height: 1.05;
     text-transform: uppercase;
@@ -260,7 +260,7 @@ const TimelineMarker = styled.button<{ $active: boolean }>`
 
   strong {
     display: block;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.45rem;
     line-height: 1;
   }
@@ -419,6 +419,7 @@ export default function Company() {
     </>
   );
 }
+
 
 
 

@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Brand, Footer, Header, Main, MenuButton, Nav, RouteViewport, Shell, WhatsApp } from './styles';
+import { Brand, Footer, Header, Main, MenuButton, Nav, PeopleMenu, RouteViewport, Shell, WhatsApp } from './styles';
 import logo from '../../assets/logo.png';
 
 type SiteLayoutProps = {
@@ -64,6 +64,15 @@ export function SiteLayout({ children }: SiteLayoutProps) {
         </MenuButton>
         <Nav $open={open} onClick={() => setOpen(false)}>
           <NavLink to="/empresa">Empresa</NavLink>
+          <PeopleMenu>
+            <NavLink to="/pessoas">Pessoas</NavLink>
+            <div>
+              <NavLink to="/pessoas/carreira">Carreira</NavLink>
+              <NavLink to="/pessoas/desenvolvimento">Pessoas que movem a Vulcano</NavLink>
+              <NavLink to="/pessoas/comunidade">Comunidade</NavLink>
+              <NavLink to="/pessoas/cuidado">We Care</NavLink>
+            </div>
+          </PeopleMenu>
           <NavLink to="/servicos">Serviços</NavLink>
           <NavLink to="/instalacoes">Instalações</NavLink>
           <NavLink to="/equipamentos">Equipamentos</NavLink>
@@ -89,6 +98,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <nav aria-label="Rotas do site">
             <strong>Mapa do site</strong>
             <Link to="/empresa">Empresa</Link>
+            <Link to="/pessoas">Pessoas</Link>
             <Link to="/servicos">Serviços</Link>
             <Link to="/instalacoes">Instalações</Link>
             <Link to="/equipamentos">Equipamentos</Link>

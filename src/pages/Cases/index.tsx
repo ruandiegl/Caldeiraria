@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 import { clients, projects } from '../../content/siteData';
 import { Container, Eyebrow, Hero } from '../siteStyles';
 
@@ -39,7 +39,7 @@ const ClientCopy = styled.div`
     max-width: 860px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.9rem, 3.45vw, 3.75rem);
     line-height: 1.06;
     text-transform: uppercase;
@@ -90,7 +90,7 @@ const ClientWall = styled.div`
     color: #0f2f47;
     border-right: 1px solid #d8e3ef;
     border-bottom: 1px solid #d8e3ef;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 0.74rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -119,7 +119,7 @@ const ClientStats = styled.div`
   strong {
     display: block;
     color: #ff8424;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.65rem;
     line-height: 1;
     text-transform: uppercase;
@@ -166,7 +166,7 @@ const SectorBand = styled.div`
   h3 {
     margin: 0 0 10px;
     color: #063e66;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
   }
@@ -206,7 +206,7 @@ const ProjectHeader = styled.div`
   h2 {
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.75rem, 3.7vw, 3.25rem);
     line-height: 1.05;
     text-transform: uppercase;
@@ -258,7 +258,7 @@ const ProjectCard = styled.article`
   h3 {
     margin: 18px 0 14px;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 1.12;
     text-transform: uppercase;
@@ -350,3 +350,4 @@ export default function Cases() {
     </>
   );
 }
+

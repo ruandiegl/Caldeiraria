@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 import { certifications } from '../../content/siteData';
 import { Container, Eyebrow, Hero } from '../siteStyles';
 
@@ -40,7 +40,7 @@ const CertificationIntro = styled.div`
     max-width: 820px;
     margin: 0;
     color: #11182d;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: clamp(1.85rem, 4vw, 3.7rem);
     line-height: 1.04;
     text-transform: uppercase;
@@ -87,7 +87,7 @@ const ComplianceCard = styled.article`
   h3 {
     margin: 0;
     color: #063e66;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.18;
     text-transform: uppercase;
@@ -154,7 +154,7 @@ const ComplianceStrip = styled.div`
   strong {
     display: block;
     color: #fb7900;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.35rem;
     line-height: 1;
     text-transform: uppercase;
@@ -226,3 +226,4 @@ export default function Certifications() {
     </>
   );
 }
+

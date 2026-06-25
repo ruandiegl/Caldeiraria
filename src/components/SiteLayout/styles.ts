@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+﻿import styled from 'styled-components';
 
 export const Shell = styled.div`
   min-height: 100vh;
   background: #fff;
   color: #223044;
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
 `;
 
 export const Header = styled.header<{ $open: boolean }>`
@@ -59,8 +59,8 @@ export const Brand = styled.a`
 export const Nav = styled.nav<{ $open: boolean }>`
   display: flex;
   align-items: center;
-  gap: 20px;
-  font-size: 12px;
+  gap: 16px;
+  font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
 
@@ -95,6 +95,7 @@ export const Nav = styled.nav<{ $open: boolean }>`
 
   .quote {
     min-height: 40px;
+    min-width: 176px;
     padding: 0 14px;
     display: inline-flex;
     align-items: center;
@@ -112,18 +113,132 @@ export const Nav = styled.nav<{ $open: boolean }>`
   }
 
   @media (max-width: 1040px) {
-    position: absolute;
+    position: fixed;
     top: 70px;
     left: 16px;
     right: 16px;
+    z-index: 22;
+    box-sizing: border-box;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 86px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     display: ${({ $open }) => ($open ? 'flex' : 'none')};
     flex-direction: column;
     align-items: stretch;
     padding: 22px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
+    background: rgba(244, 247, 251, 0.88);
+    border: 1px solid rgba(216, 227, 239, 0.96);
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(17, 24, 45, 0.16);
+    backdrop-filter: blur(18px);
+
+    a {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      line-height: 1.35;
+    }
+
+    .quote {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+`;
+
+export const PeopleMenu = styled.div`
+  position: relative;
+
+  > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  > a::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-inline: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    order: 2;
+    transform: translateY(1px);
+  }
+
+  > div {
+    position: absolute;
+    top: calc(100% + 22px);
+    left: 50%;
+    min-width: 328px;
+    padding: 12px;
+    display: grid;
+    gap: 6px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(244, 247, 251, 0.66)),
+      rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(216, 227, 239, 0.82);
+    border-radius: 18px;
+    box-shadow: 0 24px 70px rgba(17, 24, 45, 0.14);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 8px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  > div::before {
+    content: "";
+    position: absolute;
+    inset: -22px 0 auto;
+    height: 22px;
+  }
+
+  &:hover > div,
+  &:focus-within > div {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+
+  > div a {
+    padding: 12px 14px;
+    color: #102a43;
+    border-radius: 12px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: none;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  > div a:hover,
+  > div a.active {
+    color: #063e66;
+    background: rgba(255, 132, 36, 0.12);
+    transform: translateX(2px);
+  }
+
+  > div a::after {
+    display: none;
+  }
+
+  @media (max-width: 1040px) {
+    width: 100%;
+
+    > a {
+      margin-bottom: 0;
+    }
+
+    > a::before {
+      display: none;
+    }
+
+    > div {
+      display: none;
+    }
+
+    > div::before {
+      display: none;
+    }
   }
 `;
 
@@ -195,7 +310,7 @@ export const Footer = styled.footer`
   strong {
     display: block;
     color: #fff;
-    font-family: Montserrat, Inter, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 0.85rem;
     text-transform: uppercase;
   }
@@ -348,3 +463,4 @@ export const WhatsApp = styled.a`
     }
   }
 `;
+
