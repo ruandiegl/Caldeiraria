@@ -7,6 +7,23 @@ export const Shell = styled.div`
   font-family: "Open Sans", Arial, sans-serif;
 `;
 
+export const SkipLink = styled.a`
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 40;
+  padding: 10px 14px;
+  color: #fff;
+  background: #11182d;
+  border-radius: 6px;
+  transform: translateY(-180%);
+  transition: transform 180ms ease;
+
+  &:focus {
+    transform: translateY(0);
+  }
+`;
+
 export const Header = styled.header<{ $open: boolean }>`
   position: fixed;
   inset: 0 0 auto;
@@ -18,10 +35,12 @@ export const Header = styled.header<{ $open: boolean }>`
   justify-content: space-between;
   gap: 24px;
   color: #11182d;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 34px rgba(17, 24, 45, 0.08);
-  backdrop-filter: blur(16px);
-  transition: box-shadow 180ms ease, background 180ms ease, transform 180ms ease;
+  background: #ffffff;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0 0 rgba(17, 24, 45, 0);
+  backdrop-filter: blur(0) saturate(100%);
+  -webkit-backdrop-filter: blur(0) saturate(100%);
+  transition: transform 180ms ease;
 
   @media (max-width: 920px) {
     padding-inline: 16px;
@@ -296,9 +315,7 @@ export const RouteViewport = styled.div`
 export const Footer = styled.footer`
   padding: 54px max(20px, calc((100vw - 1062px) / 2)) 24px;
   color: rgba(255, 255, 255, 0.78);
-  background:
-    linear-gradient(180deg, #11182d 0%, #0b1224 100%),
-    #11182d;
+  background: #11182d;
 
   .footer-grid {
     display: grid;
@@ -389,6 +406,14 @@ export const Footer = styled.footer`
     font-size: 0.72rem;
     font-weight: 900;
     text-transform: uppercase;
+  }
+
+  .social-links svg {
+    width: 17px;
+    height: 17px;
+    display: block;
+    fill: currentColor;
+    stroke: none;
   }
 
   .social-links a:hover {
