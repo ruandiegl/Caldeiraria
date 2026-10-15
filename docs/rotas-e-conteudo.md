@@ -4,8 +4,13 @@
 
 | Rota | Componente | Responsabilidade |
 | --- | --- | --- |
-| \`/\` | \`Home\` | Apresentação principal e caminhos de entrada. |
-| \`/empresa\` | \`Company\` | História, identidade e posicionamento institucional. |
+| `/` | `Home` | Sínteses visuais dos temas institucionais, métricas, fotos de demonstração identificadas e links para a leitura integral. |
+| `/empresa` | `Company` | Índice institucional; o menu global abre as cinco telas, como em Pessoas. |
+| `/empresa/historia` | `HistoryPage` | Carrossel e texto integral de História e Identidade. |
+| `/empresa/estrutura` | `StructurePage` | Três unidades e inventário técnico completo. |
+| `/empresa/qualidade` | `QualityPage` | Qualidade integral; ISO vigente e normas em transição. |
+| `/empresa/esg` | `EsgPage` | Texto integral dos três pilares ESG. |
+| `/empresa/acoes-sociais` | `SocialActionsPage` | Texto integral e status de mídia pendente. |
 | \`/pessoas\` | \`People\` | Visão geral de carreira, desenvolvimento, comunidade e cuidado. |
 | \`/pessoas/:topic\` | \`People\` | Experiência detalhada de um tópico de pessoas. |
 | \`/servicos\` | \`Services\` | Catálogo de serviços industriais. |
@@ -15,7 +20,8 @@
 | \`/certificacoes\` | \`Certifications\` | Certificações, normas e qualificações. |
 | \`/obras-clientes\` | \`Cases\` | Clientes, obras e provas de experiência. |
 | \`/contato\` | \`Contact\` | Formulário e informações de atendimento. |
-| qualquer outra | redireciona para \`/\` | Fallback definido no roteador. |
+| `/empresa/*` desconhecida | redireciona para `/empresa` | Fallback da área institucional. |
+| qualquer outra | redireciona para `/` | Fallback geral. |
 
 ## Parâmetro \`topic\`
 
@@ -51,10 +57,14 @@ O slug deve ser estável, minúsculo e sem acentos. O título visível pode cont
 - \`certifications\`;
 - \`clients\`;
 - \`projects\`;
-- \`facilities\`;
-- \`equipment\`.
+- `facilities`;
+- `equipment`.
 
-Dados próprios de uma experiência de pessoas permanecem em \`src/pages/People/index.tsx\` enquanto forem específicos daquela página. Se forem consumidos por outras partes, mova-os para uma fonte de conteúdo compartilhada.
+`src/content/homeContent.ts` concentra as sínteses, métricas e chamadas da Home.
+
+`src/content/institutionalContent.ts` guarda a leitura completa, os `sourceParagraphs`, status de certificação e notas editoriais do documento-mestre (`docs/references/site textos (Recuperação Automática).docx`). Os 60 parágrafos públicos anteriores a “Segmentos” têm cobertura no modelo, mas a Home mostra sínteses; as páginas próprias exibem o texto integral. A informação de três unidades (16.000, 15.000 e 3.500 m²) também orienta `/instalacoes`.
+
+`src/content/companyContent.ts` mantém os slides de História e os blocos comerciais reservados para o próximo planejamento: Segmentos, Catálogo, Contato e Carreira. Não publicar notas internas, placeholders ou mídia ainda não aprovada como fatos.
 
 ## Checklist para uma nova página
 
@@ -66,4 +76,3 @@ Dados próprios de uma experiência de pessoas permanecem em \`src/pages/People/
 6. Adicione o link à navegação somente se a página for pública e prioritária.
 7. Teste a rota diretamente e depois de recarregar o navegador.
 8. Atualize este documento e o índice de documentação se uma nova convenção surgir.
-

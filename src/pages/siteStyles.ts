@@ -42,6 +42,21 @@ export const Hero = styled.section.attrs({ className: 'reveal' })<{ $image: stri
     line-height: 1.58;
   }
 
+  p.preview-note {
+    width: fit-content;
+    max-width: 100%;
+    margin: 1.5rem 0 0;
+    padding: .4rem .65rem;
+    color: #fff;
+    background: rgba(17, 24, 45, .86);
+    font-size: .73rem;
+    line-height: 1.45;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
   @media (max-width: 720px) {
     min-height: ${({ $home }) => ($home ? '84vh' : '52vh')};
     padding-top: 108px;

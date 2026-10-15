@@ -1,3 +1,5 @@
+import { institutionalFacts } from './institutionalContent';
+
 export type HomeMedia = {
   src: string | null;
   alt: string;
@@ -17,7 +19,7 @@ export const homeContent = {
     title: 'Gente que transforma engenharia em realidade',
     body:
       'Desde 1974, pessoas, técnica e responsabilidade movem soluções para a indústria, a infraestrutura e os desafios que exigem precisão.',
-    primaryAction: { label: 'Conheça nossa trajetória', href: '/empresa' },
+    primaryAction: { label: 'Conheça nossa trajetória', href: '/empresa/historia' },
     secondaryAction: { label: 'Fale com a nossa equipe', href: '/contato' },
   },
   history: {
@@ -25,7 +27,18 @@ export const homeContent = {
     title: '50 anos de seriedade, técnica e inovação.',
     body:
       'Fundada em 1º de julho de 1974, em Barra Mansa, a Metalúrgica Vulcano começou produzindo peças fundidas para o mercado nacional. Ao longo das décadas, ampliou sua atuação para insumos siderúrgicos, caldeiraria, tubulações, compósitos e serviços industriais especializados.',
-    link: { label: 'Conheça a história completa', href: '/empresa' },
+    link: { label: 'Conheça a história completa', href: '/empresa/historia' },
+  },
+  identity: {
+    eyebrow: 'Missão, visão e valores',
+    title: 'O que nos move.',
+    body: 'A Vulcano reúne excelência técnica, segurança e precisão para apoiar a indústria nacional com responsabilidade e inovação.',
+    values: [
+      { title: 'Respeito à vida', detail: 'Segurança em cada processo e em cada equipe.' },
+      { title: 'Excelência técnica', detail: 'Rigor do projeto à entrega.' },
+      { title: 'Parceria duradoura', detail: 'Relações transparentes com clientes, pessoas e fornecedores.' },
+    ],
+    link: { label: 'Conheça nossa identidade', href: '/empresa/historia' },
   },
   work: {
     eyebrow: 'Por dentro do trabalho',
@@ -51,25 +64,38 @@ export const homeContent = {
     ],
   },
   metrics: [
-    { value: '50 anos', label: 'de história', context: 'Uma trajetória iniciada em 1974.' },
-    { value: '3 unidades', label: 'vizinhas', context: 'Estrutura integrada em Barra Mansa.' },
-    { value: '34.500 m²', label: 'de área total', context: 'Parques industriais próximos entre si.' },
-    { value: '17.000 m²', label: 'de área coberta', context: 'Espaço atendido por 11 pontes rolantes.' },
+    { value: `${institutionalFacts.anniversaryYears} anos`, label: 'de história', context: `Uma trajetória iniciada em ${institutionalFacts.foundedYear}.` },
+    { value: `${institutionalFacts.units} unidades`, label: 'vizinhas', context: 'Estrutura integrada em Barra Mansa.' },
+    { value: institutionalFacts.totalArea, label: 'de área total', context: 'Parques industriais próximos entre si.' },
+    { value: institutionalFacts.coveredArea, label: 'de área coberta', context: `Espaço atendido por ${institutionalFacts.gantryCranes} pontes rolantes.` },
   ] satisfies HomeMetric[],
   solutions: [
-    { title: 'Siderurgia', detail: 'Insumos e soluções para uma cadeia industrial essencial.', href: '/servicos' },
-    { title: 'Caldeiraria', detail: 'Peças, estruturas e conjuntos feitos sob medida.', href: '/servicos' },
-    { title: 'Serviços industriais', detail: 'Experiência técnica para fabricar, montar e manter.', href: '/servicos' },
-    { title: 'Projetos especiais', detail: 'Engenharia aplicada aos requisitos de cada desafio.', href: '/servicos' },
+    { title: 'Siderurgia', detail: 'Insumos e soluções para uma cadeia industrial essencial.', href: '/servicos', tone: 'blue' },
+    { title: 'Caldeiraria', detail: 'Peças, estruturas e conjuntos feitos sob medida.', href: '/servicos', tone: 'blue' },
+    { title: 'Serviços industriais', detail: 'Experiência técnica para fabricar, montar e manter.', href: '/servicos', tone: 'blue' },
+    { title: 'Projetos especiais', detail: 'Engenharia aplicada aos requisitos de cada desafio.', href: '/servicos', tone: 'blue' },
+    { title: 'Offshore', detail: 'Fabricação, montagem e manutenção para operações no mar.', href: '/servicos/offshore', tone: 'offshore' },
+    { title: 'Linha Amarela', detail: 'Componentes e soluções para máquinas de construção e implementos.', href: '/servicos', tone: 'linha-amarela' },
   ],
   culture: {
     eyebrow: 'O jeito de trabalhar',
     title: 'Segurança, precisão e respeito à vida em cada processo.',
     body:
       'A qualidade não está separada das pessoas. Ela aparece na forma como cada equipe planeja, executa, verifica e melhora o trabalho.',
-    currentCertification: { label: 'Certificação vigente', items: ['ISO 9001:2015'] },
-    futureCertifications: { label: 'Em transição', items: ['ISO 14001', 'ISO 45001'] },
-    link: { label: 'Conheça nossos compromissos', href: '/certificacoes' },
+    currentCertification: { label: 'Certificação vigente', items: institutionalFacts.certifications.filter(({ status }) => status === 'vigente').map(({ name }) => name) },
+    futureCertifications: { label: 'Em transição', items: institutionalFacts.certifications.filter(({ status }) => status === 'em transição').map(({ name }) => name) },
+    link: { label: 'Conheça nossos compromissos', href: '/empresa/qualidade' },
+  },
+  esg: {
+    eyebrow: 'ESG em ação',
+    title: 'Responsabilidade em cada decisão.',
+    body: 'A agenda ESG conecta cuidado ambiental, desenvolvimento das pessoas e integridade à operação industrial.',
+    pillars: [
+      { title: 'Ambiente', detail: 'Eficiência no uso de energia, água e materiais.' },
+      { title: 'Pessoas', detail: 'Segurança, trabalho digno e formação contínua.' },
+      { title: 'Governança', detail: 'Ética e transparência nas relações.' },
+    ],
+    link: { label: 'Conheça nossa agenda ESG', href: '/empresa/esg' },
   },
   careers: {
     eyebrow: 'Trabalhe conosco',

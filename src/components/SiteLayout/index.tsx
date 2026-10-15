@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Brand, Footer, Header, Main, MenuButton, Nav, PeopleMenu, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
+import { Brand, CompanyMenu, Footer, Header, Main, MenuButton, Nav, PeopleMenu, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
 import { useSiteMotion } from './useSiteMotion';
 import logo from '../../assets/logo.png';
 
@@ -35,9 +35,19 @@ function WhatsAppIcon() {
 
 export function SiteLayout({ children }: SiteLayoutProps) {
   const [open, setOpen] = useState(false);
+  const [companyHovered, setCompanyHovered] = useState(false);
+  const [companyFocused, setCompanyFocused] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
   const routeRef = useRef<HTMLDivElement>(null);
+  const previousPath = useRef(location.pathname);
+  const whatsappUrl = import.meta.env.VITE_WHATSAPP_URL?.trim();
+
+  const socialDestinations = [
+    { name: 'Instagram', href: import.meta.env.VITE_INSTAGRAM_URL?.trim(), icon: <InstagramIcon /> },
+    { name: 'LinkedIn', href: import.meta.env.VITE_LINKEDIN_URL?.trim(), icon: <LinkedInIcon /> },
+    { name: 'WhatsApp', href: whatsappUrl, icon: <WhatsAppIcon /> },
+  ];
 
   useSiteMotion({ headerRef, routeRef, pathname: location.pathname });
 
@@ -45,12 +55,24 @@ export function SiteLayout({ children }: SiteLayoutProps) {
     setOpen(false);
 
     if (location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: scrollBehavior() });
     }
   }
 
+  function scrollBehavior(): ScrollBehavior {
+    return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  }
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
+    if (previousPath.current !== location.pathname) {
+      const heading = routeRef.current?.querySelector('h1');
+      if (heading) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+      }
+      previousPath.current = location.pathname;
+    }
   }, [location.pathname]);
 
   return (
@@ -66,7 +88,28 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <span />
         </MenuButton>
         <Nav $open={open} onClick={() => setOpen(false)}>
-          <NavLink to="/empresa">Empresa</NavLink>
+          <CompanyMenu
+            onMouseEnter={() => setCompanyHovered(true)}
+            onMouseLeave={() => setCompanyHovered(false)}
+            onFocus={() => setCompanyFocused(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setCompanyFocused(false);
+              }
+            }}
+          >
+            <NavLink to="/empresa" aria-controls="company-sections" aria-expanded={open || companyHovered || companyFocused}>
+              Empresa
+            </NavLink>
+            <div id="company-sections" role="group" aria-label="Seções da empresa">
+              <NavLink to="/empresa" end>Visão geral da empresa</NavLink>
+              <NavLink to="/empresa/historia">História</NavLink>
+              <NavLink to="/empresa/estrutura">Estrutura</NavLink>
+              <NavLink to="/empresa/qualidade">Qualidade</NavLink>
+              <NavLink to="/empresa/esg">ESG</NavLink>
+              <NavLink to="/empresa/acoes-sociais">Ações Sociais</NavLink>
+            </div>
+          </CompanyMenu>
           <PeopleMenu>
             <NavLink to="/pessoas">Pessoas</NavLink>
             <div>
@@ -115,17 +158,13 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <strong>Atendimento</strong>
             <p>Brasil e América Latina</p>
             <Link to="/contato">Solicitar orçamento</Link>
-            <div className="social-links" aria-label="Redes sociais">
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
-                <InstagramIcon />
-              </a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <LinkedInIcon />
-              </a>
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                <WhatsAppIcon />
-              </a>
-            </div>
+            {socialDestinations.some(({ href }) => href) && (
+              <div className="social-links" aria-label="Redes sociais">
+                {socialDestinations.map(({ name, href, icon }) => href && (
+                  <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}>{icon}</a>
+                ))}
+              </div>
+            )}
           </section>
         </div>
 
@@ -134,12 +173,12 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <span>Caldeiraria, tubulação e serviços offshore.</span>
         </div>
       </Footer>
-      <WhatsApp href="https://wa.me/5500000000000" target="_blank" aria-label="Falar pelo WhatsApp">
+      {whatsappUrl && <WhatsApp href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Falar pelo WhatsApp">
         <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
           <path d="M16.04 4.5c-6.34 0-11.5 5.07-11.5 11.31 0 2.13.61 4.2 1.77 5.99L4.5 27.5l5.9-1.78a11.65 11.65 0 0 0 5.64 1.45c6.34 0 11.5-5.07 11.5-11.32S22.38 4.5 16.04 4.5Zm0 20.72c-1.8 0-3.55-.5-5.06-1.45l-.37-.23-3.5 1.06 1.08-3.37-.25-.39a9.25 9.25 0 0 1-1.48-5.03c0-5.17 4.3-9.37 9.58-9.37 5.27 0 9.57 4.2 9.57 9.37s-4.3 9.41-9.57 9.41Z" />
           <path d="M21.44 18.52c-.3-.15-1.74-.85-2.01-.95-.27-.1-.47-.15-.67.15-.2.29-.77.95-.94 1.14-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47a8.9 8.9 0 0 1-1.66-2.04c-.17-.29-.02-.45.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.49.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1-1.04 2.45 0 1.44 1.07 2.84 1.22 3.04.15.2 2.1 3.16 5.08 4.43.71.3 1.26.48 1.7.62.71.22 1.36.19 1.87.12.57-.08 1.74-.7 1.99-1.38.25-.69.25-1.27.17-1.39-.08-.12-.27-.2-.56-.34Z" />
         </svg>
-      </WhatsApp>
+      </WhatsApp>}
     </Shell>
   );
 }

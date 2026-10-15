@@ -114,6 +114,7 @@ export const MetricFigure = styled.figure`
 export const MetricValue = styled.strong`
   color: #11182d;
   font-family: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  font-variant-numeric: tabular-nums;
   font-size: clamp(2.3rem, 4vw, 4.1rem);
   font-weight: 600;
   line-height: 0.9;

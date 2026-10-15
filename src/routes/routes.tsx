@@ -3,6 +3,11 @@ import { SiteLayout } from '../components/SiteLayout';
 import Cases from '../pages/Cases';
 import Certifications from '../pages/Certifications';
 import Company from '../pages/Company';
+import EsgPage from '../pages/Company/EsgPage';
+import HistoryPage from '../pages/Company/HistoryPage';
+import QualityPage from '../pages/Company/QualityPage';
+import SocialActionsPage from '../pages/Company/SocialActionsPage';
+import StructurePage from '../pages/Company/StructurePage';
 import Contact from '../pages/Contact';
 import Equipment from '../pages/Equipment';
 import Facilities from '../pages/Facilities';
@@ -17,6 +22,12 @@ export function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/empresa" element={<Company />} />
+        <Route path="/empresa/historia" element={<HistoryPage />} />
+        <Route path="/empresa/estrutura" element={<StructurePage />} />
+        <Route path="/empresa/qualidade" element={<QualityPage />} />
+        <Route path="/empresa/esg" element={<EsgPage />} />
+        <Route path="/empresa/acoes-sociais" element={<SocialActionsPage />} />
+        <Route path="/empresa/*" element={<Navigate to="/empresa" replace />} />
         <Route path="/pessoas" element={<People />} />
         <Route path="/pessoas/:topic" element={<People />} />
         <Route path="/servicos" element={<Services />} />

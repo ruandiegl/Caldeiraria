@@ -261,6 +261,33 @@ export const PeopleMenu = styled.div`
   }
 `;
 
+export const CompanyMenu = styled(PeopleMenu)`
+  @media (max-width: 1040px) {
+    > div {
+      position: static;
+      min-width: 0;
+      margin-top: 12px;
+      padding: 4px 0 4px 12px;
+      display: grid;
+      background: none;
+      border: 0;
+      border-left: 2px solid rgba(251, 121, 0, 0.45);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+      transition: none;
+    }
+
+    &:hover > div,
+    &:focus-within > div {
+      transform: none;
+    }
+  }
+`;
+
 export const MenuButton = styled.button`
   display: none;
   width: 40px;

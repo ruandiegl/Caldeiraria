@@ -9,8 +9,9 @@ Documentação de referência do site institucional da Metalúrgica Vulcano.
 - **Entrada da aplicação:** \`src/main.tsx\`.
 - **Componente raiz:** \`src/App.tsx\`.
 - **Rotas:** \`src/routes/routes.tsx\`.
-- **Conteúdo institucional:** \`src/content/siteData.ts\`.
-- **Layout compartilhado:** \`src/components/SiteLayout\`.
+- **Conteúdo institucional:** `src/content/institutionalContent.ts` (texto integral e origem no Word), `src/content/homeContent.ts` (sínteses visuais), `src/content/companyContent.ts` (carrossel e blocos comerciais diferidos) e `src/content/siteData.ts` (dados técnicos).
+- **Fontes de referência e auditoria:** `docs/references/` (incluindo o documento-mestre `.docx` do cliente).
+- **Layout compartilhado:** `src/components/SiteLayout`.
 - **Build de produção:** \`dist/\`.
 
 ## Índice

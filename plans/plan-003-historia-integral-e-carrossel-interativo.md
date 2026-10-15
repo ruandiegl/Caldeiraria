@@ -260,7 +260,7 @@ Se a documentação confirmada da base `base-nova` oferecer o primitive compatí
 - Criar: `src/content/companyContent.test.ts`.
 - Modificar: `docs/README.md` para registrar a fonte em `docs/references/`.
 
-- [ ] **Passo 1: confirmar a fonte e a cópia do projeto**
+- [x] **Passo 1: confirmar a fonte e a cópia do projeto**
 
 Executar na raiz canônica:
 
@@ -270,19 +270,19 @@ Get-Item -LiteralPath 'docs/references/site textos (Recuperação Automática).d
 
 Esperado: o arquivo existe no projeto e tem 82.057 bytes; o Word original permanece em `C:\Users\Rv22\Documents`.
 
-- [ ] **Passo 2: extrair o inventário sem adicionar parser ao bundle**
+- [x] **Passo 2: extrair o inventário sem adicionar parser ao bundle**
 
 Usar o Python fornecido pelo runtime do workspace e `python-docx` para confirmar 634 parágrafos, 0 tabelas e listar os títulos/índices de origem. O comando é uma auditoria de desenvolvimento; não importar `.docx` no navegador e não adicionar Python como dependência de produção.
 
-- [ ] **Passo 3: criar o modelo tipado de conteúdo**
+- [x] **Passo 3: criar o modelo tipado de conteúdo**
 
 Organizar todas as seções em `companyContent.blocks`, incluindo os capítulos históricos, identidade, estrutura, qualidade, ESG, segmentos, produtos/serviços, ações sociais, contato e carreira. Copiar os parágrafos publicáveis integralmente, normalizando apenas espaços, encoding e erros tipográficos confirmados; qualquer alteração de afirmação ou número deve ficar em `editorialNotes` para aprovação.
 
-- [ ] **Passo 4: transformar instruções internas em metadados**
+- [x] **Passo 4: transformar instruções internas em metadados**
 
 Mapear `[link para...]`, `[fotos...]`, `[Clique aqui...]`, telefones incompletos, links de denúncia e destinos de subsites para `editorialNotes` e `actions` com `status: 'link-pending'` ou `asset-pending`. O renderizador não poderá imprimir esses textos diretamente.
 
-- [ ] **Passo 5: escrever testes de completude antes da página**
+- [x] **Passo 5: escrever testes de completude antes da página**
 
 Cobrir, com nomes explícitos:
 
@@ -308,7 +308,7 @@ it('mantém claims de certificação distinguíveis por status', () => {
 });
 ```
 
-- [ ] **Passo 6: executar o ciclo da tarefa**
+- [x] **Passo 6: executar o ciclo da tarefa**
 
 ```powershell
 npm run test:run -- src/content/companyContent.test.ts
@@ -336,27 +336,27 @@ git commit -m "content: map client history source"
 - Criar: `src/pages/Company/companyStyles.ts`.
 - Testar: `src/pages/Company/Company.test.tsx`.
 
-- [ ] **Passo 1: congelar o contrato de composição**
+- [x] **Passo 1: congelar o contrato de composição**
 
 Definir `Company` como composição de `Hero`, `HistoryCarousel`, `HistoryLongform` e CTA final. O componente não deve conter o array de slides, os parágrafos do Word ou estilos extensos.
 
-- [ ] **Passo 2: consultar o contexto atual do Shadcn**
+- [x] **Passo 2: consultar o contexto atual do Shadcn**
 
 Executar `npx shadcn@latest info --json` e conferir `base-nova`, `base`, alias `@`, `src/styles/shadcn.css`, `src/components/ui` e componentes instalados. Consultar a documentação oficial antes de adicionar qualquer primitive.
 
-- [ ] **Passo 3: implementar os estilos locais**
+- [x] **Passo 3: implementar os estilos locais**
 
 Usar `styled-components` em `companyStyles.ts` para o layout editorial específico, com tokens CSS semânticos onde já existirem. Reutilizar `Container`, `Hero`, `Section`, `SectionTitle`, `Button` e `Separator` em vez de duplicar primitives globais.
 
-- [ ] **Passo 4: escrever teste estrutural da nova página**
+- [x] **Passo 4: escrever teste estrutural da nova página**
 
 O teste deve renderizar a rota em `MemoryRouter` e verificar, nesta ordem: hero de história, região nomeada do carrossel, leitura completa, capítulos de identidade/estrutura/qualidade/ESG/catálogo e CTA final. O teste deve falhar se um bloco obrigatório não for montado.
 
-- [ ] **Passo 5: validar semântica básica**
+- [x] **Passo 5: validar semântica básica**
 
 Garantir um único `h1`, `h2` por capítulo principal, `h3` em itens internos, `<main>` herdado do layout, `section` com `aria-labelledby` e nenhum `div` usado como botão.
 
-- [ ] **Passo 6: executar testes e lint**
+- [x] **Passo 6: executar testes e lint**
 
 ```powershell
 npm run test:run -- src/pages/Company/Company.test.tsx
@@ -374,7 +374,7 @@ npm run lint
 - Criar: `src/pages/Company/HistoryCarousel.test.tsx` se a suíte da página ficar grande.
 - Opcional, somente após consulta oficial: `src/components/ui/carousel.tsx` e `src/components/ui/accordion.tsx`.
 
-- [ ] **Passo 1: escrever os testes de interação**
+- [x] **Passo 1: escrever os testes de interação**
 
 Cobrir:
 
@@ -388,23 +388,23 @@ it('aceita swipe horizontal sem bloquear a rolagem vertical', async () => {});
 
 Os testes devem verificar título e `sourceRefs` do slide ativo, não apenas snapshots de classes.
 
-- [ ] **Passo 2: implementar o estado mínimo**
+- [x] **Passo 2: implementar o estado mínimo**
 
 Usar `activeIndex`, `direction` e o estado de pointer estritamente local ao carrossel. Derivar `activeSlide` e `progress` durante a renderização. Não criar contexto global nem estado duplicado na página.
 
-- [ ] **Passo 3: manter a interação existente com controles explícitos**
+- [x] **Passo 3: manter a interação existente com controles explícitos**
 
 Preservar marcadores e swipe; adicionar botões anterior/próximo com `Button`, rótulos acessíveis, disabled nos extremos, `aria-controls` e uma região `aria-live="polite"`. O trilho deve manter `touch-action: pan-y`.
 
-- [ ] **Passo 4: aplicar transição GSAP escopada**
+- [x] **Passo 4: aplicar transição GSAP escopada**
 
 Criar um ref no painel do slide e usar `useGSAP` em `HistoryCarousel` com `scope` e `revertOnUpdate: true`. Animar o painel atual com `x` e `autoAlpha`, usando `power2.out`; não animar `width`, `height`, `left`, `top`, margin ou padding. Em reduced motion, usar duração zero e deixar o painel imediatamente visível.
 
-- [ ] **Passo 5: manter o carrossel como resumo**
+- [x] **Passo 5: manter o carrossel como resumo**
 
 Cada slide deve exibir somente `marker`, `label`, `title`, `summary` e imagem editorial. O botão ou link “Ler capítulo” deve apontar para o `id` do bloco correspondente abaixo, sem duplicar o texto completo dentro do slide.
 
-- [ ] **Passo 6: validar a tarefa**
+- [x] **Passo 6: validar a tarefa**
 
 ```powershell
 npm run test:run -- src/pages/Company/HistoryCarousel.test.tsx src/pages/Company/Company.test.tsx
@@ -423,35 +423,35 @@ npm run build
 - Modificar: `src/content/companyContent.ts` somente para correções de contrato encontradas na renderização.
 - Testar: `src/pages/Company/Company.test.tsx`.
 
-- [ ] **Passo 1: implementar capítulos narrativos visíveis**
+- [x] **Passo 1: implementar capítulos narrativos visíveis**
 
 Renderizar como leitura contínua os capítulos de origem, expansão, futuro, missão, visão e valores. Usar `SectionIntro`, `Separator`, parágrafos e listas sem transformar cada parágrafo em card.
 
-- [ ] **Passo 2: implementar estrutura e capacidades como informação escaneável**
+- [x] **Passo 2: implementar estrutura e capacidades como informação escaneável**
 
 Renderizar os números e capacidades do Word em lista ou grid semântico, preservando unidades, quantidades e limites. Cada item deve manter uma descrição curta e a referência de origem; não inventar unidade ou capacidade ausente.
 
-- [ ] **Passo 3: implementar qualidade, ESG e ações sociais**
+- [x] **Passo 3: implementar qualidade, ESG e ações sociais**
 
 Separar qualidade, ESG e ações sociais em capítulos próprios. ISO 9001:2015 deve aparecer como vigente somente conforme a fonte; ISO 14001 e ISO 45001 devem aparecer como transição com previsão para o primeiro semestre de 2027. Links incompletos ficam desabilitados ou não são renderizados até receberem destino aprovado.
 
-- [ ] **Passo 4: implementar catálogo técnico progressivamente revelável**
+- [x] **Passo 4: implementar catálogo técnico progressivamente revelável**
 
 Usar `Accordion` oficial se a documentação Base UI confirmada for compatível; caso contrário, usar `<details>` sem dependência nova, mantendo nomes de seções, parágrafos e listas dentro do documento. Agrupar segmentos, produtos, serviços, projetos/equipamentos, diferenciais, concretos/pré-moldados e máquinas para construção. O conteúdo deve ser montado no HTML da página e apenas visualmente recolhido, sem carregamento assíncrono ou perda de leitura por teclado.
 
-- [ ] **Passo 5: implementar contato, carreira e CTA sem links falsos**
+- [x] **Passo 5: implementar contato, carreira e CTA sem links falsos**
 
 Renderizar vendas, compras, ouvidoria e Trabalhe Conosco com status editorial. Telefones `XXXX-XXXX`, links genéricos e “clique aqui” não podem virar links ativos; mostrar somente ações com destino conhecido, como rotas internas existentes.
 
-- [ ] **Passo 6: aplicar revelações de conteúdo**
+- [x] **Passo 6: aplicar revelações de conteúdo**
 
 Marcar somente blocos internos com `data-reveal`; não marcar o fundo ou a seção inteira. Usar a infraestrutura de `src/motion/siteMotion.ts` e confirmar que uma página longa não cria centenas de triggers individuais além do batch existente.
 
-- [ ] **Passo 7: testar cobertura do long-form**
+- [x] **Passo 7: testar cobertura do long-form**
 
 Adicionar assertions para os títulos `Nossa História`, `A Expansão e Modernização`, `Os Últimos Anos`, `Missão`, `Visão`, `Valores`, `Descrição do Grupo`, `Qualidade`, `ESG`, `Segmentos`, `Produtos`, `Ações Sociais`, `Contato` e `Trabalhe Conosco`, além de um parágrafo representativo por grupo técnico.
 
-- [ ] **Passo 8: executar validação da tarefa**
+- [x] **Passo 8: executar validação da tarefa**
 
 ```powershell
 npm run test:run -- src/pages/Company/Company.test.tsx src/content/companyContent.test.ts
@@ -470,27 +470,27 @@ npm run build
 - Modificar: `src/pages/Company/HistoryLongform.tsx` somente para correções semânticas observadas.
 - Modificar: `docs/padroes-visuais.md` se um token ou padrão reutilizável for criado.
 
-- [ ] **Passo 1: validar larguras e overflow**
+- [x] **Passo 1: validar larguras e overflow**
 
 Testar 360, 768, 1024 e 1440 pixels. Confirmar que rail, marcadores, imagens, parágrafos, listas e disclosures não geram overflow horizontal nem texto cortado.
 
-- [ ] **Passo 2: validar teclado e leitor de tela**
+- [x] **Passo 2: validar teclado e leitor de tela**
 
 Percorrer skip link, menu, hero, todos os controles do carrossel, disclosures e CTAs com Tab/Shift+Tab. Confirmar foco visível, ordem lógica, nomes acessíveis, `aria-current`, `aria-live` e associação entre slide e capítulo.
 
-- [ ] **Passo 3: validar reduced motion**
+- [x] **Passo 3: validar reduced motion**
 
 Ativar `prefers-reduced-motion: reduce`, recarregar `/empresa`, mudar slides e atravessar a página. Confirmar que nenhum conteúdo fica com `visibility: hidden`, `opacity: 0` ou transform residual.
 
-- [ ] **Passo 4: validar imagens e deslocamento de layout**
+- [x] **Passo 4: validar imagens e deslocamento de layout**
 
 Manter dimensões reservadas, `alt` descritivo e status editorial para cada imagem. O hero e o primeiro painel devem carregar sem `loading="lazy"`; demais imagens podem ser lazy quando não forem necessárias à primeira leitura. Registrar qualquer URL remota como risco operacional.
 
-- [ ] **Passo 5: medir custo de conteúdo**
+- [x] **Passo 5: medir custo de conteúdo**
 
 Comparar tamanho do build e comportamento de scroll antes/depois. Não criar centenas de componentes animados, timers ou listeners por parágrafo. Caso o DOM completo do catálogo prejudique mobile, manter todos os textos no disclosure sem criar renderização duplicada ou carregamento assíncrono.
 
-- [ ] **Passo 6: executar a suíte completa**
+- [x] **Passo 6: executar a suíte completa**
 
 ```powershell
 npm run test:run
@@ -510,19 +510,19 @@ npm run build
 - Modificar: `docs/padroes-visuais.md` se necessário.
 - Revisar: todos os arquivos alterados no diff.
 
-- [ ] **Passo 1: documentar a rota e a fonte**
+- [x] **Passo 1: documentar a rota e a fonte**
 
 Registrar que `/empresa` mantém a responsabilidade de história/identidade, que o carrossel é um resumo interativo sem autoplay e que o conteúdo longo vem do mapa estruturado de `companyContent.ts`.
 
-- [ ] **Passo 2: documentar o contrato de conteúdo**
+- [x] **Passo 2: documentar o contrato de conteúdo**
 
 Explicar `sourceRefs`, `EditorialStatus`, a diferença entre copy pública e `editorialNotes`, e o procedimento para acrescentar um novo bloco sem perder rastreabilidade do Word.
 
-- [ ] **Passo 3: revisar o diff com foco de risco**
+- [x] **Passo 3: revisar o diff com foco de risco**
 
 O Code Reviewer deve conferir: preservação de `/empresa`, ausência de claims inventados, ausência de placeholders visíveis, semântica do carrossel, cleanup GSAP, regressão do `SiteLayout`, bundle e testes. Achados importantes bloqueiam a execução do plano até correção.
 
-- [ ] **Passo 4: registrar a validação final**
+- [x] **Passo 4: registrar a validação final**
 
 Anexar ao relatório de execução os comandos `npm run test:run`, `npm run lint`, `npm run build`, viewports testados, reduced motion, teclado e resultado do refresh direto em `/empresa`.
 

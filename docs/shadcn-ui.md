@@ -6,8 +6,8 @@ Este documento registra como o projeto deve adotar o Shadcn/UI e como usar a ski
 
 - A skill oficial `shadcn` foi instalada no ambiente do Codex em `C:\Users\Rv22\.codex\skills\shadcn`.
 - A skill passa a ser descoberta automaticamente em uma nova tarefa/sessão do Codex.
-- O Shadcn/UI **ainda não foi inicializado no código do projeto**. A introdução técnica está prevista no plano `plans/plan-001-home-humanizada-e-fundacao-visual.md`.
-- O projeto continua usando React, TypeScript, Vite e styled-components até que cada migração planejada seja implementada e validada.
+- O projeto já está inicializado com o preset `base-nova`, primitives **Base UI** e Tailwind v4 (confira `components.json` e `src/styles/shadcn.css`).
+- `Button` e `Separator` já existem em `src/components/ui/`; `styled-components` permanece nas páginas durante a adoção incremental.
 
 ## Por que usar
 
@@ -19,9 +19,9 @@ O objetivo não é transformar o site em uma coleção de componentes genéricos
 
 A adoção será incremental:
 
-1. adicionar Tailwind CSS v4 e os aliases de importação exigidos pelo Shadcn;
-2. inicializar o Shadcn para Vite com base Radix;
-3. centralizar tokens semânticos em um único arquivo CSS global;
+1. conferir o contexto real com `npx shadcn@latest info --json` antes de adicionar primitives;
+2. manter a base Base UI do preset `base-nova`, sem trocar por Radix inadvertidamente;
+3. centralizar tokens semânticos no CSS global já existente;
 4. manter `styled-components` nas páginas antigas durante a transição;
 5. usar `src/components/ui/` somente para componentes gerados ou mantidos pelo Shadcn;
 6. usar `src/components/brand/` para composições específicas da Vulcano;

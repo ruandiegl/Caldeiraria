@@ -1,3 +1,5 @@
+import { institutionalFacts } from './institutionalContent';
+
 export const services = [
   {
     slug: 'soldagem',
@@ -115,10 +117,9 @@ export const projects = [
 ];
 
 export const facilities = [
-  { title: 'Unidade Matriz', area: '15.000 m²', items: ['Pontes rolantes', 'Balança rodoviária', 'Laboratório próprio', 'Expedição'] },
-  { title: 'Nova Vulcano', area: '12.000 m²', items: ['Área para spools', 'Linhas de montagem', 'Controle dimensional', 'Fluxo logístico'] },
-  { title: 'Serviços Especiais', area: '3.000 m²', items: ['Soldagem especial', 'Revestimentos', 'Preparação offshore', 'Ensaios'] },
-  { title: 'Unidade Apoio', area: '2.000 m²', items: ['Almoxarifado técnico', 'Empilhadeiras', 'Pré-montagem', 'Apoio a campo'] },
+  { title: 'Refratários e insumos siderúrgicos', area: institutionalFacts.unitAreas[0], items: ['Produtos refratários', 'Insumos siderúrgicos', 'Pré-moldados de concreto'] },
+  { title: 'Caldeiraria pesada', area: institutionalFacts.unitAreas[1], items: ['Peças para o setor de máquinas', 'Pintura', 'Tratamento térmico'] },
+  { title: 'Caldeiraria leve', area: institutionalFacts.unitAreas[2], items: ['Caldeiraria leve'] },
 ];
 
 export const equipment = [

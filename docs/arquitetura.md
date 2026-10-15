@@ -75,13 +75,32 @@ Concentra primitives visuais reutilizadas por várias páginas, como \`Container
 
 Centraliza serviços, certificações, clientes, projetos, instalações e equipamentos. Dados que alimentam mais de uma página devem ficar aqui em vez de serem duplicados em componentes.
 
-### \`src/content/homeContent.ts\`
+### `src/content/homeContent.ts`
 
-Mantém a narrativa da Home humanizada, seus fatos aprovados, métricas, chamadas e metadados de mídia. Não misture dados incompletos de contato, placeholders editoriais ou certificações futuras com fatos vigentes.
+Mantém sínteses editoriais da Home, métricas, chamadas e metadados de mídia. O texto integral do cliente não é duplicado aqui: consulte `src/content/institutionalContent.ts`, com `sourceParagraphs` para rastreabilidade ao Word.
 
-### \`src/pages/Home\`
+### `src/content/institutionalContent.ts`
 
-A Home nova é composta por seções independentes em \`src/pages/Home/sections\`, com estilos editoriais em \`homeStyles.ts\`. Primitives de comportamento vêm de \`src/components/ui\`; composições específicas da marca ficam em \`src/components/brand\`.
+Fonte tipada do conteúdo institucional completo de História, Identidade, Estrutura, Qualidade, ESG e Ações Sociais. Os 60 parágrafos públicos anteriores a “Segmentos” estão inventariados uma vez; notas de links/fotos permanecem em `editorialNotes`, fora da UI. A Home usa sínteses por tema, e as telas próprias apresentam a leitura integral. O conteúdo posterior de Segmentos, Produtos e subsites permanece fora deste incremento.
+
+### `src/content/companyContent.ts`
+
+Mantém os marcos do carrossel da História e os blocos comerciais reservados ao próximo planejamento; não é a fonte da prosa institucional completa.
+
+### `src/pages/Company`
+
+A área Empresa é estruturada com separação clara de responsabilidades:
+- `index.tsx`: índice com as cinco telas temáticas;
+- `HistoryPage.tsx`: carrossel e texto completo de História e Identidade;
+- `StructurePage.tsx`, `QualityPage.tsx`, `EsgPage.tsx`, `SocialActionsPage.tsx`: leitura completa e complementos específicos;
+- `CompanySubnav.tsx`: navegação entre temas e retorno ao índice;
+- `HistoryCarousel.tsx`: carrossel editorial interativo sem autoplay, com transição GSAP escopada (`useGSAP`), navegação por teclado (setas, Home, End), swipe por ponteiro (`touch-action: pan-y`) e anúncio `aria-live`;
+- `HistoryLongform.tsx`: componente legado preservado para os blocos comerciais diferidos, não montado nas rotas institucionais;
+- `companyStyles.ts`: estilos dedicados e variantes responsivas.
+
+### `src/pages/Home`
+
+A Home nova é composta por seções independentes em `src/pages/Home/sections`, com estilos editoriais em `homeStyles.ts`. Primitives de comportamento vêm de `src/components/ui`; composições específicas da marca ficam em `src/components/brand`.
 
 ## Padrão de composição
 
@@ -96,18 +115,17 @@ Uma página típica combina:
 Na Home humanizada, a composição é:
 
 1. hero com tese humana e mídia documental;
-2. história resumida;
+2. história e identidade em sínteses visuais;
 3. bloco “Por dentro do trabalho”;
 4. métricas estruturais contextualizadas;
-5. soluções e segmentos;
-6. cultura, qualidade e futuro;
-7. carreira;
-8. contato.
+5. soluções atuais como complemento, sem importar o catálogo do Word;
+6. qualidade e ESG em bandas próprias;
+7. carreira e contato.
 
 ## Decisões importantes
 
 - A navegação é feita no cliente com \`react-router-dom\`.
-- Rotas desconhecidas redirecionam para \`/\`.
+- Filhos desconhecidos de `/empresa` redirecionam para o índice `/empresa`; outras rotas desconhecidas redirecionam para `/`.
 - As imagens de destaque e alguns painéis usam URLs externas do Unsplash; uma publicação deve considerar disponibilidade, licenciamento e estratégia de fallback.
 - O cabeçalho liquid glass e as revelações usam GSAP/ScrollTrigger, com `useGSAP`, scope por ref, cleanup local e suporte a `prefers-reduced-motion`.
 - Shadcn/UI é adotado de forma incremental: Tailwind v4 e tokens ficam em \`src/styles/shadcn.css\`, enquanto páginas legadas continuam usando styled-components.
