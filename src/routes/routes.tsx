@@ -13,6 +13,9 @@ import Equipment from '../pages/Equipment';
 import Facilities from '../pages/Facilities';
 import Home from '../pages/Home';
 import People from '../pages/People';
+import Products from '../pages/Products';
+import Segments from '../pages/Segments';
+import { SegmentDetailPage } from '../pages/Segments/SegmentDetailPage';
 import ServiceDetail from '../pages/ServiceDetail';
 import Services from '../pages/Services';
 
@@ -28,6 +31,9 @@ export function AppRoutes() {
         <Route path="/empresa/esg" element={<EsgPage />} />
         <Route path="/empresa/acoes-sociais" element={<SocialActionsPage />} />
         <Route path="/empresa/*" element={<Navigate to="/empresa" replace />} />
+        <Route path="/segmentos" element={<Segments />} />
+        <Route path="/segmentos/:slug" element={<SegmentDetailPage />} />
+        <Route path="/produtos" element={<Products />} />
         <Route path="/pessoas" element={<People />} />
         <Route path="/pessoas/:topic" element={<People />} />
         <Route path="/servicos" element={<Services />} />

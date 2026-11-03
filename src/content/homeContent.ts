@@ -69,14 +69,6 @@ export const homeContent = {
     { value: institutionalFacts.totalArea, label: 'de área total', context: 'Parques industriais próximos entre si.' },
     { value: institutionalFacts.coveredArea, label: 'de área coberta', context: `Espaço atendido por ${institutionalFacts.gantryCranes} pontes rolantes.` },
   ] satisfies HomeMetric[],
-  solutions: [
-    { title: 'Siderurgia', detail: 'Insumos e soluções para uma cadeia industrial essencial.', href: '/servicos', tone: 'blue' },
-    { title: 'Caldeiraria', detail: 'Peças, estruturas e conjuntos feitos sob medida.', href: '/servicos', tone: 'blue' },
-    { title: 'Serviços industriais', detail: 'Experiência técnica para fabricar, montar e manter.', href: '/servicos', tone: 'blue' },
-    { title: 'Projetos especiais', detail: 'Engenharia aplicada aos requisitos de cada desafio.', href: '/servicos', tone: 'blue' },
-    { title: 'Offshore', detail: 'Fabricação, montagem e manutenção para operações no mar.', href: '/servicos/offshore', tone: 'offshore' },
-    { title: 'Linha Amarela', detail: 'Componentes e soluções para máquinas de construção e implementos.', href: '/servicos', tone: 'linha-amarela' },
-  ],
   culture: {
     eyebrow: 'O jeito de trabalhar',
     title: 'Segurança, precisão e respeito à vida em cada processo.',

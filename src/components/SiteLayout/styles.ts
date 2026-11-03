@@ -28,16 +28,15 @@ export const Header = styled.header<{ $open: boolean }>`
   position: fixed;
   inset: 0 0 auto;
   z-index: 20;
-  min-height: 70px;
-  padding: 0 max(20px, calc((100vw - 1062px) / 2));
+  min-height: 68px;
+  padding: 0 max(20px, calc((100vw - 1360px) / 2));
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
   color: #11182d;
   background: #ffffff;
-  border-bottom: 1px solid transparent;
-  box-shadow: 0 0 0 rgba(17, 24, 45, 0);
+  border-bottom: 1px solid #edf1f5;
+  box-shadow: 0 4px 16px rgba(17, 24, 45, 0.055);
   backdrop-filter: blur(0) saturate(100%);
   -webkit-backdrop-filter: blur(0) saturate(100%);
   transition: transform 180ms ease;
@@ -45,13 +44,18 @@ export const Header = styled.header<{ $open: boolean }>`
   @media (max-width: 920px) {
     padding-inline: 16px;
   }
+
+  @media (max-width: 1279px) {
+    min-height: 64px;
+    justify-content: space-between;
+  }
 `;
 
 export const Brand = styled.a`
   min-width: 0;
-  display: inline-flex;
+  display: none;
   align-items: center;
-  width: 220px;
+  width: 176px;
   height: 50px;
   color: inherit;
   text-decoration: none;
@@ -73,24 +77,42 @@ export const Brand = styled.a`
     width: 176px;
     height: 42px;
   }
+
+  @media (max-width: 1279px) {
+    display: inline-flex;
+  }
 `;
 
 export const Nav = styled.nav<{ $open: boolean }>`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 11px;
-  font-weight: 900;
-  text-transform: uppercase;
+  width: 100%;
+  max-width: 1360px;
+  flex: 1;
+  font-size: clamp(12px, 0.95vw, 14px);
+  font-weight: 600;
+  text-transform: none;
+
+  > ul.primary-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(8px, 1vw, 13px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
   a {
     position: relative;
+    min-height: 44px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
     color: inherit;
     text-decoration: none;
     transition: color 180ms ease, transform 180ms ease;
   }
 
-  a:not(.quote)::after {
+  a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -104,7 +126,7 @@ export const Nav = styled.nav<{ $open: boolean }>`
   }
 
   a:hover {
-    color: #fb7900;
+    color: #063e66;
   }
 
   a:hover::after,
@@ -112,45 +134,50 @@ export const Nav = styled.nav<{ $open: boolean }>`
     transform: scaleX(1);
   }
 
-  .quote {
-    min-height: 40px;
-    min-width: 176px;
-    padding: 0 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+  a.nav-careers {
+    padding-inline: 12px;
+    color: #11182d;
     background: #fb7900;
-    border-radius: 7px;
-    box-shadow: 0 10px 24px rgba(251, 121, 0, 0.22);
+    border-radius: 5px;
   }
 
-  .quote:hover {
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 14px 30px rgba(251, 121, 0, 0.3);
+  a.nav-careers::after { display: none; }
+  a.nav-careers:hover { color: #11182d; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #fb7900;
+    outline-offset: 3px;
+    border-radius: 3px;
   }
 
-  @media (max-width: 1040px) {
+  @media (max-width: 1279px) {
     position: fixed;
-    top: 70px;
+    top: 64px;
     left: 16px;
     right: 16px;
     z-index: 22;
     box-sizing: border-box;
     max-width: calc(100vw - 32px);
-    max-height: calc(100dvh - 86px);
+    max-height: calc(100dvh - 80px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    display: ${({ $open }) => ($open ? 'flex' : 'none')};
-    flex-direction: column;
-    align-items: stretch;
-    padding: 22px;
+    display: ${({ $open }) => ($open ? 'block' : 'none')};
+    padding: 10px 20px 18px;
     background: rgba(244, 247, 251, 0.88);
     border: 1px solid rgba(216, 227, 239, 0.96);
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(17, 24, 45, 0.16);
     backdrop-filter: blur(18px);
+    flex: initial;
+
+    > ul.primary-list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    > ul.primary-list > li { width: 100%; }
 
     a {
       max-width: 100%;
@@ -158,118 +185,136 @@ export const Nav = styled.nav<{ $open: boolean }>`
       line-height: 1.35;
     }
 
-    .quote {
-      width: 100%;
-      min-width: 0;
+    > ul.primary-list {
+      justify-content: initial;
+    }
+
+    a {
+      padding-inline: 2px;
     }
   }
 `;
 
-export const PeopleMenu = styled.div`
+export const CompanyMenu = styled.div<{ $expanded: boolean }>`
   position: relative;
+  display: flex;
+  align-items: center;
 
-  > a {
-    display: inline-flex;
+  .company-trigger {
+    display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
   }
 
-  > a::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-inline: 4px solid transparent;
-    border-top: 5px solid currentColor;
-    order: 2;
-    transform: translateY(1px);
-  }
+  .company-trigger > a { white-space: nowrap; }
 
-  > div {
-    position: absolute;
-    top: calc(100% + 22px);
-    left: 50%;
-    min-width: 328px;
-    padding: 12px;
+  .company-disclosure {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0;
     display: grid;
-    gap: 6px;
+    place-items: center;
+    border: 0;
+    border-radius: 4px;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .company-disclosure svg {
+    width: 13px;
+    height: 13px;
+    transition: transform 180ms ease;
+    transform: rotate(${({ $expanded }) => ($expanded ? '180deg' : '0deg')});
+  }
+
+  .company-submenu {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 50%;
+    min-width: 258px;
+    margin: 0;
+    padding: 9px;
+    display: block;
     background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(244, 247, 251, 0.66)),
-      rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(216, 227, 239, 0.82);
-    border-radius: 18px;
+      linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 247, 251, 0.92)),
+      rgba(255, 255, 255, 0.96);
+    border: 1px solid #d8e3ef;
+    border-radius: 12px;
     box-shadow: 0 24px 70px rgba(17, 24, 45, 0.14);
     backdrop-filter: blur(18px);
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
     transform: translate(-50%, 8px);
-    transition: opacity 180ms ease, transform 180ms ease;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
   }
 
-  > div::before {
+  .company-submenu > ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+    list-style: none;
+  }
+
+  .company-submenu::before {
     content: "";
     position: absolute;
-    inset: -22px 0 auto;
-    height: 22px;
+    inset: -10px 0 auto;
+    height: 10px;
   }
 
-  &:hover > div,
-  &:focus-within > div {
+  &[data-expanded='true'] .company-submenu {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
     transform: translate(-50%, 0);
   }
 
-  > div a {
-    padding: 12px 14px;
+  .company-submenu a {
+    min-height: 44px;
+    padding: 8px 14px;
     color: #102a43;
-    border-radius: 12px;
-    font-size: 0.76rem;
+    border-radius: 8px;
+    font-size: 0.72rem;
     font-weight: 800;
     text-transform: none;
     transition: background 180ms ease, color 180ms ease, transform 180ms ease;
   }
 
-  > div a:hover,
-  > div a.active {
+  .company-submenu a:hover,
+  .company-submenu a.active {
     color: #063e66;
     background: rgba(255, 132, 36, 0.12);
     transform: translateX(2px);
   }
 
-  > div a::after {
+  .company-submenu a::after {
     display: none;
   }
 
-  @media (max-width: 1040px) {
+  @media (max-width: 1279px) {
     width: 100%;
+    display: block;
 
-    > a {
-      margin-bottom: 0;
+    .company-trigger {
+      width: 100%;
     }
 
-    > a::before {
-      display: none;
+    .company-trigger > a {
+      flex: 1;
     }
 
-    > div {
-      display: none;
-    }
-
-    > div::before {
-      display: none;
-    }
-  }
-`;
-
-export const CompanyMenu = styled(PeopleMenu)`
-  @media (max-width: 1040px) {
-    > div {
+    .company-submenu {
       position: static;
       min-width: 0;
-      margin-top: 12px;
+      width: 100%;
+      margin-top: 2px;
       padding: 4px 0 4px 12px;
-      display: grid;
-      background: none;
+      display: ${({ $expanded }) => ($expanded ? 'block' : 'none')};
+      background: transparent;
       border: 0;
       border-left: 2px solid rgba(251, 121, 0, 0.45);
       border-radius: 0;
@@ -277,21 +322,27 @@ export const CompanyMenu = styled(PeopleMenu)`
       backdrop-filter: none;
       opacity: 1;
       pointer-events: auto;
+      visibility: visible;
       transform: none;
       transition: none;
     }
 
-    &:hover > div,
-    &:focus-within > div {
-      transform: none;
+    .company-submenu > ul {
+      padding: 0;
     }
+
+    .company-submenu::before {
+      display: none;
+    }
+
+    &[data-expanded='true'] .company-submenu { transform: none; }
   }
 `;
 
-export const MenuButton = styled.button`
-  display: none;
-  width: 40px;
-  height: 40px;
+export const MenuButton = styled.button<{ $compact: boolean }>`
+  display: ${({ $compact }) => ($compact ? 'block' : 'none')};
+  width: 44px;
+  height: 44px;
   border: 0;
   border-radius: 8px;
   background: #11182d;
@@ -312,9 +363,6 @@ export const MenuButton = styled.button`
     background: currentColor;
   }
 
-  @media (max-width: 1040px) {
-    display: block;
-  }
 `;
 
 export const Main = styled.main`
@@ -346,8 +394,8 @@ export const Footer = styled.footer`
 
   .footer-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.72fr) minmax(220px, 0.78fr);
-    gap: 44px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(150px, 0.72fr) minmax(190px, 0.78fr) minmax(150px, 0.72fr);
+    gap: 26px;
     align-items: start;
   }
 
@@ -402,7 +450,7 @@ export const Footer = styled.footer`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #11182d;
     background: #fb7900;
     border-radius: 7px;
     font-size: 0.72rem;
@@ -412,7 +460,7 @@ export const Footer = styled.footer`
   }
 
   .footer-contact > a:hover {
-    color: #fff;
+    color: #11182d;
     transform: translateY(-1px);
   }
 
@@ -457,6 +505,13 @@ export const Footer = styled.footer`
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     color: rgba(255, 255, 255, 0.62);
     font-size: 0.78rem;
+  }
+
+  @media (max-width: 1080px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 34px;
+    }
   }
 
   @media (max-width: 720px) {

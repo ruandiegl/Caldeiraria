@@ -44,6 +44,26 @@ describe('rotas institucionais', () => {
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
+  it('abre o índice, os detalhes dos segmentos e o catálogo de produtos', () => {
+    open('/segmentos');
+    expect(screen.getByRole('heading', { level: 1, name: /segmentos/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /caldeiraria/i })).toHaveAttribute('href', '/segmentos/caldeiraria');
+
+    open('/segmentos/caldeiraria');
+    expect(screen.getByRole('heading', { level: 1, name: /caldeiraria/i })).toBeInTheDocument();
+
+    open('/produtos');
+    expect(screen.getByRole('heading', { level: 1, name: /produtos/i })).toBeInTheDocument();
+  });
+
+  it.each([
+    ['/servicos', /soluções sob medida para fabricação, montagem e manutenção industrial/i],
+    ['/equipamentos', /catálogo fabril para transformar chapa, perfil e tubo/i],
+  ])('preserva a página técnica legada %s', (path, heading) => {
+    open(path);
+    expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
+  });
+
   it('leva um caminho desconhecido de Empresa de volta ao índice', async () => {
     open('/empresa/assunto-inexistente');
     await waitFor(() => expect(screen.getByRole('heading', { level: 1, name: /empresa/i })).toBeInTheDocument());

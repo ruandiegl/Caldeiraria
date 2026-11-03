@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Brand, CompanyMenu, Footer, Header, Main, MenuButton, Nav, PeopleMenu, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
+import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { primaryNavItems, getPrimaryNavId } from '@/content/navigation';
+import { Brand, CompanyMenu, Footer, Header, Main, MenuButton, Nav, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
 import { useSiteMotion } from './useSiteMotion';
 import logo from '../../assets/logo.png';
 
@@ -35,13 +37,16 @@ function WhatsAppIcon() {
 
 export function SiteLayout({ children }: SiteLayoutProps) {
   const [open, setOpen] = useState(false);
-  const [companyHovered, setCompanyHovered] = useState(false);
-  const [companyFocused, setCompanyFocused] = useState(false);
+  const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 1279px)').matches);
+  const [companyExpanded, setCompanyExpanded] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const companyToggleRef = useRef<HTMLButtonElement>(null);
   const routeRef = useRef<HTMLDivElement>(null);
   const previousPath = useRef(location.pathname);
   const whatsappUrl = import.meta.env.VITE_WHATSAPP_URL?.trim();
+  const activePrimaryId = getPrimaryNavId(location.pathname);
 
   const socialDestinations = [
     { name: 'Instagram', href: import.meta.env.VITE_INSTAGRAM_URL?.trim(), icon: <InstagramIcon /> },
@@ -51,8 +56,13 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 
   useSiteMotion({ headerRef, routeRef, pathname: location.pathname });
 
-  function handleBrandClick() {
+  function closeNavigation() {
     setOpen(false);
+    setCompanyExpanded(false);
+  }
+
+  function handleBrandClick() {
+    closeNavigation();
 
     if (location.pathname === '/') {
       window.scrollTo({ top: 0, behavior: scrollBehavior() });
@@ -62,6 +72,26 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   function scrollBehavior(): ScrollBehavior {
     return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
   }
+
+  function handleHeaderKeyDown(event: KeyboardEvent<HTMLElement>) {
+    if (event.key !== 'Escape') return;
+    if (companyExpanded) {
+      setCompanyExpanded(false);
+      companyToggleRef.current?.focus();
+      return;
+    }
+    if (open) {
+      closeNavigation();
+      menuButtonRef.current?.focus();
+    }
+  }
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 1279px)');
+    const updateCompact = (event: MediaQueryListEvent) => setCompact(event.matches);
+    media.addEventListener('change', updateCompact);
+    return () => media.removeEventListener('change', updateCompact);
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: scrollBehavior() });
@@ -78,53 +108,88 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <Shell>
       <SkipLink href="#main-content">Pular para o conteúdo</SkipLink>
-      <Header ref={headerRef} $open={open} data-site-header>
+      <Header ref={headerRef} $open={open} data-site-header onKeyDown={handleHeaderKeyDown}>
         <Brand as={Link} to="/" aria-label="Metalúrgica Vulcano" onClick={handleBrandClick}>
           <img src={logo} alt="Metalúrgica Vulcano" />
         </Brand>
-        <MenuButton type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} onClick={() => setOpen((current) => !current)}>
-          <span />
-          <span />
-          <span />
+        <MenuButton
+          ref={menuButtonRef}
+          $compact={compact}
+          type="button"
+          aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+          onClick={() => open ? closeNavigation() : setOpen(true)}
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </MenuButton>
-        <Nav $open={open} onClick={() => setOpen(false)}>
-          <CompanyMenu
-            onMouseEnter={() => setCompanyHovered(true)}
-            onMouseLeave={() => setCompanyHovered(false)}
-            onFocus={() => setCompanyFocused(true)}
-            onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                setCompanyFocused(false);
-              }
-            }}
-          >
-            <NavLink to="/empresa" aria-controls="company-sections" aria-expanded={open || companyHovered || companyFocused}>
-              Empresa
-            </NavLink>
-            <div id="company-sections" role="group" aria-label="Seções da empresa">
-              <NavLink to="/empresa" end>Visão geral da empresa</NavLink>
-              <NavLink to="/empresa/historia">História</NavLink>
-              <NavLink to="/empresa/estrutura">Estrutura</NavLink>
-              <NavLink to="/empresa/qualidade">Qualidade</NavLink>
-              <NavLink to="/empresa/esg">ESG</NavLink>
-              <NavLink to="/empresa/acoes-sociais">Ações Sociais</NavLink>
-            </div>
-          </CompanyMenu>
-          <PeopleMenu>
-            <NavLink to="/pessoas">Pessoas</NavLink>
-            <div>
-              <NavLink to="/pessoas/carreira">Carreira</NavLink>
-              <NavLink to="/pessoas/desenvolvimento">Pessoas que movem a Vulcano</NavLink>
-              <NavLink to="/pessoas/comunidade">Comunidade</NavLink>
-              <NavLink to="/pessoas/cuidado">We Care</NavLink>
-            </div>
-          </PeopleMenu>
-          <NavLink to="/servicos">Serviços</NavLink>
-          <NavLink to="/instalacoes">Instalações</NavLink>
-          <NavLink to="/equipamentos">Equipamentos</NavLink>
-          <NavLink to="/certificacoes">Certificações</NavLink>
-          <NavLink to="/obras-clientes">Obras e clientes</NavLink>
-          <NavLink className="quote" to="/contato">Solicitar orçamento</NavLink>
+        <Nav
+          id="primary-navigation"
+          aria-label="Navegação principal"
+          $open={open}
+          inert={compact && !open}
+          aria-hidden={compact && !open}
+        >
+          <ul className="primary-list">
+            {primaryNavItems.map((item) => item.id === 'company' ? (
+              <li key={item.id}>
+                <CompanyMenu
+                  $expanded={companyExpanded}
+                  data-expanded={companyExpanded}
+                >
+                  <div className="company-trigger">
+                    <Link
+                      to={item.href}
+                      className={activePrimaryId === item.id ? 'active' : undefined}
+                      aria-current={location.pathname === item.href ? 'page' : undefined}
+                      onClick={closeNavigation}
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      ref={companyToggleRef}
+                      className="company-disclosure"
+                      type="button"
+                      aria-label={companyExpanded ? 'Recolher seções de Empresa' : 'Expandir seções de Empresa'}
+                      aria-expanded={companyExpanded}
+                      aria-controls="company-sections"
+                      onClick={() => setCompanyExpanded((current) => !current)}
+                    >
+                      <ChevronDown aria-hidden="true" />
+                    </button>
+                  </div>
+                  <div
+                    className="company-submenu"
+                    id="company-sections"
+                    role="group"
+                    aria-label="Seções da empresa"
+                    aria-hidden={!companyExpanded}
+                  >
+                    <ul>
+                      <li><Link to="/empresa" className={location.pathname === '/empresa' ? 'active' : undefined} aria-current={location.pathname === '/empresa' ? 'page' : undefined} onClick={closeNavigation}>Visão geral da empresa</Link></li>
+                      <li><Link to="/empresa/historia" className={location.pathname === '/empresa/historia' ? 'active' : undefined} aria-current={location.pathname === '/empresa/historia' ? 'page' : undefined} onClick={closeNavigation}>História</Link></li>
+                      <li><Link to="/empresa/estrutura" className={location.pathname === '/empresa/estrutura' ? 'active' : undefined} aria-current={location.pathname === '/empresa/estrutura' ? 'page' : undefined} onClick={closeNavigation}>Estrutura</Link></li>
+                    </ul>
+                  </div>
+                </CompanyMenu>
+              </li>
+            ) : (
+              <li key={item.id}>
+                <Link
+                  to={item.href}
+                  className={item.id === 'careers'
+                    ? `nav-careers${activePrimaryId === item.id ? ' active' : ''}`
+                    : activePrimaryId === item.id ? 'active' : undefined}
+                  aria-current={activePrimaryId === item.id ? 'page' : undefined}
+                  onClick={closeNavigation}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Nav>
       </Header>
       <Main id="main-content">
@@ -143,10 +208,25 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             </p>
           </section>
 
-          <nav aria-label="Rotas do site">
+          <nav aria-label="Mapa do site">
             <strong>Mapa do site</strong>
+            <Link to="/">Home</Link>
             <Link to="/empresa">Empresa</Link>
+            <Link to="/segmentos">Segmentos</Link>
+            <Link to="/produtos">Produtos</Link>
+            <Link to="/empresa/qualidade">Qualidade</Link>
+            <Link to="/empresa/esg">ESG</Link>
+            <Link to="/empresa/acoes-sociais">Ações Sociais</Link>
+            <Link to="/contato">Contato</Link>
+            <Link to="/pessoas/carreira">Trabalhe Conosco</Link>
+          </nav>
+
+          <nav aria-label="Outras páginas">
+            <strong>Outras páginas</strong>
             <Link to="/pessoas">Pessoas</Link>
+            <Link to="/pessoas/desenvolvimento">Pessoas que movem a Vulcano</Link>
+            <Link to="/pessoas/comunidade">Comunidade</Link>
+            <Link to="/pessoas/cuidado">We Care</Link>
             <Link to="/servicos">Serviços</Link>
             <Link to="/instalacoes">Instalações</Link>
             <Link to="/equipamentos">Equipamentos</Link>

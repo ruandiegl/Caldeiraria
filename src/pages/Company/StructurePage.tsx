@@ -6,7 +6,7 @@ import { CompanySubnav } from './CompanySubnav';
 import { TopicHero, TopicLead } from './companyStyles';
 
 export default function StructurePage() {
-  const units = institutionalContent.history.paragraphs.find((paragraph) => paragraph.sourceParagraphs.includes(12))!;
+  const units = institutionalContent.history.paragraphs.find((paragraph) => paragraph.originRefs.some((source) => source.documentId === 'word-18-10' && source.paragraph === 15))!;
   return (
     <>
       <CompanySubnav />

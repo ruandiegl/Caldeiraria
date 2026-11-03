@@ -1,133 +1,207 @@
-﻿import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, Eyebrow, Hero, Section, SectionTitle } from '../siteStyles';
+import { contactContent } from '@/content/contactContent';
+import { editorialResources } from '@/content/editorialResources';
+import { Container, Eyebrow, Section, SectionTitle } from '../siteStyles';
+
+const ContactHero = styled.section.attrs({ className: 'reveal' })`
+  padding: 144px 0 82px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(255, 132, 36, 0.18), transparent 28rem),
+    linear-gradient(125deg, #11182d, #123b59);
+
+  h1 {
+    max-width: 820px;
+    margin: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    line-height: 1.04;
+    text-transform: uppercase;
+  }
+
+  .contact-intro {
+    max-width: 700px;
+    margin: 22px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 720px) {
+    padding: 118px 0 62px;
+  }
+`;
 
 const ContactGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 0.86fr;
-  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 
-  @media (max-width: 920px) {
+  @media (max-width: 720px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const Form = styled.form`
-  padding: 30px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+const ContactCard = styled.article`
+  min-height: 250px;
+  padding: clamp(22px, 4vw, 34px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border: 1px solid #d8e3ef;
+  border-top: 3px solid #fb7900;
+  box-shadow: 0 14px 40px rgba(17, 24, 45, 0.06);
 
-  label {
-    display: grid;
-    gap: 8px;
+  h3 {
+    margin: 0;
     color: #11182d;
-    font-size: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-
-  .full {
-    grid-column: 1 / -1;
-  }
-
-  input,
-  select,
-  textarea {
-    min-height: 50px;
-    padding: 12px 14px;
-    border: 1px solid #e2e8f0;
-    border-radius: 7px;
-    color: #223044;
-    background: #f8fafc;
-    outline: none;
-  }
-
-  textarea {
-    min-height: 150px;
-    resize: vertical;
-  }
-
-  button {
-    min-height: 52px;
-    border: 0;
-    border-radius: 7px;
-    color: #fff;
-    background: #fb7900;
-    font-weight: 900;
-    text-transform: uppercase;
-    cursor: pointer;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.2;
   }
 
   p {
-    margin: 0;
+    margin: 13px 0 0;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .question {
+    margin-bottom: 4px;
     color: #063e66;
     font-weight: 800;
   }
 
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr;
-    padding: 22px;
+  .contact-action {
+    min-height: 44px;
+    margin-top: auto;
+    padding: 12px 0 0;
+    display: inline-flex;
+    align-items: center;
+    color: #063e66;
+    font-size: 0.9rem;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .contact-action:focus-visible {
+    outline: 3px solid #fb7900;
+    outline-offset: 4px;
   }
 `;
 
-const MapPanel = styled.aside`
-  min-height: 420px;
-  padding: 30px;
+const ContactResource = styled.aside`
+  margin-top: 24px;
+  padding: clamp(22px, 4vw, 34px);
   color: #fff;
-  background:
-    linear-gradient(rgba(17, 24, 45, 0.78), rgba(17, 24, 45, 0.78)),
-    url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80") center / cover;
-  border-radius: 8px;
+  background: #11182d;
 
-  h3 {
-    margin: 0 0 16px;
+  h2 {
+    margin: 0;
     font-family: "Open Sans", Arial, sans-serif;
-    font-size: 1.5rem;
-    text-transform: uppercase;
+    font-size: clamp(1.35rem, 3vw, 2rem);
   }
 
   p {
-    color: rgba(255, 255, 255, 0.82);
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
+  }
+
+  a {
+    min-height: 44px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    color: #11182d;
+    background: #fb7900;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  a:focus-visible {
+    outline: 3px solid #11182d;
+    outline-offset: 3px;
   }
 `;
 
-export default function Contact() {
-  const [sent, setSent] = useState(false);
+function safeHttpUrl(value: string | null | undefined) {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+type ContactProps = {
+  whistleblowingUrl?: string | null;
+};
+
+export default function Contact({ whistleblowingUrl = editorialResources.whistleblowingUrl }: ContactProps = {}) {
+  const activeWhistleblowingUrl = safeHttpUrl(whistleblowingUrl);
 
   return (
     <>
-      <Hero $image="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2200&q=82">
-        <Container><Eyebrow>Contato</Eyebrow><h1>Vamos dimensionar a solução industrial do seu projeto.</h1><p className="copy">Informe o escopo, a localização e o serviço desejado para a equipe técnica avaliar o melhor encaminhamento.</p></Container>
-      </Hero>
+      <ContactHero>
+        <Container>
+          <Eyebrow>{contactContent.eyebrow}</Eyebrow>
+          <h1>{contactContent.title}</h1>
+          <p className="contact-intro">{contactContent.introduction}</p>
+        </Container>
+      </ContactHero>
+
       <Section $muted>
         <Container>
-          <SectionTitle><Eyebrow>Orçamento</Eyebrow><h2>Dados iniciais para análise técnica.</h2></SectionTitle>
+          <SectionTitle>
+            <Eyebrow>Fale com a equipe certa</Eyebrow>
+            <h2>Escolha o assunto para encaminhar sua mensagem.</h2>
+          </SectionTitle>
+
           <ContactGrid>
-            <Form onSubmit={(event) => { event.preventDefault(); setSent(true); event.currentTarget.reset(); }}>
-              <label>Nome<input required /></label>
-              <label>Empresa<input required /></label>
-              <label>Telefone<input required /></label>
-              <label>E-mail<input type="email" required /></label>
-              <label>Cidade<input /></label>
-              <label>Serviço desejado<select><option>Caldeiraria industrial</option><option>Sistemas de tubulação</option><option>Soldagem especial</option><option>Serviços offshore</option><option>Projeto sob medida</option></select></label>
-              <label className="full">Mensagem<textarea required /></label>
-              <button className="full" type="submit">Solicitar orçamento</button>
-              {sent && <p className="full">Solicitação registrada. Nossa equipe comercial retornará com os próximos passos.</p>}
-            </Form>
-            <MapPanel>
-              <Eyebrow>Atendimento comercial</Eyebrow>
-              <h3>Brasil e América Latina</h3>
-              <p>Base industrial preparada para contratos nacionais, obras em campo e atendimento offshore. O mapa integrado pode entrar aqui com o endereço final da unidade principal.</p>
-            </MapPanel>
+            {contactContent.departments.map((department) => (
+              <ContactCard
+                key={department.id}
+                id={department.id === 'sales' ? 'vendas' : 'compras'}
+                data-origin-refs={department.originRefs.map(({ paragraph }) => paragraph).join(',')}
+              >
+                {department.question && <p className="question">{department.question}</p>}
+                <h3>{department.title}</h3>
+                <p>{department.description}</p>
+                <a className="contact-action" href={`mailto:${department.email}`}>
+                  {department.email}
+                </a>
+              </ContactCard>
+            ))}
           </ContactGrid>
+
+          <ContactCard data-origin-refs={contactContent.careersLink.originRefs.map(({ paragraph }) => paragraph).join(',')}>
+            <h3>{contactContent.careersLink.label}</h3>
+            <p>{contactContent.careersLink.description}</p>
+            <Link className="contact-action" to={contactContent.careersLink.href}>
+              Conheça as oportunidades
+            </Link>
+          </ContactCard>
+
+          {activeWhistleblowingUrl && (
+            <ContactResource>
+              <Eyebrow>Canal independente</Eyebrow>
+              <h2>{contactContent.pendingWhistleblowing.title}</h2>
+              <p>{contactContent.pendingWhistleblowing.copy}</p>
+              <a href={activeWhistleblowingUrl} target="_blank" rel="noopener noreferrer">
+                {contactContent.pendingWhistleblowing.actionLabel}
+              </a>
+            </ContactResource>
+          )}
         </Container>
       </Section>
     </>
   );
 }
-

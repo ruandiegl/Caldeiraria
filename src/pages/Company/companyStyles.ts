@@ -56,7 +56,7 @@ export const CompanyIndexLink = styled.a`
   transition: background .2s ease;
   &:hover { background: #f4f7fb; }
   &:focus-visible { outline: 3px solid #fb7900; outline-offset: -3px; }
-  .number { color: #fb7900; font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
+  .number { color: #a84d00; font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
   strong { color: #063e66; font-family: var(--font-condensed, "IBM Plex Sans Condensed", sans-serif); font-size: clamp(1.8rem, 3vw, 2.45rem); line-height: 1.1; }
   .arrow { position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; color: #fb7900; }
 `;
@@ -189,7 +189,7 @@ export const SlideMeta = styled.div`
 `;
 
 export const SlideMarker = styled.span`
-  color: #fb7900;
+  color: #a84d00;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -244,7 +244,7 @@ export const ChapterJumpLink = styled.a`
   transition: color 150ms ease;
 
   &:hover {
-    color: #fb7900;
+    color: #063e66;
   }
 `;
 
@@ -424,7 +424,7 @@ export const ChapterHeader = styled.header`
 
 export const ChapterEyebrow = styled.p`
   margin: 0 0 8px;
-  color: #fb7900;
+  color: #a84d00;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.14em;

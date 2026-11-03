@@ -4,75 +4,59 @@
 
 | Rota | Componente | Responsabilidade |
 | --- | --- | --- |
-| `/` | `Home` | Sínteses visuais dos temas institucionais, métricas, fotos de demonstração identificadas e links para a leitura integral. |
-| `/empresa` | `Company` | Índice institucional; o menu global abre as cinco telas, como em Pessoas. |
-| `/empresa/historia` | `HistoryPage` | Carrossel e texto integral de História e Identidade. |
-| `/empresa/estrutura` | `StructurePage` | Três unidades e inventário técnico completo. |
-| `/empresa/qualidade` | `QualityPage` | Qualidade integral; ISO vigente e normas em transição. |
-| `/empresa/esg` | `EsgPage` | Texto integral dos três pilares ESG. |
-| `/empresa/acoes-sociais` | `SocialActionsPage` | Texto integral e status de mídia pendente. |
-| \`/pessoas\` | \`People\` | Visão geral de carreira, desenvolvimento, comunidade e cuidado. |
-| \`/pessoas/:topic\` | \`People\` | Experiência detalhada de um tópico de pessoas. |
-| \`/servicos\` | \`Services\` | Catálogo de serviços industriais. |
-| \`/servicos/:slug\` | \`ServiceDetail\` | Detalhe de um serviço identificado por slug. |
-| \`/instalacoes\` | \`Facilities\` | Unidades e capacidades físicas. |
-| \`/equipamentos\` | \`Equipment\` | Equipamentos e recursos produtivos. |
-| \`/certificacoes\` | \`Certifications\` | Certificações, normas e qualificações. |
-| \`/obras-clientes\` | \`Cases\` | Clientes, obras e provas de experiência. |
-| \`/contato\` | \`Contact\` | Formulário e informações de atendimento. |
-| `/empresa/*` desconhecida | redireciona para `/empresa` | Fallback da área institucional. |
-| qualquer outra | redireciona para `/` | Fallback geral. |
+| `/` | `Home` | Fotografia panorâmica responsiva e seis sínteses ligadas às páginas de Segmentos, na ordem do layout do cliente. |
+| `/empresa` | `Company` | Índice da área Empresa. |
+| `/empresa/historia` | `HistoryPage` | Carrossel interativo sem autoplay e texto completo de História e Identidade. |
+| `/empresa/estrutura` | `StructurePage` | Texto completo de estrutura, unidades e capacidades. |
+| `/empresa/qualidade` | `QualityPage` | Conteúdo completo de Qualidade e situação das normas. |
+| `/empresa/esg` | `EsgPage` | Conteúdo completo dos pilares ESG. |
+| `/empresa/acoes-sociais` | `SocialActionsPage` | Conteúdo preservado da fonte institucional anterior; mídias pendentes permanecem identificadas. |
+| `/segmentos` | `Segments` | Índice dos seis segmentos do Word. |
+| `/segmentos/:slug` | `SegmentDetailPage` | Texto completo do segmento, com blocos e âncoras estáveis. |
+| `/produtos` | `Products` | Catálogo com os 14 grupos de produtos e links para detalhes disponíveis. |
+| `/contato` | `Contact` | E-mails de Vendas e Compras, acesso à Carreira e canal de Ouvidoria somente se sua URL real estiver configurada. |
+| `/pessoas` | `People` | Visão geral legada de carreira, desenvolvimento, comunidade e cuidado. |
+| `/pessoas/carreira` | `People` + `CareersContent` | Conteúdo completo de Trabalhe Conosco. Candidatura só é habilitada quando há URL oficial. |
+| `/pessoas/desenvolvimento` | `People` | Tema legado de desenvolvimento. |
+| `/pessoas/comunidade` | `People` | Tema legado de comunidade. |
+| `/pessoas/cuidado` | `People` | Tema legado We Care. |
+| `/servicos` | `Services` | Catálogo legado de serviços industriais, separado de Segmentos. |
+| `/servicos/:slug` | `ServiceDetail` | Detalhe de um serviço legado. |
+| `/instalacoes` | `Facilities` | Visão técnica legada de instalações. |
+| `/equipamentos` | `Equipment` | Equipamentos e recursos produtivos, separados do catálogo Produtos. |
+| `/certificacoes` | `Certifications` | Certificações, normas e qualificações. |
+| `/obras-clientes` | `Cases` | Obras e clientes. |
+| `/empresa/*` sem correspondência | redireciona para `/empresa` | Fallback da área institucional. |
+| slug de segmento desconhecido | redireciona para `/segmentos` | Mantém a navegação dentro do índice correspondente. |
+| demais rotas desconhecidas | redireciona para `/` | Fallback geral do React Router. |
 
-## Parâmetro \`topic\`
+## Navegação principal
 
-Os valores aceitos atualmente são:
+O cabeçalho mostra os nove destinos, nesta ordem: Home, Empresa, Segmentos, Produtos, Qualidade, ESG, Ações Sociais, Contato e Trabalhe Conosco. Empresa é um link para `/empresa` e tem um botão de expansão separado para o índice, História e Estrutura. A navegação móvel usa botão com `aria-expanded` e `aria-controls`, fecha com Escape ou seleção e retira os links do foco quando está recolhida.
 
-- \`carreira\`
-- \`desenvolvimento\`
-- \`comunidade\`
-- \`cuidado\`
-
-Um tópico desconhecido redireciona para \`/pessoas\`. Ao adicionar um tópico, atualize o mapa de dados e os links de navegação da própria página.
-
-## Parâmetro \`slug\`
-
-Os serviços atuais estão em \`src/content/siteData.ts\` e usam estes slugs:
-
-- \`soldagem\`
-- \`tubulacao\`
-- \`suportes\`
-- \`tanques-vasos\`
-- \`chumbadores\`
-- \`miscelaneas\`
-- \`projetos-sob-medida\`
-- \`offshore\`
-
-O slug deve ser estável, minúsculo e sem acentos. O título visível pode conter acentuação normal.
+Páginas que não aparecem na barra principal continuam ligadas no rodapé: Pessoas, Serviços, Instalações, Equipamentos, Certificações e Obras e clientes.
 
 ## Fonte dos dados
 
-\`src/content/siteData.ts\` concentra:
+O texto atual do cliente está em `docs/references/site textos resumido 18-10.docx`. O inventário em `src/content/__fixtures__/site-textos-18-10.manifest.json` registra os 582 parágrafos e sua classificação; `src/content/sourceDocuments.ts` guarda a identidade e o hash da fonte. Os dados do site usam `originRefs` para ligar trechos à numeração base 1 do documento. A aplicação não interpreta o Word em tempo de execução.
 
-- \`services\`;
-- \`certifications\`;
-- \`clients\`;
-- \`projects\`;
-- `facilities`;
-- `equipment`.
+`src/content/institutionalContent.ts` é a fonte do conteúdo completo de História, Identidade, Estrutura, Qualidade e ESG. `src/content/companyContent.ts` fornece os marcos e a origem dos slides do carrossel. A página História reúne o carrossel interativo e a leitura completa.
 
-`src/content/homeContent.ts` concentra as sínteses, métricas e chamadas da Home.
+`src/content/segmentsContent.ts` contém a copy integral dos seis segmentos e suas sínteses da Home. `src/content/productsContent.ts` contém os grupos e itens do catálogo; links de itens apontam para âncoras existentes.
 
-`src/content/institutionalContent.ts` guarda a leitura completa, os `sourceParagraphs`, status de certificação e notas editoriais do documento-mestre (`docs/references/site textos (Recuperação Automática).docx`). Os 60 parágrafos públicos anteriores a “Segmentos” têm cobertura no modelo, mas a Home mostra sínteses; as páginas próprias exibem o texto integral. A informação de três unidades (16.000, 15.000 e 3.500 m²) também orienta `/instalacoes`.
+`src/content/contactContent.ts` contém os contatos de Vendas e Compras, seus endereços de e-mail e os textos de Contato e Carreira. `src/content/careersContent.ts` contém a redação de Trabalhe Conosco. O formulário comercial com confirmação local foi removido; os links de Vendas e Compras abrem `mailto:`. Os telefones `XXXX` não são exibidos.
 
-`src/content/companyContent.ts` mantém os slides de História e os blocos comerciais reservados para o próximo planejamento: Segmentos, Catálogo, Contato e Carreira. Não publicar notas internas, placeholders ou mídia ainda não aprovada como fatos.
+`src/content/editorialResources.ts` concentra mídia e destinos operacionais opcionais. Valores `null` indicam pendências reais: fotografia autorizada da Home, PDF ISO, código de conduta, URL de ouvidoria, URL de candidatura, links das divisões e telefones. A ação de denúncia e o envio de currículo só aparecem quando uma URL HTTP/HTTPS é configurada. A ausência desses recursos não deve ser preenchida com URLs inventadas, `href="#"`, formulários simulados ou confirmações de envio.
+
+A área Ações Sociais continua usando sua fonte institucional anterior; a migração de conteúdo do Word de 18-10 não atribui uma nova copy a essa tela.
 
 ## Checklist para uma nova página
 
 1. Defina o objetivo da página em uma frase.
 2. Escolha a rota e registre-a neste documento.
-3. Crie o diretório em \`src/pages/<NomeDaPagina>\`.
-4. Reutilize o \`SiteLayout\` e os primitives compartilhados.
+3. Crie o diretório em `src/pages/<NomeDaPagina>`.
+4. Reutilize o `SiteLayout` e os primitives compartilhados.
 5. Inclua estados de conteúdo, vazio e erro quando aplicável.
-6. Adicione o link à navegação somente se a página for pública e prioritária.
-7. Teste a rota diretamente e depois de recarregar o navegador.
+6. Adicione à navegação principal somente se a página for pública e prioritária; páginas secundárias podem ser mantidas no rodapé.
+7. Teste a rota diretamente e depois de recarregar o navegador em uma hospedagem com fallback de SPA.
 8. Atualize este documento e o índice de documentação se uma nova convenção surgir.

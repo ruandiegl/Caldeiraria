@@ -2,74 +2,64 @@
 
 ## Direção visual
 
-A interface deve comunicar engenharia aplicada, capacidade industrial, precisão e proximidade humana. O visual combina imagens de operação, azul profundo, superfícies claras e laranja de ação. A estética deve parecer específica para caldeiraria e serviços industriais, não um template genérico.
+A interface comunica engenharia aplicada, capacidade industrial, precisão e proximidade humana. Use azul profundo, superfícies claras e laranja de ação. O visual deve continuar específico à Metalúrgica Vulcano, sem parecer um template genérico.
 
-## Tokens observados
+## Cores de referência
 
-Use os valores existentes como referência antes de criar novos:
-
-| Uso | Valor de referência |
+| Uso | Valor |
 | --- | --- |
-| Azul marinho principal | \`#11182d\` |
-| Azul de texto | \`#223044\` |
-| Azul institucional | \`#063e66\` |
-| Laranja de ação | \`#fb7900\` |
-| Laranja de destaque | \`#ff8424\` |
-| Texto secundário | \`#475569\` |
-| Fundo suave | \`#f4f7fb\` / \`#f8fafc\` |
-| Verde do WhatsApp | \`#1f9d55\` |
-| Bordas suaves | \`#e2e8f0\` |
+| Azul marinho | `#11182d` |
+| Azul de texto | `#223044` |
+| Azul institucional | `#063e66` |
+| Laranja de ação | `#fb7900` |
+| Laranja para texto pequeno em fundo claro | `#a84d00` |
+| Laranja de destaque | `#ff8424` |
+| Texto secundário | `#475569` |
+| Fundo suave | `#f4f7fb` / `#f8fafc` |
+| Verde do WhatsApp | `#1f9d55` |
+| Borda suave | `#d8e3ef` |
 
-Se a mudança exigir uma nova cor, confirme primeiro se ela representa uma necessidade semântica real. Não introduza gradientes ou cores decorativas sem função.
+## Tipografia e layout
 
-## Tipografia
+- Use IBM Plex Sans Variable para leitura e IBM Plex Sans Condensed nos títulos editoriais, com os fallbacks instalados.
+- Prefira caixa de frase, pesos fortes e tamanhos responsivos com `clamp`; telas legadas ainda podem usar caixa alta.
+- Eyebrows permanecem curtos, espaçados e em caixa alta.
+- Use `Container` para alinhar o conteúdo editorial geral, com largura de referência de 1062 px. A Home e o cabeçalho seguem containers próprios: até 1360 px para a faixa de foto/cabeçalho e 1120 px para a grade de segmentos.
+- Grids devem ter colunas explícitas e colapsar em breakpoints definidos. Reduza o espaço vertical em telas estreitas sem remover a hierarquia.
+- Use cantos discretos, normalmente entre 7 e 8 px. Mantenha corpo de texto com largura e line-height confortáveis.
 
-- A base de novas interfaces usa \`IBM Plex Sans Variable\`; títulos editoriais usam \`IBM Plex Sans Condensed\`, com fallback para \`Open Sans\`, \`Arial Narrow\` e \`sans-serif\`.
-- Títulos editoriais usam caixa de frase, peso forte e escala responsiva com \`clamp\`; páginas legadas podem manter caixa alta enquanto não forem migradas.
-- Eyebrows são pequenos, fortes, espaçados e em caixa alta.
-- Textos corridos usam largura limitada e line-height confortável.
-- Botões e labels devem permanecer curtos, diretos e em caixa alta quando seguirem o padrão existente.
+## Home e conteúdo
 
-## Layout
+A Home segue o layout aprovado pelo cliente: fotografia de destaque em 3:1 no desktop, com altura mínima de 240 px, e proporção 16:7 no celular. O hero foi ampliado a pedido do cliente, com uma fonte responsiva até 2800 px para preservar nitidez. Abaixo, seis blocos abertos de Segmentos ficam em duas colunas a partir de 768 px e em uma coluna em telas estreitas. Os nomes e a ordem vêm de `segmentsContent.ts`. Os blocos levam às páginas de conteúdo integral; a Home não reintroduz as métricas e seções antigas.
 
-- Use \`Container\` para manter alinhamento horizontal consistente.
-- A largura base atual é de aproximadamente \`1062px\`, com margens laterais responsivas.
-- Seções têm bastante respiro vertical; em mobile, reduza o espaçamento sem eliminar a hierarquia.
-- Prefira grids explícitos e colunas que colapsem em breakpoints claros.
-- Use cantos arredondados discretos, normalmente entre \`7px\` e \`8px\`, reservando círculos para controles ou sinais específicos.
-- O hero é uma tese da página: imagem, overlay, título e chamada devem responder ao propósito daquela rota.
-- A Home usa uma composição documental: a capacidade industrial é apresentada a partir das pessoas, do processo e do contexto, não apenas de cards e números.
-- O bloco “Por dentro do trabalho” é a assinatura da Home e organiza três momentos: preparar, fazer e cuidar.
+A foto corporativa da Home ainda está pendente. Em desenvolvimento, o preview de demonstração precisa estar identificado. Em produção, é exibido um espaço reservado até receber a imagem autorizada.
 
 ## Imagens
 
-- Imagens industriais devem reforçar o assunto da seção.
-- Use overlay escuro quando o texto estiver sobre a imagem.
-- Forneça \`alt\` descritivo para conteúdo informativo; use \`alt=""\` apenas em imagens puramente decorativas.
-- Preserve \`object-fit: cover\` para fotos de hero e \`object-fit: contain\` para logos quando aplicável.
-- URLs externas devem ser tratadas como dependência operacional: confira disponibilidade e considere migrar imagens essenciais para \`src/assets\`.
-- Pessoas reais só devem aparecer com autorização de uso de imagem e revisão dos nomes, funções e EPIs visíveis.
-- Durante a prototipação, imagens do Unsplash podem ser usadas somente como `preview-asset`, sempre com a etiqueta “Imagem de demonstração” e legenda indicando substituição. Antes da publicação, todos os previews devem ser trocados por imagens corporativas autorizadas (`approved`); não use banco de imagens para representar colaboradores reais.
+- Escolha imagens que correspondam ao assunto e use overlay quando houver texto sobreposto.
+- Imagens informativas recebem `alt` descritivo; mídia decorativa recebe `alt=""`.
+- Preserve `object-fit: cover` para fotografia e `contain` para logos.
+- Imagens externas são dependências operacionais: verifique disponibilidade, uso autorizado e fallback.
+- Pessoas reais só aparecem com autorização de imagem e revisão do contexto, nomes e EPIs.
+- Não use banco de imagens para representar colaboradores reais nem publique previews como conteúdo corporativo aprovado.
 
-## Interação e movimento
+## Interação, navegação e movimento
 
-- Use `data-reveal` para novas entradas progressivas; `.reveal` existe apenas para compatibilidade com páginas legadas.
-- A entrada padrão usa 24 px de deslocamento, 650 ms, `power2.out`, stagger de 80 ms e execução única.
-- O cabeçalho começa branco sólido e assume liquid glass após 24 px, em 350 ms; não anime o blur continuamente durante scroll.
-- Anime blocos internos de texto, mídia ou dados, nunca o fundo completo da seção.
-- Microinterações devem ser curtas e funcionais: elevação pequena, mudança de cor ou foco.
-- Respeite \`prefers-reduced-motion: reduce\`; não adicione animações que ignorem essa preferência.
-- Não use movimento constante apenas para preencher espaço.
-- Não introduza scroll hijacking, pinning, paralaxe ou smooth scroll sem novo planejamento e validação de performance.
-- Foco de teclado deve permanecer visível; \`:focus-visible\` usa outline laranja com offset.
+- A navegação principal contém Home, Empresa, Segmentos, Produtos, Qualidade, ESG, Ações Sociais, Contato e Trabalhe Conosco.
+- No desktop, o cabeçalho reserva toda a faixa para os nove acessos, distribuídos horizontalmente em um limite de 1360 px; não exibe o logotipo junto ao menu. Os rótulos ficam em caixa de frase, e “Trabalhe Conosco” recebe o destaque laranja da marca com texto marinho. Em telas compactas até 1279 px, o logotipo acompanha o botão Menu.
+- O cabeçalho desktop mede 68 px; a foto principal começa 24 px abaixo dele, alinhada à grade central de 1360 px. O cabeçalho compacto mede 64 px e conserva o respiro móvel da foto.
+- Empresa é link e tem botão disclosure próprio. Ele informa `aria-expanded` e `aria-controls`; as opções devem poder ser descobertas por clique e teclado, sem depender apenas do hover.
+- O menu compacto usa um botão Menu com nome acessível, fecha com Escape e após escolher uma rota, retorna o foco ao acionador quando Escape o fecha, e remove os links recolhidos da sequência de Tab.
+- Controles interativos devem ter área de toque confortável de ao menos 44 × 44 px sempre que o layout permitir.
+- Microinterações são curtas e úteis. Anime elementos internos, não o fundo inteiro.
+- Respeite `prefers-reduced-motion`. Não adicione scroll hijacking, pinning ou paralaxe sem planejamento específico.
+- Foco de teclado deve permanecer visível, com outline de contraste adequado.
 
 Para implementação e cleanup, consulte [Movimento e GSAP](./movimento-e-gsap.md).
 
 ## Acessibilidade
 
-- Todo controle deve ter nome acessível.
-- Botões devem usar \`button\`; navegação deve usar links.
-- Campos de formulário devem ter \`label\` associado pela estrutura ou por \`htmlFor\`/\`id\` quando necessário.
-- Não comunique estado somente por cor.
-- Teste navegação por teclado e leitura em larguras de mobile.
-- Ao incluir um ícone decorativo, marque-o com \`aria-hidden="true"\`.
+- Todo controle recebe nome acessível. Use botões para ações e links para navegação.
+- Navegação comum usa semântica de lista dentro de `nav`, sem `role="menu"`.
+- Não comunique estado apenas por cor.
+- Verifique foco, contraste e leitura em larguras móveis, incluindo refluxo a 320 CSS px.

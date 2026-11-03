@@ -3,22 +3,35 @@ import { companyTopicPaths, homeSectionIds, institutionalContent, institutionalF
 import { homeContent } from './homeContent';
 import { facilities } from './siteData';
 import { companyContent } from './companyContent';
-
-const requiredHomeParagraphs = [
-  2, 4, 6, 7, 9, 10, 12, 14, 15, 17, 19, 21, 23, 24, 25, 26, 27,
-  29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
-  46, 47, 48, 49, 50, 51, 53, 56, 58, 60, 61, 63, 66, 68, 69, 70,
-  72, 73, 75, 76, 77, 78, 80, 81, 82, 84, 85,
-];
+import sourceManifest from './__fixtures__/site-textos-18-10.manifest.json';
 
 describe('fonte editorial institucional', () => {
-  it('atribui cada um dos 60 parágrafos públicos da Home exatamente uma vez', () => {
+  it('mapeia todo o conteúdo institucional do Word novo uma vez, usando referências base 1', () => {
+    const destinations = ['/empresa/historia', '/empresa/estrutura', '/empresa/qualidade', '/empresa/esg'];
+    const expected = sourceManifest.filter(({ classification, destination }) => classification === 'content' && destinations.includes(destination ?? '')).map(({ paragraph }) => paragraph);
     const actual = homeSectionIds.flatMap((id) =>
-      institutionalContent[id].paragraphs.flatMap((paragraph) => paragraph.sourceParagraphs),
+      [...institutionalContent[id].paragraphs, ...(institutionalContent[id].detailParagraphs ?? []), ...(institutionalContent[id].pendingParagraphs ?? [])]
+        .flatMap((paragraph) => paragraph.originRefs)
+        .filter(({ documentId }) => documentId === 'word-18-10')
+        .map(({ paragraph }) => paragraph),
     );
 
-    expect(new Set(actual)).toEqual(new Set(requiredHomeParagraphs));
-    expect(actual).toHaveLength(requiredHomeParagraphs.length);
+    expect([...actual].sort((a, b) => a - b)).toEqual([...expected].sort((a, b) => a - b));
+    expect(actual.every((paragraph) => paragraph >= 1 && paragraph <= 582)).toBe(true);
+  });
+
+  it('mantém âncoras semânticas independentes dos números de parágrafo', () => {
+    const anchorFor = (sectionId: keyof typeof institutionalContent, paragraph: number) =>
+      [...institutionalContent[sectionId].paragraphs, ...(institutionalContent[sectionId].detailParagraphs ?? [])]
+        .find((item) => item.originRefs.some((reference) => reference.documentId === 'word-18-10' && reference.paragraph === paragraph))?.anchorId;
+
+    expect(anchorFor('history', 7)).toBe('origem');
+    expect(anchorFor('history', 12)).toBe('expansao');
+    expect(anchorFor('history', 17)).toBe('futuro');
+    expect(anchorFor('structure', 32)).toBe('capacidades');
+    expect(anchorFor('quality', 172)).toBe('certificacoes');
+    expect(anchorFor('social-actions', 209)).toBeUndefined();
+    expect(institutionalContent['social-actions'].paragraphs.every(({ originRefs }) => originRefs.every(({ documentId }) => documentId === 'word-legacy'))).toBe(true);
   });
 
   it('mantém ações sociais fora da Home e cinco destinos de Empresa', () => {

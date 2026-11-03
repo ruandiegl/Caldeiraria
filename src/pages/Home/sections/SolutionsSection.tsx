@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import { DraftingCompass, Factory, HardHat, Ship, Truck, Wrench } from 'lucide-react';
+import { DraftingCompass, Factory, HardHat, Truck, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionIntro } from '../../../components/brand/SectionIntro';
-import { homeContent } from '../../../content/homeContent';
+import { segmentsContent } from '@/content/segmentsContent';
 import { Container } from '../../siteStyles';
 import { SolutionLink, SolutionSpotlight, SolutionsCopy, SolutionsGrid, SolutionsLayout, SolutionsSection as SolutionsBand } from '../homeStyles';
 
-const solutionIcons = [Factory, Wrench, HardHat, DraftingCompass, Ship, Truck] as const;
+const solutionIcons = [Factory, Wrench, HardHat, DraftingCompass, Factory, Truck] as const;
 
 export function SolutionsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeSolution = homeContent.solutions[activeIndex];
+  const activeSolution = segmentsContent[activeIndex];
 
   return (
     <SolutionsBand aria-label="Áreas de atuação">
@@ -25,19 +25,18 @@ export function SolutionsSection() {
             <SolutionSpotlight as="aside" aria-label="Área em destaque">
               <span>Em destaque</span>
               <strong>{activeSolution.title}</strong>
-              <p>{activeSolution.detail}</p>
+              <p>{activeSolution.homeSummary}</p>
             </SolutionSpotlight>
           </SolutionsCopy>
           <SolutionsGrid data-reveal>
-            {homeContent.solutions.map((solution, index) => {
+            {segmentsContent.map((solution, index) => {
               const Icon = solutionIcons[index];
               return (
                 <SolutionLink
                   as={Link}
-                  to={solution.href}
-                  key={solution.title}
-                  data-tone={solution.tone}
-                  aria-label={`${solution.title}: ${solution.detail}`}
+                  to={`/segmentos/${solution.slug}`}
+                  key={solution.slug}
+                  aria-label={`${solution.title}: ${solution.homeSummary}`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                 >

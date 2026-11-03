@@ -1,0 +1,3494 @@
+[
+  {
+    "paragraph": 1,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 2,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 3,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 4,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 5,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 6,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 7,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 8,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 9,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 10,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 11,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 12,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 13,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 14,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 15,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 16,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 17,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 18,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 19,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 20,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 21,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 22,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 23,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 24,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 25,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 26,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 27,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 28,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 29,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 30,
+    "classification": "content",
+    "destination": "/empresa/historia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 31,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 32,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 33,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 34,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 35,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 36,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 37,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 38,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 39,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 40,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 41,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 42,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 43,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 44,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 45,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 46,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 47,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 48,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 49,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 50,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 51,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 52,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 53,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 54,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 55,
+    "classification": "content",
+    "destination": "/empresa/estrutura",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 56,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 57,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 58,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 59,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 60,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 61,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 62,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 63,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 64,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 65,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 66,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 67,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 68,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 69,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 70,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 71,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 72,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 73,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 74,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 75,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 76,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 77,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 78,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 79,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 80,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 81,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 82,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 83,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 84,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 85,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 86,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 87,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 88,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 89,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 90,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 91,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 92,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 93,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 94,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 95,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 96,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 97,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 98,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 99,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 100,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 101,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 102,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 103,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 104,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 105,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 106,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 107,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 108,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 109,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 110,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 111,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 112,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 113,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 114,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 115,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 116,
+    "classification": "content",
+    "destination": "/segmentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 117,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 118,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 119,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 120,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 121,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 122,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 123,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 124,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 125,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 126,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 127,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 128,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 129,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 130,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 131,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 132,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 133,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 134,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 135,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 136,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 137,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 138,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 139,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 140,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 141,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 142,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 143,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 144,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 145,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 146,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 147,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 148,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 149,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 150,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 151,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 152,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 153,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 154,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 155,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 156,
+    "classification": "duplicate",
+    "destination": null,
+    "duplicateOf": 153
+  },
+  {
+    "paragraph": 157,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 158,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 159,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 160,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 161,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 162,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 163,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 164,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 165,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 166,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 167,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 168,
+    "classification": "content",
+    "destination": "/produtos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 169,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 170,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 171,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 172,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 173,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 174,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 175,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 176,
+    "classification": "content",
+    "destination": "/empresa/qualidade",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 177,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 178,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 179,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 180,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 181,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 182,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 183,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 184,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 185,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 186,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 187,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 188,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 189,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 190,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 191,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 192,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 193,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 194,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 195,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 196,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 197,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 198,
+    "classification": "content",
+    "destination": "/empresa/esg",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 199,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 200,
+    "classification": "duplicate",
+    "destination": null,
+    "duplicateOf": 198
+  },
+  {
+    "paragraph": 201,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 202,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 203,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 204,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 205,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 206,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 207,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 208,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 209,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 210,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 211,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 212,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 213,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 214,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 215,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 216,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 217,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 218,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 219,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 220,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 221,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 222,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 223,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 224,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 225,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 226,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 227,
+    "classification": "content",
+    "destination": "/contato",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 228,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 229,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 230,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 231,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 232,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 233,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 234,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 235,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 236,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 237,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 238,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 239,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 240,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 241,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 242,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 243,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 244,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 245,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 246,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 247,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 248,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 249,
+    "classification": "content",
+    "destination": "/pessoas/carreira",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 250,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 251,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 252,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 253,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 254,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 255,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 256,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 257,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 258,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 259,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 260,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 261,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 262,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 263,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 264,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 265,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 266,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 267,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 268,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 269,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 270,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 271,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 272,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 273,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 274,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 275,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 276,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 277,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 278,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 279,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 280,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 281,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 282,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 283,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 284,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 285,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 286,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 287,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 288,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 289,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 290,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 291,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 292,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 293,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 294,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 295,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 296,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 297,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 298,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 299,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 300,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 301,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 302,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 303,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 304,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 305,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 306,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 307,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 308,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 309,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 310,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 311,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 312,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 313,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 314,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 315,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 316,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 317,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 318,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 319,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 320,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 321,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 322,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 323,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 324,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 325,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 326,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 327,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 328,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 329,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 330,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 331,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 332,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 333,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 334,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 335,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 336,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 337,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 338,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 339,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 340,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 341,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 342,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 343,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 344,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 345,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 346,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 347,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 348,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 349,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 350,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 351,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 352,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 353,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 354,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 355,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 356,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 357,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 358,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 359,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 360,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 361,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 362,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 363,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 364,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 365,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 366,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 367,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 368,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 369,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 370,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 371,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 372,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 373,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 374,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 375,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 376,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 377,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 378,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 379,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 380,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 381,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 382,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 383,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 384,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 385,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 386,
+    "classification": "content",
+    "destination": "/segmentos/siderurgia",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 387,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 388,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 389,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 390,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 391,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 392,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 393,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 394,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 395,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 396,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 397,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 398,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 399,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 400,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 401,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 402,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 403,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 404,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 405,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 406,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 407,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 408,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 409,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 410,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 411,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 412,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 413,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 414,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 415,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 416,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 417,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 418,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 419,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 420,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 421,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 422,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 423,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 424,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 425,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 426,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 427,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 428,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 429,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 430,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 431,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 432,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 433,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 434,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 435,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 436,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 437,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 438,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 439,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 440,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 441,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 442,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 443,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 444,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 445,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 446,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 447,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 448,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 449,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 450,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 451,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 452,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 453,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 454,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 455,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 456,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 457,
+    "classification": "content",
+    "destination": "/segmentos/caldeiraria",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 458,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 459,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 460,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 461,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 462,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 463,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 464,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 465,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 466,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 467,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 468,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 469,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 470,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 471,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 472,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 473,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 474,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 475,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 476,
+    "classification": "duplicate",
+    "destination": null,
+    "duplicateOf": 472
+  },
+  {
+    "paragraph": 477,
+    "classification": "duplicate",
+    "destination": null,
+    "duplicateOf": 473
+  },
+  {
+    "paragraph": 478,
+    "classification": "duplicate",
+    "destination": null,
+    "duplicateOf": 474
+  },
+  {
+    "paragraph": 479,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 480,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 481,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 482,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 483,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 484,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 485,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 486,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 487,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 488,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 489,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 490,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 491,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 492,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 493,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 494,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 495,
+    "classification": "content",
+    "destination": "/segmentos/servicos-industriais",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 496,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 497,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 498,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 499,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 500,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 501,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 502,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 503,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 504,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 505,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 506,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 507,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 508,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 509,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 510,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 511,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 512,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 513,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 514,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 515,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 516,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 517,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 518,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 519,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 520,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 521,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 522,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 523,
+    "classification": "content",
+    "destination": "/segmentos/projetos-e-equipamentos",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 524,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 525,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 526,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 527,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 528,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 529,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 530,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 531,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 532,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 533,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 534,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 535,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 536,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 537,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 538,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 539,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 540,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 541,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 542,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 543,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 544,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 545,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 546,
+    "classification": "content",
+    "destination": "/segmentos/concretos-especiais-e-pre-moldados",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 547,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 548,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 549,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 550,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 551,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 552,
+    "classification": "marker",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 553,
+    "classification": "note",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 554,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 555,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 556,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 557,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 558,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 559,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 560,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 561,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 562,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 563,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 564,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 565,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 566,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 567,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 568,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 569,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 570,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 571,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 572,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 573,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 574,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 575,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 576,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 577,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 578,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 579,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 580,
+    "classification": "content",
+    "destination": "/segmentos/maquinas-para-construcao",
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 581,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  },
+  {
+    "paragraph": 582,
+    "classification": "empty",
+    "destination": null,
+    "duplicateOf": null
+  }
+]

@@ -6,7 +6,6 @@ import { CompanySubnav } from './CompanySubnav';
 import { EditorialBadge, TopicHero, TopicLead } from './companyStyles';
 
 export default function QualityPage() {
-  const dedicatedDifference = institutionalContent.quality.detailParagraphs?.find((paragraph) => paragraph.sourceParagraphs.includes(179));
   return (
     <>
       <CompanySubnav />
@@ -25,11 +24,6 @@ export default function QualityPage() {
         </Container>
       </Section>
       <InstitutionalReading section={institutionalContent.quality} sectionId="qualidade-completa" />
-      {dedicatedDifference && (
-        <Section aria-labelledby="quality-dedicated-title">
-          <Container><TopicLead><h2 id="quality-dedicated-title">Práticas de gestão no cotidiano</h2><p>{dedicatedDifference.text}</p></TopicLead></Container>
-        </Section>
-      )}
     </>
   );
 }

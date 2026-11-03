@@ -1,9 +1,29 @@
 import '@testing-library/jest-dom/vitest';
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { ServerStyleSheet } from 'styled-components';
 import { describe, expect, it, vi } from 'vitest';
 import { SiteLayout } from './index';
+import { Header, Nav } from './styles';
+
+function mockViewport(width = 390) {
+  const originalWidth = window.innerWidth;
+  Object.defineProperty(window, 'innerWidth', { configurable: true, value: width });
+  const matchMedia = vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
+    matches: query === '(max-width: 1279px)' && width <= 1279,
+    media: query,
+    onchange: null,
+    addListener: vi.fn(), removeListener: vi.fn(),
+    addEventListener: vi.fn(), removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  }));
+  return () => {
+    matchMedia.mockRestore();
+    Object.defineProperty(window, 'innerWidth', { configurable: true, value: originalWidth });
+  };
+}
 
 describe('rodapé do site', () => {
   it('não publica destinos sociais e telefones fictícios', () => {
@@ -33,7 +53,9 @@ describe('estrutura de movimento do layout', () => {
       </MemoryRouter>,
     );
 
-    fireEvent.click(within(screen.getByRole('banner')).getByRole('link', { name: 'História' }));
+    const header = within(screen.getByRole('banner'));
+    fireEvent.click(header.getByRole('button', { name: 'Expandir seções de Empresa' }));
+    fireEvent.click(header.getByRole('link', { name: 'História' }));
     expect(screen.getByRole('heading', { name: 'Nossa História' })).toHaveFocus();
   });
 
@@ -69,22 +91,29 @@ describe('estrutura de movimento do layout', () => {
     expect(screen.getByTestId('route-motion-scope')).toBeInTheDocument();
   });
 
-  it('mantém o controle acessível do menu após a integração de movimento', async () => {
+  it('controla o menu com aria-expanded e o fecha com Escape devolvendo o foco', async () => {
+    const restoreViewport = mockViewport();
     const user = userEvent.setup();
-    render(
-      <MemoryRouter>
-        <SiteLayout>
-          <p>Conteúdo de teste</p>
-        </SiteLayout>
-      </MemoryRouter>,
-    );
+    try {
+      render(
+        <MemoryRouter>
+          <SiteLayout>
+            <p>Conteúdo de teste</p>
+          </SiteLayout>
+        </MemoryRouter>,
+      );
 
-    const openButton = screen.getByLabelText('Abrir menu');
-    await user.click(openButton);
-    const closeButton = screen.getByLabelText('Fechar menu');
-    await user.click(closeButton);
-
-    expect(screen.getByLabelText('Abrir menu')).toBeInTheDocument();
+      const openButton = screen.getByRole('button', { name: 'Menu' });
+      expect(openButton).toHaveAttribute('aria-expanded', 'false');
+      expect(openButton).toHaveAttribute('aria-controls', 'primary-navigation');
+      await user.click(openButton);
+      expect(openButton).toHaveAttribute('aria-expanded', 'true');
+      await user.keyboard('{Escape}');
+      expect(openButton).toHaveAttribute('aria-expanded', 'false');
+      expect(openButton).toHaveFocus();
+    } finally {
+      restoreViewport();
+    }
   });
 });
 
@@ -101,59 +130,105 @@ describe('menu Empresa no cabeçalho', () => {
     return within(screen.getByRole('banner'));
   }
 
-  it('reúne a visão geral e as cinco rotas existentes em um submenu identificado', () => {
+  it('mantém Empresa como link e oferece História e Estrutura no expansor', () => {
     const header = renderLayout();
-    const submenu = within(header.getByRole('group', { name: 'Seções da empresa' }));
-
     expect(header.getByRole('link', { name: 'Empresa' })).toHaveAttribute('href', '/empresa');
+    expect(header.getByRole('button', { name: 'Expandir seções de Empresa' })).toHaveAttribute('aria-controls', 'company-sections');
+    fireEvent.click(header.getByRole('button', { name: 'Expandir seções de Empresa' }));
+    const submenu = within(header.getByRole('group', { name: 'Seções da empresa' }));
 
     for (const [name, href] of [
       ['Visão geral da empresa', '/empresa'],
       ['História', '/empresa/historia'],
       ['Estrutura', '/empresa/estrutura'],
-      ['Qualidade', '/empresa/qualidade'],
-      ['ESG', '/empresa/esg'],
-      ['Ações Sociais', '/empresa/acoes-sociais'],
     ]) {
       expect(submenu.getByRole('link', { name })).toHaveAttribute('href', href);
     }
   });
 
-  it('abre o submenu com o mouse e o fecha ao sair', async () => {
-    const user = userEvent.setup();
+  it('destaca Trabalhe Conosco como a ação principal do cabeçalho', () => {
     const header = renderLayout();
-    const empresa = header.getByRole('link', { name: 'Empresa' });
-
-    expect(empresa).toHaveAttribute('aria-expanded', 'false');
-    await user.hover(empresa);
-    expect(empresa).toHaveAttribute('aria-expanded', 'true');
-    await user.unhover(empresa);
-    expect(empresa).toHaveAttribute('aria-expanded', 'false');
+    expect(header.getByRole('link', { name: 'Trabalhe Conosco' })).toHaveAttribute('class', 'nav-careers');
   });
 
-  it('abre o submenu por teclado e permite percorrer seus links', async () => {
+  it('expande o submenu com botão e teclado para percorrer seus links', async () => {
     const user = userEvent.setup();
     const header = renderLayout();
-    const empresa = header.getByRole('link', { name: 'Empresa' });
+    const toggle = header.getByRole('button', { name: 'Expandir seções de Empresa' });
 
-    await user.tab();
-    await user.tab();
-    await user.tab();
-    expect(empresa).toHaveFocus();
-    expect(empresa).toHaveAttribute('aria-expanded', 'true');
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    toggle.focus();
+    await user.keyboard('{Enter}');
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
     await user.tab();
     expect(header.getByRole('link', { name: 'Visão geral da empresa' })).toHaveFocus();
     await user.tab();
     expect(header.getByRole('link', { name: 'História' })).toHaveFocus();
   });
 
-  it('inclui as seções no menu móvel e o fecha após selecionar uma rota', async () => {
+  it('fecha o menu após selecionar uma rota e marca o destino atual', async () => {
+    const restoreViewport = mockViewport();
     const user = userEvent.setup();
-    const header = renderLayout();
+    try {
+      const header = renderLayout();
+      const menuButton = header.getByRole('button', { name: 'Menu' });
+      await user.click(menuButton);
+      expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+      await user.click(header.getByRole('link', { name: 'Ações Sociais' }));
+      expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+      expect(header.getByRole('link', { name: 'Ações Sociais', hidden: true })).toHaveAttribute('aria-current', 'page');
+    } finally {
+      restoreViewport();
+    }
+  });
 
-    await user.click(header.getByLabelText('Abrir menu'));
-    expect(header.getByLabelText('Fechar menu')).toBeInTheDocument();
-    fireEvent.click(header.getByRole('link', { name: 'Ações Sociais' }));
-    expect(header.getByLabelText('Abrir menu')).toBeInTheDocument();
+  it('remove os links da navegação fechada da sequência de foco em telas compactas', () => {
+    const restoreViewport = mockViewport();
+    try {
+      const header = renderLayout();
+      const navigation = header.getByLabelText('Navegação principal');
+      expect(navigation).toHaveAttribute('inert');
+      expect(header.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false');
+    } finally {
+      restoreViewport();
+    }
+  });
+
+  it('usa o menu compacto até 1279 px e libera a navegação completa em 1280 px', async () => {
+    const restoreCompactViewport = mockViewport(1279);
+    const compact = render(<MemoryRouter><SiteLayout><h1>Home</h1></SiteLayout></MemoryRouter>);
+    try {
+      await waitFor(() => expect(screen.getByRole('button', { name: 'Menu' })).toBeVisible());
+      expect(compact.container.querySelector('#primary-navigation')).toHaveAttribute('inert');
+    } finally {
+      compact.unmount();
+      restoreCompactViewport();
+    }
+
+    const restoreFullViewport = mockViewport(1280);
+    try {
+      render(<MemoryRouter><SiteLayout><h1>Home</h1></SiteLayout></MemoryRouter>);
+      await waitFor(() => expect(document.querySelector('button[aria-label="Menu"]')).not.toBeVisible());
+      expect(screen.getByRole('navigation', { name: 'Navegação principal' })).not.toHaveAttribute('inert');
+    } finally {
+      restoreFullViewport();
+    }
+  });
+});
+
+describe('alinhamento do cabeçalho desktop', () => {
+  it('distribui a navegação por toda a faixa central do cabeçalho', () => {
+    const sheet = new ServerStyleSheet();
+    renderToString(sheet.collectStyles(
+      <Header $open={false}>
+        <Nav $open={false}>
+          <ul className="primary-list"><li><a href="/">Home</a></li></ul>
+        </Nav>
+      </Header>,
+    ));
+
+    const styles = sheet.getStyleTags();
+    sheet.seal();
+    expect(styles).toMatch(/ul\.primary-list\{[^}]*justify-content:space-between/);
   });
 });

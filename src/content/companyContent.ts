@@ -1,4 +1,5 @@
 import { institutionalFacts } from './institutionalContent';
+import type { SourceRef } from './sourceDocuments';
 
 export type EditorialStatus = 'approved' | 'needs-review' | 'asset-pending' | 'link-pending';
 
@@ -10,6 +11,7 @@ export type HistorySlide = {
   summary: string;
   image: { src: string | null; alt: string; status: EditorialStatus };
   sourceRefs: string[];
+  originRefs: readonly SourceRef[];
 };
 
 export type HistoryBlockItem = {
@@ -61,13 +63,14 @@ export const companyContent: CompanyContent = {
       label: 'Fundação',
       title: 'Meio século de seriedade e técnica',
       summary:
-        'Fundada em 1º de julho de 1974, em Barra Mansa (RJ), a Vulcano iniciou sua trajetória focada na confecção de peças fundidas para o mercado nacional, estabelecendo as bases de precisão que guiam o grupo.',
+        'Fundada em 1º de julho de 1974, em Barra Mansa (RJ), a Metalúrgica Vulcano iniciou sua trajetória com a confecção de peças fundidas para o mercado nacional.',
       image: {
         src: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=82',
         alt: 'Imagem ilustrativa de operação metalúrgica',
         status: 'needs-review',
       },
       sourceRefs: ['history.foundation'],
+      originRefs: [{ documentId: 'word-18-10', paragraph: 9 }],
     },
     {
       id: 'slide-2012',
@@ -75,13 +78,14 @@ export const companyContent: CompanyContent = {
       label: 'Especialização',
       title: 'Caldeiraria pesada e serviços técnicos',
       summary:
-        'Inauguração da unidade voltada a projetos de alta complexidade técnica: caldeiraria pesada Onshore e Offshore, fabricação de tubulações, suportes industriais, compósitos e serviços industriais especializados.',
+        'A Vulcano diversificou suas soluções e, em 2012, inaugurou uma unidade para projetos de alta complexidade, incluindo caldeiraria pesada, tubulações, suportes, compósitos e serviços industriais.',
       image: {
         src: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=82',
         alt: 'Área de caldeiraria pesada e fabricação de tubulações industriais',
         status: 'needs-review',
       },
       sourceRefs: ['history.portfolio', 'history.expansion'],
+      originRefs: [{ documentId: 'word-18-10', paragraph: 10 }],
     },
     {
       id: 'slide-unidades',
@@ -89,13 +93,14 @@ export const companyContent: CompanyContent = {
       label: 'Modernização',
       title: 'Três parques industriais integrados',
       summary:
-        `Estruturação de ${institutionalFacts.units} unidades fabris vizinhas em Barra Mansa, totalizando ${institutionalFacts.totalArea} de área e ${institutionalFacts.coveredArea} de área coberta atendida por ${institutionalFacts.gantryCranes} pontes rolantes de 5 ton a 16 ton, pintura e tratamento térmico.`,
+        `Unidades fabris em Barra Mansa somam ${institutionalFacts.totalArea} de área total. São três unidades vizinhas, com estruturas e processos complementares.`,
       image: {
         src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=82',
         alt: 'Imagem ilustrativa de infraestrutura industrial',
         status: 'needs-review',
       },
       sourceRefs: ['structure.units', 'structure.capacity'],
+      originRefs: [13, 15].map((paragraph) => ({ documentId: 'word-18-10', paragraph })),
     },
     {
       id: 'slide-2024',
@@ -103,13 +108,14 @@ export const companyContent: CompanyContent = {
       label: '50 Anos',
       title: 'Marco histórico de solidez nacional',
       summary:
-        'Celebração de 50 anos de operações ininterruptas no Brasil, consolidando projetos especiais de engenharia personalizada e atendimento aos setores de energia, óleo e gás, infraestrutura e siderurgia.',
+        'Em 2024, a empresa celebrou 50 anos de operações ininterruptas no Brasil e consolidou projetos especiais de engenharia personalizados.',
       image: {
         src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=82',
         alt: 'Profissionais de engenharia atuando em fabricações industriais complexas',
         status: 'needs-review',
       },
       sourceRefs: ['history.50years'],
+      originRefs: [{ documentId: 'word-18-10', paragraph: 18 }],
     },
     {
       id: 'slide-2027',
@@ -117,13 +123,14 @@ export const companyContent: CompanyContent = {
       label: 'Rumo ao Futuro',
       title: 'Agenda ESG e gestão integrada',
       summary:
-        'Fase avançada de transição para as certificações ISO 14001 e ISO 45001 com previsão para o primeiro semestre de 2027, somando ecoeficiência, descarbonização e risco zero à excelência da ISO 9001:2015.',
+        'A Metalúrgica Vulcano está em transição para as normas ISO 14001 e ISO 45001, com previsão para o primeiro semestre de 2027. A ISO 9001:2015 foi renovada.',
       image: {
         src: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=82',
         alt: 'Instalações industriais com padrões de gestão ambiental e de segurança ocupacional',
         status: 'needs-review',
       },
       sourceRefs: ['quality.iso-14001-45001-transition', 'esg.environmental'],
+      originRefs: [{ documentId: 'word-18-10', paragraph: 62 }],
     },
   ],
 

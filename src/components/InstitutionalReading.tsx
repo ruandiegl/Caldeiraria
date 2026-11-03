@@ -10,12 +10,12 @@ type InstitutionalReadingProps = {
 
 function renderParagraphs(paragraphs: EditorialParagraph[]) {
   const blocks: ReactNode[] = [];
-  const anchors: Record<number, string> = {
-    4: 'origem',
-    9: 'expansao',
-    14: 'futuro',
-    29: 'capacidades',
-    53: 'certificacoes',
+
+  const sourceAttributes = (paragraph: EditorialParagraph) => {
+    const source = paragraph.originRefs[0];
+    return source
+      ? { 'data-source-document': source.documentId, 'data-source-paragraph': source.paragraph }
+      : {};
   };
 
   for (let index = 0; index < paragraphs.length;) {
@@ -28,19 +28,19 @@ function renderParagraphs(paragraphs: EditorialParagraph[]) {
       }
       blocks.push(
         <EditorialItemList key={current.id}>
-          {items.map((item) => <li key={item.id} data-source-paragraph={item.sourceParagraphs[0]}>{item.text}</li>)}
+          {items.map((item) => <li key={item.id} {...sourceAttributes(item)}>{item.text}</li>)}
         </EditorialItemList>,
       );
       continue;
     }
 
-    const source = current.sourceParagraphs[0];
+    const sourceProps = sourceAttributes(current);
     if (current.kind === 'heading') {
-      blocks.push(<EditorialSubheading key={current.id} id={anchors[source]} data-source-paragraph={source}>{current.text}</EditorialSubheading>);
+      blocks.push(<EditorialSubheading key={current.id} id={current.anchorId} {...sourceProps}>{current.text}</EditorialSubheading>);
     } else if (current.kind === 'eyebrow') {
-      blocks.push(<ChapterLabel key={current.id} data-source-paragraph={source}>{current.text}</ChapterLabel>);
+      blocks.push(<ChapterLabel key={current.id} {...sourceProps}>{current.text}</ChapterLabel>);
     } else {
-      blocks.push(<EditorialText key={current.id} data-source-paragraph={source}>{current.text}</EditorialText>);
+      blocks.push(<EditorialText key={current.id} {...sourceProps}>{current.text}</EditorialText>);
     }
     index += 1;
   }

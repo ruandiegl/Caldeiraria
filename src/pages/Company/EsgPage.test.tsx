@@ -2,16 +2,20 @@ import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import { institutionalContent } from '@/content/institutionalContent';
 import EsgPage from './EsgPage';
 
 describe('ESG institucional', () => {
-  it('publica os três pilares e uma só conclusão, sem links fictícios', () => {
+  it('apresenta os três pilares e retém a afirmação de canal ativo enquanto não há URL', () => {
     render(<MemoryRouter><EsgPage /></MemoryRouter>);
-    expect(screen.getByRole('heading', { level: 1, name: /esg/i })).toBeInTheDocument();
-    for (const pillar of [/ambiental.*ecoeficiência/i, /social.*segurança/i, /governança.*integridade/i]) {
-      expect(screen.getByRole('heading', { name: pillar })).toBeInTheDocument();
-    }
-    expect(screen.getAllByText(/ao unir engenharia de alta complexidade com os critérios ESG/i)).toHaveLength(1);
-    expect(document.body).not.toHaveTextContent('[Link para canal de denuncia');
+    expect(screen.getByRole('heading', { level: 1, name: 'ESG' })).toBeInTheDocument();
+    expect(screen.getByText(/Ecoeficiência e Descarbonização/i)).toBeInTheDocument();
+    expect(screen.getByText(/Segurança, Saúde e Direitos Humanos/i)).toBeInTheDocument();
+    expect(screen.getByText(/Integridade, Ética e Compliance/i)).toBeInTheDocument();
+    expect(screen.queryByText(/canais de denúncia ativos/i)).not.toBeInTheDocument();
+    expect(institutionalContent.esg.pendingParagraphs?.[0].originRefs).toEqual([
+      { documentId: 'word-18-10', paragraph: 88 },
+      { documentId: 'word-18-10', paragraph: 197 },
+    ]);
   });
 });

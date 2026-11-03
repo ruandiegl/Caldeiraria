@@ -101,7 +101,7 @@ export const HeroSlide = styled.div<{ $image: string; $active: boolean }>`
 
 export const Eyebrow = styled.p`
   margin: 0 0 14px;
-  color: #ff8424;
+  color: #a84d00;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -123,7 +123,7 @@ export const Button = styled.a<{ $ghost?: boolean }>`
   justify-content: center;
   border: 1px solid ${({ $ghost }) => ($ghost ? 'rgba(255, 255, 255, 0.56)' : '#fb7900')};
   border-radius: 7px;
-  color: #fff;
+  color: ${({ $ghost }) => ($ghost ? '#fff' : '#11182d')};
   background: ${({ $ghost }) => ($ghost ? 'rgba(255, 255, 255, 0.1)' : '#fb7900')};
   font-size: 11px;
   font-weight: 900;
@@ -343,7 +343,7 @@ export const CapabilityGrid = styled.div`
 
   strong {
     display: block;
-    color: #ff8424;
+    color: #a84d00;
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.15rem;
     line-height: 1;
@@ -872,7 +872,7 @@ export const ClientNames = styled.div`
   }
 
   span:hover {
-    color: #fb7900;
+    color: #a84d00;
     background: #fff;
   }
 

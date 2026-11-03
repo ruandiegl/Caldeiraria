@@ -1,6 +1,6 @@
 # Arquitetura
 
-## Visão do fluxo
+## Fluxo da aplicação
 
 ~~~text
 index.html
@@ -11,123 +11,64 @@ index.html
               -> AppRoutes
                   -> SiteLayout
                       -> página correspondente à rota
-                          -> dados e estilos da página
+                          -> conteúdo tipado e estilos da página
 ~~~
 
-## Estrutura de diretórios
+## Estrutura principal
 
 ~~~text
-.
-├── public/                  # Arquivos públicos servidos sem processamento
-├── src/
-│   ├── assets/              # Imagens importadas pelo código
-│   ├── components/          # Componentes reutilizáveis
-│   │   ├── brand/           # Composições com identidade visual Vulcano
-│   │   └── ui/              # Primitives Shadcn mantidas pelo projeto
-│   ├── content/             # Dados institucionais e coleções de conteúdo
-│   ├── motion/              # Registro GSAP e motores de movimento testáveis
-│   ├── pages/               # Páginas associadas às rotas
-│   ├── routes/              # Mapa de rotas do cliente
-│   ├── styles/              # Estilos globais e tokens Shadcn
-│   ├── App.tsx              # Composição principal
-│   └── main.tsx             # Ponto de entrada do React
-├── docs/                    # Documentação do projeto
-├── index.html               # Documento HTML de entrada do Vite
-├── vite.config.ts           # Plugins e configuração do Vite
-├── eslint.config.js         # Configuração do lint
-├── tsconfig*.json           # Configuração TypeScript
-├── package.json             # Scripts e dependências
-├── package-lock.json        # Versões resolvidas das dependências
-└── components.json          # Configuração do Shadcn/UI
+src/
+├── assets/       imagens importadas pelo código
+├── components/   componentes compartilhados, marca, UI e SiteLayout
+├── content/      copy, dados do catálogo e referências ao Word
+├── motion/       registro GSAP e funções de movimento
+├── pages/        páginas e composições por rota
+├── routes/       mapa de rotas públicas
+└── styles/       estilos globais e tokens
+docs/references/  Word do cliente e imagem do layout
+public/           arquivos públicos e regras do servidor
 ~~~
 
-## Responsabilidades principais
+## Responsabilidades
 
-### \`src/main.tsx\`
+### Rotas e moldura compartilhada
 
-Cria a raiz React, habilita \`StrictMode\` e envolve a aplicação com \`BrowserRouter\`.
+`src/routes/routes.tsx` é a fonte de verdade das rotas. `src/components/SiteLayout` fornece o cabeçalho, a navegação principal, o rodapé, o atalho de acessibilidade e a área da página. O cabeçalho escolhe os nove destinos prioritários e inclui as páginas antigas em uma lista secundária no rodapé. O submenu Empresa usa um botão disclosure; a navegação comum continua com links, sem `role="menu"`.
 
-### \`src/App.tsx\`
+`useSiteMotion.ts` conecta as refs da moldura ao motor GSAP. A lógica comum fica em `src/motion`; novas animações devem permanecer escopadas, ter cleanup e respeitar `prefers-reduced-motion`.
 
-Aplica \`GlobalStyles\` e renderiza \`AppRoutes\`. Não coloque regras específicas de uma página neste arquivo.
+### Conteúdo editorial
 
-### \`src/routes/routes.tsx\`
+O documento atual do cliente é `docs/references/site textos resumido 18-10.docx`. `sourceDocuments.ts` identifica as fontes; o manifesto em `src/content/__fixtures__` registra os 582 parágrafos. As entradas publicáveis recebem `originRefs` com números base 1. A aplicação consome dados TypeScript e não interpreta arquivos Word.
 
-É a fonte de verdade das rotas públicas. Todas as páginas passam pelo \`SiteLayout\`, que mantém cabeçalho, navegação, rodapé e atalho de WhatsApp consistentes.
+- `institutionalContent.ts`: leitura completa de História, Identidade, Estrutura, Qualidade e ESG.
+- `companyContent.ts`: marcos e resumos do carrossel de História, com sua origem no Word.
+- `segmentsContent.ts`: copy completa dos seis segmentos e resumos usados na Home.
+- `productsContent.ts`: 14 grupos de produtos e links para detalhes com âncoras reais.
+- `contactContent.ts` e `careersContent.ts`: conteúdo de Contato e Trabalhe Conosco.
+- `editorialResources.ts`: recursos opcionais como foto autorizada, certificados e URLs externas. Recursos sem confirmação têm valor `null`.
+- `siteData.ts`: serviços, certificações, clientes, obras, instalações e equipamentos legados.
 
-### \`src/components/SiteLayout\`
+Ações Sociais conserva a fonte editorial anterior, pois o Word atual não entrega uma nova redação para essa tela.
 
-Controla a moldura compartilhada do site, o menu responsivo e a orquestração dos efeitos de cabeçalho e rota. `useSiteMotion.ts` conecta refs ao motor de movimento e reconstrói somente as revelações pertencentes à rota atual. Mudanças aqui podem afetar todas as páginas.
+### Páginas
 
-### \`src/motion\`
+`src/pages/Company` mantém índice e páginas próprias para História, Estrutura, Qualidade, ESG e Ações Sociais. História combina carrossel acessível sem autoplay com leitura integral.
 
-Centraliza o registro do GSAP e as funções testáveis de movimento. `siteMotion.ts` não conhece React: recebe elementos, cria triggers locais e retorna cleanup. Consulte [Movimento e GSAP](./movimento-e-gsap.md) antes de ampliar esse sistema.
+`src/pages/Home` compõe apenas o slot responsivo da fotografia panorâmica e a grade dos seis segmentos. A foto está pendente; o site mantém o espaço reservado sem apresentar uma imagem de demonstração como conteúdo corporativo em produção.
 
-### \`src/pages\`
+`src/pages/Segments` tem o índice dos seis assuntos e uma página de leitura completa para cada slug. `src/pages/Products` lista os grupos e liga os produtos aos segmentos quando há destino real. `/servicos` e `/equipamentos` permanecem como áreas técnicas distintas.
 
-Cada diretório representa uma página ou fluxo visual. As páginas compõem seções e podem definir estilos específicos junto da implementação quando o estilo não for reutilizável.
+`src/pages/Contact` direciona Vendas e Compras por `mailto:` e não apresenta formulário com confirmação simulada. Denúncia só aparece com URL HTTP/HTTPS real configurada. `src/pages/People/CareersContent.tsx` apresenta o texto completo em `/pessoas/carreira`; candidatura externa só aparece quando sua URL está configurada. Os demais tópicos de Pessoas permanecem na página legada.
 
-### \`src/pages/siteStyles.ts\`
+### Estilos e componentes
 
-Concentra primitives visuais reutilizadas por várias páginas, como \`Container\`, \`Hero\`, \`Section\`, \`Button\`, grids, cards e bandas de conteúdo.
+`src/pages/siteStyles.ts` concentra primitives usados por várias páginas, como `Container`, `Hero`, `Section` e `Button`. `src/components/ui` mantém primitives Shadcn/UI; `src/components/brand` mantém composições da marca. Componentes com estilo específico podem manter os estilos junto à sua página.
 
-### \`src/content/siteData.ts\`
+## Decisões de navegação e hospedagem
 
-Centraliza serviços, certificações, clientes, projetos, instalações e equipamentos. Dados que alimentam mais de uma página devem ficar aqui em vez de serem duplicados em componentes.
-
-### `src/content/homeContent.ts`
-
-Mantém sínteses editoriais da Home, métricas, chamadas e metadados de mídia. O texto integral do cliente não é duplicado aqui: consulte `src/content/institutionalContent.ts`, com `sourceParagraphs` para rastreabilidade ao Word.
-
-### `src/content/institutionalContent.ts`
-
-Fonte tipada do conteúdo institucional completo de História, Identidade, Estrutura, Qualidade, ESG e Ações Sociais. Os 60 parágrafos públicos anteriores a “Segmentos” estão inventariados uma vez; notas de links/fotos permanecem em `editorialNotes`, fora da UI. A Home usa sínteses por tema, e as telas próprias apresentam a leitura integral. O conteúdo posterior de Segmentos, Produtos e subsites permanece fora deste incremento.
-
-### `src/content/companyContent.ts`
-
-Mantém os marcos do carrossel da História e os blocos comerciais reservados ao próximo planejamento; não é a fonte da prosa institucional completa.
-
-### `src/pages/Company`
-
-A área Empresa é estruturada com separação clara de responsabilidades:
-- `index.tsx`: índice com as cinco telas temáticas;
-- `HistoryPage.tsx`: carrossel e texto completo de História e Identidade;
-- `StructurePage.tsx`, `QualityPage.tsx`, `EsgPage.tsx`, `SocialActionsPage.tsx`: leitura completa e complementos específicos;
-- `CompanySubnav.tsx`: navegação entre temas e retorno ao índice;
-- `HistoryCarousel.tsx`: carrossel editorial interativo sem autoplay, com transição GSAP escopada (`useGSAP`), navegação por teclado (setas, Home, End), swipe por ponteiro (`touch-action: pan-y`) e anúncio `aria-live`;
-- `HistoryLongform.tsx`: componente legado preservado para os blocos comerciais diferidos, não montado nas rotas institucionais;
-- `companyStyles.ts`: estilos dedicados e variantes responsivas.
-
-### `src/pages/Home`
-
-A Home nova é composta por seções independentes em `src/pages/Home/sections`, com estilos editoriais em `homeStyles.ts`. Primitives de comportamento vêm de `src/components/ui`; composições específicas da marca ficam em `src/components/brand`.
-
-## Padrão de composição
-
-Uma página típica combina:
-
-1. um \`Hero\` com imagem, eyebrow, título e texto;
-2. uma ou mais \`Section\` dentro de \`Container\`;
-3. componentes visuais reutilizáveis de \`siteStyles.ts\`;
-4. conteúdo específico ou dados importados de \`siteData.ts\`;
-5. links \`Link\`/\`NavLink\` para navegação interna.
-
-Na Home humanizada, a composição é:
-
-1. hero com tese humana e mídia documental;
-2. história e identidade em sínteses visuais;
-3. bloco “Por dentro do trabalho”;
-4. métricas estruturais contextualizadas;
-5. soluções atuais como complemento, sem importar o catálogo do Word;
-6. qualidade e ESG em bandas próprias;
-7. carreira e contato.
-
-## Decisões importantes
-
-- A navegação é feita no cliente com \`react-router-dom\`.
-- Filhos desconhecidos de `/empresa` redirecionam para o índice `/empresa`; outras rotas desconhecidas redirecionam para `/`.
-- As imagens de destaque e alguns painéis usam URLs externas do Unsplash; uma publicação deve considerar disponibilidade, licenciamento e estratégia de fallback.
-- O cabeçalho liquid glass e as revelações usam GSAP/ScrollTrigger, com `useGSAP`, scope por ref, cleanup local e suporte a `prefers-reduced-motion`.
-- Shadcn/UI é adotado de forma incremental: Tailwind v4 e tokens ficam em \`src/styles/shadcn.css\`, enquanto páginas legadas continuam usando styled-components.
-- O preset efetivo do Shadcn é o \`base-nova\` com primitives Base UI, conforme \`components.json\`; consulte a skill antes de usar APIs como \`render\` ou atualizar componentes.
-- Não crie uma nova camada de estado global sem uma necessidade real; o estado atual é local aos componentes.
+- O roteamento é client-side via React Router.
+- Slugs inválidos de Segmentos retornam para `/segmentos`; filhos desconhecidos de `/empresa` retornam para `/empresa`; as demais rotas não conhecidas retornam para `/`.
+- Netlify usa `public/_redirects` para encaminhar rotas SPA a `index.html`; `public/.htaccess` preserva a regra para Apache.
+- Páginas técnicas antigas podem ter imagens Unsplash. Imagens de demonstração não representam colaboradores nem devem ser publicadas como mídia corporativa aprovada.
+- O movimento respeita reduced motion e não deve depender de animação para revelar conteúdo.

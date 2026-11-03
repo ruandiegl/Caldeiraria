@@ -39,6 +39,8 @@ describe('companyContent editorial model', () => {
       expect(slide.title).toBeTruthy();
       expect(slide.summary).toBeTruthy();
       expect(slide.sourceRefs.length).toBeGreaterThan(0);
+      expect(slide.originRefs.length).toBeGreaterThan(0);
+      expect(slide.originRefs.every(({ documentId }) => documentId === 'word-18-10')).toBe(true);
       expect(slide.image.alt).toBeTruthy();
     }
   });

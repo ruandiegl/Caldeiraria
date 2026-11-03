@@ -2,24 +2,9 @@
 import { type CSSProperties } from 'react';
 import styled from 'styled-components';
 import { Actions, Button, Container, Eyebrow, Hero } from '../siteStyles';
+import CareersContent from './CareersContent';
 
 const peopleTopics = {
-  carreira: {
-    eyebrow: 'Carreira',
-    title: 'Crescimento técnico para quem constrói indústria de verdade.',
-    summary:
-      'A Vulcano valoriza trajetórias que começam no aprendizado prático, avançam pela qualificação e ganham força com novas responsabilidades em fábrica, obra e campo.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2200&q=82',
-    accent: '#fb7900',
-    badge: 'Trilha profissional',
-    signal: 'Fábrica | Obra | Campo',
-    quote: 'Carreira industrial se constrói com prática, orientação e responsabilidade no detalhe.',
-    points: [
-      ['Entrada e evolução', 'Oportunidades para desenvolver habilidades em caldeiraria, soldagem, montagem e apoio operacional.'],
-      ['Liderança técnica', 'Crescimento apoiado por experiência prática, acompanhamento de equipes e domínio de processos.'],
-      ['Segurança no caminho', 'Carreira construída com atenção a normas, procedimentos e responsabilidade coletiva.'],
-    ],
-  },
   desenvolvimento: {
     eyebrow: 'Pessoas que movem a Vulcano',
     title: 'Conhecimento compartilhado entre gerações, áreas e contratos.',
@@ -831,7 +816,7 @@ const TopicNav = styled.nav`
   }
 
   a:hover {
-    color: #fff;
+    color: #11182d;
     border-color: #fb7900;
     background: #fb7900;
   }
@@ -856,39 +841,6 @@ const TopicFooterNav = styled.div`
 `;
 
 function renderTopicVisual(topic: PeopleTopicKey) {
-  if (topic === 'carreira') {
-    return (
-      <TopicVisual>
-        <div className="visual-header">
-          <strong>Mapa de crescimento</strong>
-          <span>Uma trilha visual do primeiro contato técnico à liderança em campo</span>
-        </div>
-        <div className="visual-stage career-ladder">
-          <div className="career-step" style={{ '--lift': '0px' } as CSSProperties}>
-            <em>01</em>
-            <strong>Entrada</strong>
-            <span>Aprendizado prático, leitura de processo e rotina de segurança.</span>
-          </div>
-          <div className="career-step" style={{ '--lift': '46px' } as CSSProperties}>
-            <em>02</em>
-            <strong>Ofício</strong>
-            <span>Soldagem, montagem, caldeiraria e domínio de ferramentas.</span>
-          </div>
-          <div className="career-step" style={{ '--lift': '92px' } as CSSProperties}>
-            <em>03</em>
-            <strong>Especialização</strong>
-            <span>Certificações, qualidade, documentação e autonomia técnica.</span>
-          </div>
-          <div className="career-step" style={{ '--lift': '138px' } as CSSProperties}>
-            <em>04</em>
-            <strong>Liderança</strong>
-            <span>Coordenação de equipes, contratos críticos e atuação em campo.</span>
-          </div>
-        </div>
-      </TopicVisual>
-    );
-  }
-
   if (topic === 'desenvolvimento') {
     return (
       <TopicVisual>
@@ -1002,6 +954,10 @@ function renderTopicVisual(topic: PeopleTopicKey) {
 
 export default function People() {
   const { topic } = useParams();
+
+  if (topic === 'carreira') {
+    return <CareersContent />;
+  }
 
   if (topic && !(topic in peopleTopics)) {
     return <Navigate to="/pessoas" replace />;

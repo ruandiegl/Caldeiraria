@@ -7,7 +7,7 @@ export const Intro = styled.div<{ $light: boolean }>`
 
 export const IntroLabel = styled.p<{ $light: boolean }>`
   margin: 0;
-  color: ${({ $light }) => ($light ? '#ffb26e' : '#fb7900')};
+  color: ${({ $light }) => ($light ? '#ffb26e' : '#a84d00')};
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.16em;
