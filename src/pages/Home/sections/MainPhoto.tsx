@@ -3,8 +3,8 @@ import { homeContent, type HomeMedia } from '@/content/homeContent';
 import { HomePhotoContainer, HomePhotoFrame, HomePhotoSection } from '../homeStyles';
 
 const media: HomeMedia = homeContent.media[0];
-const isPreviewInReview = import.meta.env.DEV && media.status === 'preview-asset';
-const imageSource = media.status === 'approved' || isPreviewInReview ? media.src : null;
+const isConceptPreview = media.status === 'preview-asset';
+const imageSource = media.status === 'approved' || isConceptPreview ? media.src : null;
 
 export function MainPhoto() {
   const [failed, setFailed] = useState(false);
@@ -34,7 +34,7 @@ export function MainPhoto() {
                   fetchPriority="high"
                   onError={() => setFailed(true)}
                 />
-                {isPreviewInReview && <span className="preview-badge">Imagem conceitual</span>}
+                {isConceptPreview && <span className="preview-badge">Imagem conceitual</span>}
               </>
             ) : (
               <div className="photo-fallback" role="img" aria-label="Imagem principal indisponível">

@@ -2,11 +2,27 @@ import '@testing-library/jest-dom/vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { MainPhoto } from './MainPhoto';
 import { HomePhotoSection } from '../homeStyles';
 
 describe('foto principal da Home', () => {
+  it('mostra a imagem conceitual também no build de produção', async () => {
+    vi.stubEnv('DEV', false);
+    vi.resetModules();
+
+    try {
+      const { MainPhoto: ProductionMainPhoto } = await import('./MainPhoto');
+      render(<ProductionMainPhoto />);
+
+      expect(screen.getByRole('img', { name: /prensa hidráulica.*equipe usando EPIs/i })).toBeInTheDocument();
+      expect(screen.getByText('Imagem conceitual')).toBeVisible();
+    } finally {
+      vi.unstubAllEnvs();
+      vi.resetModules();
+    }
+  });
+
   it('carrega com prioridade, tamanhos responsivos e proporção reservada', () => {
     const { container } = render(<MainPhoto />);
     const image = screen.getByRole('img', { name: /prensa hidráulica.*equipe usando EPIs/i });

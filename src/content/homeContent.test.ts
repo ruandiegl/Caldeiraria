@@ -18,6 +18,8 @@ describe('conteúdo da Home', () => {
     });
     expect(homeContent.media).toHaveLength(4);
     expect(homeContent.media.every((media) => media.status === 'preview-asset')).toBe(true);
-    expect(homeContent.media.every((media) => media.src?.startsWith('https://images.unsplash.com/'))).toBe(true);
+    expect(homeContent.media[0].src).not.toMatch(/^https:\/\//);
+    expect(homeContent.media[0].srcSet).toMatch(/900w.*1600w.*2200w.*2800w/);
+    expect(homeContent.media.slice(1).every((media) => media.src?.startsWith('https://images.unsplash.com/'))).toBe(true);
   });
 });

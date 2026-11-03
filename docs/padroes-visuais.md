@@ -32,7 +32,7 @@ A interface comunica engenharia aplicada, capacidade industrial, precisão e pro
 
 A Home segue o layout aprovado pelo cliente: fotografia de destaque em 3:1 no desktop, com altura mínima de 240 px, e proporção 16:7 no celular. O hero foi ampliado a pedido do cliente, com uma fonte responsiva até 2800 px para preservar nitidez. Abaixo, seis blocos abertos de Segmentos ficam em duas colunas a partir de 768 px e em uma coluna em telas estreitas. Os nomes e a ordem vêm de `segmentsContent.ts`. Os blocos levam às páginas de conteúdo integral; a Home não reintroduz as métricas e seções antigas.
 
-A foto corporativa da Home ainda está pendente. Em desenvolvimento, o preview de demonstração precisa estar identificado. Em produção, é exibido um espaço reservado até receber a imagem autorizada.
+A foto corporativa da Home ainda está pendente. A imagem conceitual local pode ser exibida em prévias e em produção, sempre identificada como “Imagem conceitual”. Quando a Vulcano fornecer uma foto autorizada, atualizar o conteúdo e a classificação da mídia.
 
 ## Imagens
 
