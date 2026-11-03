@@ -83,13 +83,6 @@ export const HomePhotoFrame = styled.div<{ $failed: boolean }>`
   }
 `;
 
-export const HomePhotoCaption = styled.figcaption`
-  margin-top: 8px;
-  color: #64748b;
-  font-size: 0.76rem;
-  line-height: 1.5;
-`;
-
 export const SegmentOverviewSection = styled.section`
   padding: clamp(40px, 3vw, 48px) 0 clamp(64px, 8vw, 104px);
   background: #fff;

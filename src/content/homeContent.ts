@@ -1,7 +1,12 @@
 import { institutionalFacts } from './institutionalContent';
+import heroConcept900 from '../assets/hero-conceito-industrial-900.webp';
+import heroConcept1600 from '../assets/hero-conceito-industrial-1600.webp';
+import heroConcept2200 from '../assets/hero-conceito-industrial-2200.webp';
+import heroConcept2800 from '../assets/hero-conceito-industrial.webp';
 
 export type HomeMedia = {
   src: string | null;
+  srcSet?: string;
   alt: string;
   caption: string;
   status: 'pending-asset' | 'preview-asset' | 'approved';
@@ -104,9 +109,10 @@ export const homeContent = {
   },
   media: [
     {
-      src: 'https://images.unsplash.com/photo-1695603414724-2396274ef5cc?auto=format&fit=crop&w=1600&q=82',
-      alt: 'Trabalhadores usando equipamentos de proteção em uma fábrica industrial',
-      caption: 'Imagem de demonstração via Unsplash — substituir por foto autorizada da Vulcano.',
+      src: heroConcept2800,
+      srcSet: `${heroConcept900} 900w, ${heroConcept1600} 1600w, ${heroConcept2200} 2200w, ${heroConcept2800} 2800w`,
+      alt: 'Imagem conceitual de uma prensa hidráulica em uma fábrica metalúrgica, com equipe usando EPIs',
+      caption: '',
       status: 'preview-asset',
     },
     {
