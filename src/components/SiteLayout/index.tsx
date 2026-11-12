@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 
 import { ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { primaryNavItems, getPrimaryNavId } from '@/content/navigation';
-import { Brand, CompanyMenu, Footer, Header, Main, MenuButton, Nav, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
+import { Brand, Footer, Header, Main, MenuButton, Nav, NavDropdown, RouteViewport, Shell, SkipLink, WhatsApp } from './styles';
 import { useSiteMotion } from './useSiteMotion';
 import logo from '../../assets/logo.png';
 
@@ -39,10 +39,12 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(() => window.matchMedia('(max-width: 1279px)').matches);
   const [companyExpanded, setCompanyExpanded] = useState(false);
+  const [peopleExpanded, setPeopleExpanded] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const companyToggleRef = useRef<HTMLButtonElement>(null);
+  const peopleToggleRef = useRef<HTMLButtonElement>(null);
   const routeRef = useRef<HTMLDivElement>(null);
   const previousPath = useRef(location.pathname);
   const whatsappUrl = import.meta.env.VITE_WHATSAPP_URL?.trim();
@@ -59,6 +61,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   function closeNavigation() {
     setOpen(false);
     setCompanyExpanded(false);
+    setPeopleExpanded(false);
   }
 
   function handleBrandClick() {
@@ -78,6 +81,11 @@ export function SiteLayout({ children }: SiteLayoutProps) {
     if (companyExpanded) {
       setCompanyExpanded(false);
       companyToggleRef.current?.focus();
+      return;
+    }
+    if (peopleExpanded) {
+      setPeopleExpanded(false);
+      peopleToggleRef.current?.focus();
       return;
     }
     if (open) {
@@ -133,62 +141,98 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           aria-hidden={compact && !open}
         >
           <ul className="primary-list">
-            {primaryNavItems.map((item) => item.id === 'company' ? (
-              <li key={item.id}>
-                <CompanyMenu
-                  $expanded={companyExpanded}
-                  data-expanded={companyExpanded}
-                >
-                  <div className="company-trigger">
-                    <Link
-                      to={item.href}
-                      className={activePrimaryId === item.id ? 'active' : undefined}
-                      aria-current={location.pathname === item.href ? 'page' : undefined}
-                      onClick={closeNavigation}
-                    >
-                      {item.label}
-                    </Link>
-                    <button
-                      ref={companyToggleRef}
-                      className="company-disclosure"
-                      type="button"
-                      aria-label={companyExpanded ? 'Recolher seções de Empresa' : 'Expandir seções de Empresa'}
-                      aria-expanded={companyExpanded}
-                      aria-controls="company-sections"
-                      onClick={() => setCompanyExpanded((current) => !current)}
-                    >
-                      <ChevronDown aria-hidden="true" />
-                    </button>
-                  </div>
-                  <div
-                    className="company-submenu"
-                    id="company-sections"
-                    role="group"
-                    aria-label="Seções da empresa"
-                    aria-hidden={!companyExpanded}
+            {primaryNavItems.map((item) => {
+              if (item.id === 'company' || item.id === 'people') {
+                const isCompany = item.id === 'company';
+                const expanded = isCompany ? companyExpanded : peopleExpanded;
+                const toggleRef = isCompany ? companyToggleRef : peopleToggleRef;
+                const groupId = isCompany ? 'company-sections' : 'people-sections';
+                const groupLabel = isCompany ? 'Seções da empresa' : 'Seções de Pessoas';
+                const destinations = isCompany
+                  ? [
+                    ['Visão geral da empresa', '/empresa'],
+                    ['História', '/empresa/historia'],
+                    ['Estrutura', '/empresa/estrutura'],
+                    ['Qualidade', '/empresa/qualidade'],
+                    ['ESG', '/empresa/esg'],
+                    ['Ações Sociais', '/empresa/acoes-sociais'],
+                  ]
+                  : [
+                    ['Carreira', '/pessoas/carreira'],
+                    ['Pessoas que movem a Vulcano', '/pessoas/desenvolvimento'],
+                    ['Comunidade', '/pessoas/comunidade'],
+                    ['We Care', '/pessoas/cuidado'],
+                  ];
+
+                return (
+                  <li key={item.id}>
+                    <NavDropdown $expanded={expanded} data-expanded={expanded}>
+                      <div className="nav-dropdown-trigger">
+                        <Link
+                          to={item.href}
+                          className={activePrimaryId === item.id ? 'active' : undefined}
+                          aria-current={location.pathname === item.href ? 'page' : undefined}
+                          onClick={closeNavigation}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          ref={toggleRef}
+                          className="nav-dropdown-disclosure"
+                          type="button"
+                          aria-label={`${expanded ? 'Recolher' : 'Expandir'} seções ${isCompany ? 'de Empresa' : 'de Pessoas'}`}
+                          aria-expanded={expanded}
+                          aria-controls={groupId}
+                          onClick={() => {
+                            setCompanyExpanded(isCompany ? !companyExpanded : false);
+                            setPeopleExpanded(isCompany ? false : !peopleExpanded);
+                          }}
+                        >
+                          <ChevronDown aria-hidden="true" />
+                        </button>
+                      </div>
+                      <div
+                        className="nav-dropdown-submenu"
+                        id={groupId}
+                        role="group"
+                        aria-label={groupLabel}
+                        aria-hidden={!expanded}
+                      >
+                        <ul>
+                          {destinations.map(([label, href]) => (
+                            <li key={href}>
+                              <Link
+                                to={href}
+                                className={location.pathname === href ? 'active' : undefined}
+                                aria-current={location.pathname === href ? 'page' : undefined}
+                                onClick={closeNavigation}
+                              >
+                                {label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </NavDropdown>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.id}>
+                  <Link
+                    to={item.href}
+                    className={item.id === 'quote'
+                      ? 'nav-quote'
+                      : activePrimaryId === item.id ? 'active' : undefined}
+                    aria-current={activePrimaryId === item.id ? 'page' : undefined}
+                    onClick={closeNavigation}
                   >
-                    <ul>
-                      <li><Link to="/empresa" className={location.pathname === '/empresa' ? 'active' : undefined} aria-current={location.pathname === '/empresa' ? 'page' : undefined} onClick={closeNavigation}>Visão geral da empresa</Link></li>
-                      <li><Link to="/empresa/historia" className={location.pathname === '/empresa/historia' ? 'active' : undefined} aria-current={location.pathname === '/empresa/historia' ? 'page' : undefined} onClick={closeNavigation}>História</Link></li>
-                      <li><Link to="/empresa/estrutura" className={location.pathname === '/empresa/estrutura' ? 'active' : undefined} aria-current={location.pathname === '/empresa/estrutura' ? 'page' : undefined} onClick={closeNavigation}>Estrutura</Link></li>
-                    </ul>
-                  </div>
-                </CompanyMenu>
-              </li>
-            ) : (
-              <li key={item.id}>
-                <Link
-                  to={item.href}
-                  className={item.id === 'careers'
-                    ? `nav-careers${activePrimaryId === item.id ? ' active' : ''}`
-                    : activePrimaryId === item.id ? 'active' : undefined}
-                  aria-current={activePrimaryId === item.id ? 'page' : undefined}
-                  onClick={closeNavigation}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </Nav>
       </Header>

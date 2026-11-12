@@ -1,13 +1,12 @@
 export type PrimaryNavId =
-  | 'home'
   | 'company'
-  | 'segments'
-  | 'products'
-  | 'quality'
-  | 'esg'
-  | 'social-actions'
-  | 'contact'
-  | 'careers';
+  | 'people'
+  | 'services'
+  | 'facilities'
+  | 'equipment'
+  | 'certifications'
+  | 'cases'
+  | 'quote';
 
 export type PrimaryNavItem = {
   id: PrimaryNavId;
@@ -16,28 +15,26 @@ export type PrimaryNavItem = {
 };
 
 export const primaryNavItems: readonly PrimaryNavItem[] = [
-  { id: 'home', label: 'Home', href: '/' },
   { id: 'company', label: 'Empresa', href: '/empresa' },
-  { id: 'segments', label: 'Segmentos', href: '/segmentos' },
-  { id: 'products', label: 'Produtos', href: '/produtos' },
-  { id: 'quality', label: 'Qualidade', href: '/empresa/qualidade' },
-  { id: 'esg', label: 'ESG', href: '/empresa/esg' },
-  { id: 'social-actions', label: 'Ações Sociais', href: '/empresa/acoes-sociais' },
-  { id: 'contact', label: 'Contato', href: '/contato' },
-  { id: 'careers', label: 'Trabalhe Conosco', href: '/pessoas/carreira' },
+  { id: 'people', label: 'Pessoas', href: '/pessoas' },
+  { id: 'services', label: 'Serviços', href: '/servicos' },
+  { id: 'facilities', label: 'Instalações', href: '/instalacoes' },
+  { id: 'equipment', label: 'Equipamentos', href: '/equipamentos' },
+  { id: 'certifications', label: 'Certificações', href: '/certificacoes' },
+  { id: 'cases', label: 'Obras e clientes', href: '/obras-clientes' },
+  { id: 'quote', label: 'Solicitar orçamento', href: '/contato' },
 ];
 
 const isAtPath = (pathname: string, route: string) => pathname === route || pathname.startsWith(`${route}/`);
 
 export function getPrimaryNavId(pathname: string): PrimaryNavId | null {
-  if (pathname === '/') return 'home';
-  if (isAtPath(pathname, '/empresa/qualidade')) return 'quality';
-  if (isAtPath(pathname, '/empresa/esg')) return 'esg';
-  if (isAtPath(pathname, '/empresa/acoes-sociais')) return 'social-actions';
-  if (isAtPath(pathname, '/empresa') && ['/empresa', '/empresa/historia', '/empresa/estrutura'].some((route) => isAtPath(pathname, route))) return 'company';
-  if (isAtPath(pathname, '/segmentos')) return 'segments';
-  if (isAtPath(pathname, '/produtos')) return 'products';
-  if (isAtPath(pathname, '/contato')) return 'contact';
-  if (isAtPath(pathname, '/pessoas/carreira')) return 'careers';
+  if (isAtPath(pathname, '/empresa')) return 'company';
+  if (isAtPath(pathname, '/pessoas')) return 'people';
+  if (isAtPath(pathname, '/servicos')) return 'services';
+  if (isAtPath(pathname, '/instalacoes')) return 'facilities';
+  if (isAtPath(pathname, '/equipamentos')) return 'equipment';
+  if (isAtPath(pathname, '/certificacoes')) return 'certifications';
+  if (isAtPath(pathname, '/obras-clientes')) return 'cases';
+  if (isAtPath(pathname, '/contato')) return 'quote';
   return null;
 }

@@ -28,11 +28,12 @@ export const Header = styled.header<{ $open: boolean }>`
   position: fixed;
   inset: 0 0 auto;
   z-index: 20;
-  min-height: 68px;
+  min-height: 76px;
   padding: 0 max(20px, calc((100vw - 1360px) / 2));
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: clamp(12px, 1.8vw, 26px);
   color: #11182d;
   background: #ffffff;
   border-bottom: 1px solid #edf1f5;
@@ -53,7 +54,7 @@ export const Header = styled.header<{ $open: boolean }>`
 
 export const Brand = styled.a`
   min-width: 0;
-  display: none;
+  display: inline-flex;
   align-items: center;
   width: 176px;
   height: 50px;
@@ -78,24 +79,22 @@ export const Brand = styled.a`
     height: 42px;
   }
 
-  @media (max-width: 1279px) {
-    display: inline-flex;
-  }
 `;
 
 export const Nav = styled.nav<{ $open: boolean }>`
   width: 100%;
-  max-width: 1360px;
+  max-width: none;
   flex: 1;
-  font-size: clamp(12px, 0.95vw, 14px);
-  font-weight: 600;
-  text-transform: none;
+  min-width: 0;
+  font-size: clamp(11px, 0.84vw, 12px);
+  font-weight: 900;
+  text-transform: uppercase;
 
   > ul.primary-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(8px, 1vw, 13px);
+    gap: clamp(4px, 0.75vw, 11px);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -103,8 +102,8 @@ export const Nav = styled.nav<{ $open: boolean }>`
 
   a {
     position: relative;
-    min-height: 44px;
-    padding: 0 10px;
+    min-height: 46px;
+    padding: 0 clamp(3px, 0.4vw, 7px);
     display: inline-flex;
     align-items: center;
     color: inherit;
@@ -134,15 +133,20 @@ export const Nav = styled.nav<{ $open: boolean }>`
     transform: scaleX(1);
   }
 
-  a.nav-careers {
-    padding-inline: 12px;
-    color: #11182d;
+  a.nav-quote {
+    min-width: 204px;
+    min-height: 46px;
+    padding-inline: 16px;
+    justify-content: center;
+    color: #fff;
     background: #fb7900;
     border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(251, 121, 0, 0.16);
+    white-space: nowrap;
   }
 
-  a.nav-careers::after { display: none; }
-  a.nav-careers:hover { color: #11182d; }
+  a.nav-quote::after { display: none; }
+  a.nav-quote:hover { color: #fff; background: #e96d00; }
 
   a:focus-visible,
   button:focus-visible {
@@ -195,23 +199,23 @@ export const Nav = styled.nav<{ $open: boolean }>`
   }
 `;
 
-export const CompanyMenu = styled.div<{ $expanded: boolean }>`
+export const NavDropdown = styled.div<{ $expanded: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
 
-  .company-trigger {
+  .nav-dropdown-trigger {
     display: flex;
     align-items: center;
     gap: 2px;
   }
 
-  .company-trigger > a { white-space: nowrap; }
+  .nav-dropdown-trigger > a { white-space: nowrap; }
 
-  .company-disclosure {
-    width: 44px;
-    min-width: 44px;
-    height: 44px;
+  .nav-dropdown-disclosure {
+    width: 24px;
+    min-width: 24px;
+    height: 46px;
     padding: 0;
     display: grid;
     place-items: center;
@@ -222,14 +226,14 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
     cursor: pointer;
   }
 
-  .company-disclosure svg {
+  .nav-dropdown-disclosure svg {
     width: 13px;
     height: 13px;
     transition: transform 180ms ease;
     transform: rotate(${({ $expanded }) => ($expanded ? '180deg' : '0deg')});
   }
 
-  .company-submenu {
+  .nav-dropdown-submenu {
     position: absolute;
     top: calc(100% + 9px);
     left: 50%;
@@ -251,7 +255,7 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
     transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
   }
 
-  .company-submenu > ul {
+  .nav-dropdown-submenu > ul {
     margin: 0;
     padding: 0;
     display: grid;
@@ -259,21 +263,21 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
     list-style: none;
   }
 
-  .company-submenu::before {
+  .nav-dropdown-submenu::before {
     content: "";
     position: absolute;
     inset: -10px 0 auto;
     height: 10px;
   }
 
-  &[data-expanded='true'] .company-submenu {
+  &[data-expanded='true'] .nav-dropdown-submenu {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
     transform: translate(-50%, 0);
   }
 
-  .company-submenu a {
+  .nav-dropdown-submenu a {
     min-height: 44px;
     padding: 8px 14px;
     color: #102a43;
@@ -284,14 +288,14 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
     transition: background 180ms ease, color 180ms ease, transform 180ms ease;
   }
 
-  .company-submenu a:hover,
-  .company-submenu a.active {
+  .nav-dropdown-submenu a:hover,
+  .nav-dropdown-submenu a.active {
     color: #063e66;
     background: rgba(255, 132, 36, 0.12);
     transform: translateX(2px);
   }
 
-  .company-submenu a::after {
+  .nav-dropdown-submenu a::after {
     display: none;
   }
 
@@ -299,15 +303,20 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
     width: 100%;
     display: block;
 
-    .company-trigger {
+    .nav-dropdown-trigger {
       width: 100%;
     }
 
-    .company-trigger > a {
+    .nav-dropdown-trigger > a {
       flex: 1;
     }
 
-    .company-submenu {
+    .nav-dropdown-disclosure {
+      width: 44px;
+      min-width: 44px;
+    }
+
+    .nav-dropdown-submenu {
       position: static;
       min-width: 0;
       width: 100%;
@@ -327,15 +336,15 @@ export const CompanyMenu = styled.div<{ $expanded: boolean }>`
       transition: none;
     }
 
-    .company-submenu > ul {
+    .nav-dropdown-submenu > ul {
       padding: 0;
     }
 
-    .company-submenu::before {
+    .nav-dropdown-submenu::before {
       display: none;
     }
 
-    &[data-expanded='true'] .company-submenu { transform: none; }
+    &[data-expanded='true'] .nav-dropdown-submenu { transform: none; }
   }
 `;
 

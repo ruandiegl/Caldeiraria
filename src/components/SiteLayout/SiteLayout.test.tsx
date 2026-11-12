@@ -130,7 +130,7 @@ describe('menu Empresa no cabeçalho', () => {
     return within(screen.getByRole('banner'));
   }
 
-  it('mantém Empresa como link e oferece História e Estrutura no expansor', () => {
+  it('mantém Empresa como link e oferece as páginas institucionais no expansor', () => {
     const header = renderLayout();
     expect(header.getByRole('link', { name: 'Empresa' })).toHaveAttribute('href', '/empresa');
     expect(header.getByRole('button', { name: 'Expandir seções de Empresa' })).toHaveAttribute('aria-controls', 'company-sections');
@@ -141,14 +141,17 @@ describe('menu Empresa no cabeçalho', () => {
       ['Visão geral da empresa', '/empresa'],
       ['História', '/empresa/historia'],
       ['Estrutura', '/empresa/estrutura'],
+      ['Qualidade', '/empresa/qualidade'],
+      ['ESG', '/empresa/esg'],
+      ['Ações Sociais', '/empresa/acoes-sociais'],
     ]) {
       expect(submenu.getByRole('link', { name })).toHaveAttribute('href', href);
     }
   });
 
-  it('destaca Trabalhe Conosco como a ação principal do cabeçalho', () => {
+  it('destaca Solicitar orçamento como a ação principal do cabeçalho', () => {
     const header = renderLayout();
-    expect(header.getByRole('link', { name: 'Trabalhe Conosco' })).toHaveAttribute('class', 'nav-careers');
+    expect(header.getByRole('link', { name: 'Solicitar orçamento' })).toHaveAttribute('class', 'nav-quote');
   });
 
   it('expande o submenu com botão e teclado para percorrer seus links', async () => {
@@ -174,6 +177,7 @@ describe('menu Empresa no cabeçalho', () => {
       const menuButton = header.getByRole('button', { name: 'Menu' });
       await user.click(menuButton);
       expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+      await user.click(header.getByRole('button', { name: 'Expandir seções de Empresa' }));
       await user.click(header.getByRole('link', { name: 'Ações Sociais' }));
       expect(menuButton).toHaveAttribute('aria-expanded', 'false');
       expect(header.getByRole('link', { name: 'Ações Sociais', hidden: true })).toHaveAttribute('aria-current', 'page');
